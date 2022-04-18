@@ -1,0 +1,22 @@
+[profile]
+name = BBTZ5TEST
+path = ~/.BBTZ5TEST
+
+[log]
+path = ~/.BBTZ5TEST.log
+
+[plugins]
+path = 
+  build
+
+[preferences]
+# always have these!
+extensions.autoDisableScopes = 0
+extensions.enableScopes = 15
+extensions.startupScanScopes = 15
+# null deletes if present
+extensions.lastAppBuildId = null
+extensions.lastAppVersion = null
+extensions.zotero.debug.log = true
+
+# free to add more here

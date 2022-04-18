@@ -1,0 +1,22 @@
+diff --git a/node_modules/css-colors-to-vars/index.js b/node_modules/css-colors-to-vars/index.js
+index 44e39cb..8e9230a 100644
+--- a/node_modules/css-colors-to-vars/index.js
++++ b/node_modules/css-colors-to-vars/index.js
+@@ -137,9 +137,15 @@ const remap = (uri) => {
+     if (root.declarations.every(d => d.property !== newColorKeys[i]))
+       root.declarations.push({ type: 'declaration', property: newColorKeys[i], value: newColors[i] })
+   }
++  root.type = 'rule'
++  root.selectors = ['root']
+   rulesWithColors.splice(0, null, root)
+-
+-  const result = css.stringify({ type: parsed.type, stylesheet: { rules: rulesWithColors } })
++  let result = css.stringify({ type: parsed.type, stylesheet: { rules: rulesWithColors } })
++  if(!result){
++    rulesWithColors[0].type = 'rule'
++    rulesWithColors[0].selectors= ':root'
++   result = css.stringify({ type: parsed.type, stylesheet: { rules: rulesWithColors } })
++  }
+   return result
+ }
+ 

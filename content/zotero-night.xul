@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://zotero-night/skin/night.css" type="text/css"?>
+<?xml-stylesheet href="chrome://zotero-night/skin/night-viewer.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://zotero-night/locale/zotero-night.dtd">
+
+<overlay id="zotero-night-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script>
+    var globals = Function('return this')();
+    var zotero_night_zoteropane = null;
+  </script>
+  <stringbundleset>
+    <stringbundle id="zotero-night-strings" src="chrome://zotero-night/locale/zotero-night.properties" />
+  </stringbundleset>
+
+  <!-- Include the main extension logic -->
+  <script src="chrome://zotero-night/content/zotero-night.js" />
+  <script>
+    window.addEventListener('load', async function() {
+      try {
+        Zotero.debug('zotero-night startup')
+        await Zotero.Night.load(globals)
+        Zotero.debug('zotero-night started')
+      } catch (err) {
+        Zotero.debug(`zotero-night ZoteroPane overlay error: ${err.message}\n${err.stack ||''}`)
+      }
+    })
+  </script>
+</overlay>

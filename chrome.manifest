@@ -1,0 +1,5 @@
+content	zotero-night				content/
+locale	zotero-night	en-US		locale/en-US/
+skin	zotero-night	default		skin/
+
+overlay	chrome://zotero/content/zoteroPane.xul	chrome://zotero-night/content/zotero-night.xul

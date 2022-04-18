@@ -1,0 +1,379 @@
+:root {
+  --main-background: #2e3440;
+  --main-text-color-toolbox-color: #eceff4;
+  --zotero-toolbar-border-bottom: #191b20;
+  --label-color: #d8dee9;
+  --input-background: #2e3440;
+  --tag-selector-item-hover-background: #bbcef1;
+  --row-hover-background: #4c566a;
+  --tabs-border: #bf616a;
+  --tab-not-border-top: #88c0d0;
+  --tab-not-border-left: rgba(181, 180, 199, 0.2);
+  --tab-color: rgb(230, 229, 239);
+  --tab-hover-background: #cbd9f1;
+  --retraction-details-background: #7f0000;
+}
+
+* {
+  border: 0 !important;
+}
+#main-window[theme='dark'] label {
+  color: var(--label-color) !important;
+}
+#main-window[theme='dark'] label:not(.zotero-clicky) {
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] #zotero-tb,
+#main-window[theme='dark'] #zotero-toolbar,
+#main-window[theme='dark'] #main-text-color-toolbox {
+  background: var(--main-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] #zotero-toolbar {
+  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark'] #main-text-color-toolbox menu {
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] #manage-attachments-menu label,
+#main-window[theme='dark'] #developer-menu label,
+#main-window[theme='dark'] #layout-menu label,
+#main-window[theme='dark'] #note-font-size-menu label,
+#main-window[theme='dark'] #font-size-menu label,
+#main-window[theme='dark'] #debug-output-menu label,
+#main-window[theme='dark'] #new-item label {
+  color: var(--label-color) !important;
+}
+
+#main-window[theme='dark'] #zotero-tag-selector-container {
+  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  border-top: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark'] #zotero-tag-selector-container input {
+  background: var(--input-background) !important;
+  border: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] .tag-selector-list-container {
+  background: var(--input-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] .tag-selector-item:hover {
+  background: var(--tag-selector-item-hover-background) !important;
+  color: var(--label-color) !important;
+}
+
+#main-window[theme='dark'] .tag-selector-item {
+  background: var(--input-background) !important;
+}
+
+#main-window[theme='dark'] #zotero-tb-search {
+  background-color: var(--input-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+  border: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark'] #zotero-pane {
+  background: var(--main-background) !important;
+  color: var(--label-color) !important;
+}
+
+#main-window[theme='dark'] treechildren {
+  background: var(--main-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] .virtualized-table .row {
+  background: var(--main-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] .virtualized-table .row.selected {
+  background: var(--input-background) !important;
+  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark'] .virtualized-table:not(:focus) .row.selected {
+  background: var(--input-background) !important;
+  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark'] .row:hover {
+  background: var(--row-hover-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] #zotero-item-pane-content {
+  background: var(--main-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] .tabs {
+  background: var(--main-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+  border: 0px solid var(--tabs-border) !important;
+}
+
+#main-window[theme='dark'] .tab {
+  color: var(--row-hover-background) !important;
+  background: var(--main-background) !important;
+}
+
+#main-window[theme='dark'] .tab:hover {
+  background: var(--row-hover-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] .tab:not(:focus) {
+  color: var(--row-hover-background) !important;
+  background: var(--main-background) !important;
+  border-top: 0px solid var(--tab-not-border-top) !important;
+  border-left: 0px solid var(--tab-not-border-left) !important;
+  border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark'] .tab.selected:not(.highlighted) {
+  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--main-background) !important;
+  border-top: 3px solid var(--tab-not-border-top) !important;
+  border-left: 0px solid var(--tab-not-border-left) !important;
+  border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark'] #zotero-collections-tree {
+  background: var(--main-background) !important;
+}
+
+#main-window[theme='dark']
+  #zotero-collections-tree
+  treechildren::-moz-tree-row(hover) {
+  background: var(--row-hover-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark']
+  #zotero-collections-tree
+  treechildren::-moz-tree-cell(selected) {
+  background: var(--input-background) !important;
+  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark']
+  #zotero-collections-tree
+  treechildren::-moz-tree-cell-text(selected) {
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] #zotero-collections-tree treechildren {
+  border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark'] #zotero-collections-tree .virtualized-table {
+  border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark'] #zotero-items-tree {
+  border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  background: var(--main-background) !important;
+}
+
+#main-window[theme='dark']
+  #zotero-items-tree
+  treechildren::-moz-tree-row(hover) {
+  background: var(--row-hover-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark']
+  #zotero-items-tree
+  treechildren::-moz-tree-row(selected) {
+  background: var(--input-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark']
+  #zotero-items-tree
+  treechildren::-moz-tree-cell-text(selected) {
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] #zotero-items-tree treecol {
+  background: var(--input-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark'] #zotero-items-tree .virtualized-table-header {
+  background: var(--input-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark']
+  #zotero-items-tree
+  .virtualized-table-header
+  .cell:hover {
+  background: var(--row-hover-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] .treecol-image {
+  background: var(--input-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark'] #zotero-item-pane-content .zotero-clicky:hover {
+  color: var(--label-color) !important;
+}
+
+#main-window[theme='dark'] tabpanel {
+  color: var(--label-color) !important;
+  background: var(--row-hover-background) !important;
+}
+
+#main-window[theme='dark'] tab[selected='true'] {
+  color: var(--label-color) !important;
+  background: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] tab {
+  color: var(--tab-color) !important;
+  background: var(--input-background) !important;
+  border-top: 0px solid var(--label-color) !important;
+  border-left: 0px solid var(--label-color) !important;
+  border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark'] tab:hover {
+  color: var(--label-color) !important;
+  background: var(--tab-hover-background) !important;
+}
+
+#main-window[theme='dark']
+  #zotero-duplicates-merge-pane
+  > groupbox
+  > .groupbox-body {
+  background: var(--main-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark']
+  #zotero-item-pane-content
+  > groupbox
+  > .groupbox-body {
+  background: var(--main-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] #retraction-details {
+  background: var(--retraction-details-background) !important;
+}
+
+#main-window[theme='dark'] #zotero-item-pane-content {
+  background: var(--main-background) !important;
+}
+
+#main-window[theme='dark'] #zotero-item-pane-content tabpanel {
+  background: var(--input-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] #tags-box-container ul li ul {
+  background: var(--row-hover-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] #tags-box-container input {
+  background-color: var(--row-hover-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+  border: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark'] #zotero-item-pane-content tab[selected='true'] {
+  background: var(--input-background) !important;
+  border-top: 3px solid var(--tab-not-border-top) !important;
+}
+
+#main-window[theme='dark'] #zotero-item-pane-content tab {
+  color: var(--tab-color) !important;
+  background: var(--main-background) !important;
+  border-top: 0px solid var(--tab-not-border-top) !important;
+  border-left: 0px solid var(--tab-not-border-left) !important;
+  border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
+}
+
+#main-window[theme='dark'] #zotero-item-pane-content tab:hover {
+  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--row-hover-background) !important;
+}
+
+#main-window[theme='dark'] #item-type-menu {
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] #zotero-date-field-status {
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] #zotero-prefpane-general,
+#zotero-prefpane-sync,
+#zotero-prefpane-export,
+#zotero-prefpane-advanced-keys-tab,
+#wordProcessors,
+#zotero-quickCopy-format,
+#sync-reset-form {
+  color: var(--label-color) !important;
+  background: var(--row-hover-background) !important;
+}
+
+#main-window[theme='dark'] #zotero-prefpane-general title {
+  background: var(--input-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] prefwindow {
+  color: var(--label-color) !important;
+  background: var(--row-hover-background) !important;
+}
+
+#main-window[theme='dark'] prefwindow .chromeclass-toolbar {
+  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--main-background) !important;
+}
+
+#main-window[theme='dark'] #aboutcontent {
+  background: var(--input-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] #version {
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark']
+  #zotero-advanced-search-dialog
+  #zotero-search-box-controls {
+  color: var(--label-color) !important;
+  background: var(--row-hover-background) !important;
+}
+
+#main-window[theme='dark'] #zotero-note-editor linksbox {
+  background-color: var(--input-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] #zotero-note-window blockquote {
+  color: var(--main-text-color-toolbox-color) (255, 248, 248);
+}
