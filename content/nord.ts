@@ -155,4 +155,30 @@ export const nord = `
   Styleguide Nord - Aurora
   */
   --nord15: #b48ead;
+
+
+  --body-background-color: var(--nord1);
+  --a-background-color: rgba(0, 0, 0, 0);
+  --citation-hover-background-color: var(--nord9);
+  --citation-ProseMirror-selectednode-background-color: var(--nord5);
+  --find-background-color: var(--nord13);
+  --primary-editor-column-resize-handle-background-color: var(--nord9);
+  --primary-editor-selectedCell-after-background: rgba(200, 200, 255, 0.4);
+  --ProseMirror-gapcursor-after-border-top: var(--nord6);
+  --h6-color: var(--nord6);
+  --blockquote-border-left: var(--nord9);
+  --pre-background: var(--nord2);
+  --table-border: var(--nord4);
+  --empty-node--before-color: var(--nord3);
+  --node-selected-background-color: var(--nord3);
+  --image-border: var(--nord3);
+  --image-background-color: var(--nord3);
+  --popup-box-shadow: rgba(0, 0, 0, 0.12);
+  --before-border-bottom-color: rgba(0, 0, 0, 0.2);
+  --button-hover-background: var(--nord2);
+  --findbar-color: var(--nord4);
+  --button-color: var(--nord5);
+  --noticebar-background: var(--nord13);
+  --icon-color-border: rgba(0, 0, 0, 0.08);
+
 }`

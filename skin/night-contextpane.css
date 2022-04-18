@@ -1,0 +1,129 @@
+[theme='dark'] #tabs-deck {
+  min-width: 600px;
+}
+
+[theme='dark'] #zotero-context-pane {
+  min-width: 360px;
+}
+
+[theme='dark'] #zotero-context-pane.stacked {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 0;
+  pointer-events: none;
+}
+
+[theme='dark'] #zotero-context-pane.stacked #zotero-context-toolbar-extension {
+  display: none;
+}
+
+[theme='dark'] #zotero-context-pane .stacked-context-placeholder {
+  min-height: 300px;
+}
+
+[theme='dark'] #zotero-context-pane.standard .stacked-context-placeholder {
+  display: none;
+}
+
+[theme='dark'] #zotero-context-splitter-stacked {
+  pointer-events: auto;
+}
+
+[theme='dark'] #zotero-context-pane-inner {
+  width: 0;
+  font: message-box;
+  min-height: 100px;
+  height: 100%;
+  pointer-events: auto;
+}
+
+[theme='dark'] /*#zotero-context-pane.standard .stacked-splitter {*/
+/*    display: none;*/
+/*}*/
+
+#zotero-tab-toolbar {
+  position: fixed;
+  z-index: 1;
+  -moz-appearance: none;
+  background: linear-gradient(
+    to top,
+    #a9a9a9 0,
+    #a9a9a9 1px,
+    #f6f6f6 1px,
+    #f6f6f6 100%
+  );
+}
+
+[theme='dark'] #zotero-item-toolbar {
+  height: 32px;
+}
+[theme='dark'] #zotero-tb-split {
+  background: var(--nord0);
+}
+
+[theme='dark'] #zotero-tb-split button {
+  color: var(--nord6) !important;
+}
+
+[theme='dark'] #zotero-context-toolbar-extension {
+  height: 32px;
+  /* To cover the splitter that has a higher stacking order than our parent */
+  opacity: 0.99;
+  width: 100%;
+  margin-inline-start: -5px;
+  background: var(--nord0);
+}
+
+[theme='dark'] .zotero-context-notes-list {
+  padding-top: 5px;
+  background: var(--nord0) !important;
+  color: var(--nord6) !important;
+}
+[theme='dark'] .notes-list-container {
+  background: var(--nord0) !important;
+  color: var(--nord6) !important;
+}
+[theme='dark'] .notes-list-container .note-row .body .date {
+  background: var(--nord0) !important;
+  color: var(--nord4) !important;
+}
+
+[theme='dark'] .zotero-context-pane-editor-parent-line > div {
+  display: flex;
+  align-items: center;
+  padding: 5px 5px;
+}
+
+[theme='dark'] .zotero-context-pane-editor-parent-line .parent-item-type {
+  margin-inline-end: 3px;
+  width: 16px;
+}
+
+[theme='dark'] .zotero-context-pane-editor-parent-line .parent-title {
+  flex-grow: 1;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[theme='dark'] #zotero-context-pane[collapsed='true'] .notes-list-container,
+#zotero-context-pane-inner[collapsed='true'] .notes-list-container,
+#zotero-context-pane[collapsed='true'] .zotero-view-item > tabpanel > *,
+#zotero-context-pane-inner[collapsed='true'] .zotero-view-item > tabpanel > * {
+  overflow: unset !important;
+}
+
+[theme='dark'] .note-row .inner {
+  background: var(--nord2);
+}
+[theme='dark'] .more-row {
+  background: var(--nord4);
+  color: var(--nord6);
+}
+
+[theme='dark'] .zotero-context-notes-list > hbox > vbox > textarea {
+  background: var(--nord4) !important;
+}

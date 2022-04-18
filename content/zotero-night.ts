@@ -36,14 +36,21 @@ class Night {
         debug({ event })
         debug({ type })
         if (event === 'select') {
+          const noteWindow = Zotero.Notes._editorInstances?.[0]?._iframeWindow
+
+          const noteDoc = noteWindow.document
           const reader = Zotero.Reader.getByTabID(ids[0])
           const doc = reader._iframeWindow.document
           if (doc.querySelector('#pageStyle')) return
+
           const style = doc.createElement('style')
           style.setAttribute('id', 'pageStyle')
           style.textContent = css
           const header = doc.querySelector('header')
-          header.appendChild(style)
+          const noteHeader = noteDoc.querySelector('header')
+          header?.appendChild(style)
+          noteHeader?.appendChild(style)
+          doc.querySelector('html[dir]').setAttribute('theme', 'dark')
         }
         if (event === 'add') {
           debug(`Added tab ${ids[0]}`)
@@ -69,6 +76,9 @@ class Night {
             style.textContent = css
             debug(style)
             activeTabWindow.document.head.appendChild(style)
+            activeTabWindow.document
+              .querySelector('html[dir]')
+              .setAttribute('theme', 'dark')
             debug('delayyyy')
             return
           }
@@ -83,7 +93,9 @@ class Night {
               style.textContent = css
               debug(style)
               activeTabWindow.document.head.appendChild(style)
-              debug('delayyyy')
+              activeTabWindow.document
+                .querySelector('html[dir]')
+                .setAttribute('theme', 'dark')
             }
           )
           // window.document[2].appendChild(style);
