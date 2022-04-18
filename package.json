@@ -1,6 +1,6 @@
 {
   "name": "zotero-night",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Night theme for Zotero UI & Pdf",
   "scripts": {
     "lint": "eslint . --ext .ts --cache --cache-location .eslintcache/",
