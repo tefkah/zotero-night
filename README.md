@@ -1,5 +1,6 @@
 # Night
 
+![](./IMG-20220419-WA0000.jpg)
 Install by downloading the [latest version](https://github.com/ThomasFKJorna/zotero-night/releases/latest)
 
 Night theme for Zotero UI &amp; Pdf
