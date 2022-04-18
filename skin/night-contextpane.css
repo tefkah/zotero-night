@@ -117,13 +117,21 @@
 }
 
 [theme='dark'] .note-row .inner {
-  background: var(--nord2);
+  background: var(--nord2) !important;
 }
 [theme='dark'] .more-row {
-  background: var(--nord4);
-  color: var(--nord6);
+  background: var(--nord4) !important;
+  color: var(--nord1) !important;
 }
 
 [theme='dark'] .zotero-context-notes-list > hbox > vbox > textarea {
   background: var(--nord4) !important;
+}
+
+[theme='dark'] .header-row button {
+  background-color: var(--nord6) !important;
+  color: var(--nord1) !important;
+  border-radius: 5px !important;
+  width: 20px !important;
+  height: 20px !important;
 }

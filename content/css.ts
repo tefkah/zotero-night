@@ -303,23 +303,33 @@ const editor = `
 `
 
 export const css = `${nord}
-
+* {
+    border: 0 !important;
+    transition: color 0.15s ease, background-color 0.15s ease
+}
+body {
+   background: var(--nord0) !important;
+}
+[dir] sidebarResizer {
+background:    var(--nord0) !important
+}
 div#viewer .page .canvasWrapper, div#viewer .page .textLayer {
-	        	  filter: brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65) hue-rotate(180deg) !important;
+	        	  filter: var(--nord-filter) !important;
         		  border-image: none;
 	        	}
 
                 #viewer {
-                    background-color: var(--nord1) !important;
+                    background-color: var(--nord0) !important;
                 }
                 
                 #sidebarContent {
-                    background-color: var(--nord2) !important;
+                    background-color: var(--nord0) !important;
                 }
                 
                 #toolbarSidebar {
                     background-color: var(--nord0) !important;
                     color: var(--nord5) !important;
+                    border: 0;
                 }
 
                 [dir] #toolbarContainer, [dir] #toolbarViewer {
@@ -343,18 +353,43 @@ div#viewer .page .canvasWrapper, div#viewer .page .textLayer {
                 }
                 
                 .annotation {
-                    background-color: var(--nord3) !important;
+                    background-color: var(--nord2) !important;
                     color: var(--nord5) !important;
+                    padding: .3rem;
+                    border-color: var(--nord3) !important;
                 }
                 
                 .annotation .highlight {
                     color: var(--nord4) !important;
                 }
+                .annotation:hover {
+                    background-color: var(--nord3) !important;
+                }
+                #toolbarViewer button:hover{
+                    background: var(--nord3) !important;
+                    cursor: pointer !important;
+                }
+
+.splitToolbarButton {
+    filter: var(--nord-filter) !important;
+}
+
+[dir] #outlineView .treeItem > a{
+    color: var(--nord4) !important;
+}
+[dir] #annotationsView .search {
+    margin: 6px 5px !important;
+}
+
+[theme='dark'] #annotationsView .search input {
+    background: var(--nord4);
+}
 
 [dir] .editor .content:focus {
  cursor:text;
  background:var(--nord1) !important;
 }
+
 .editor .content:empty::before {
  content:attr(placeholder) !important;
  color:var(--nord9) !important;
@@ -365,6 +400,7 @@ div#viewer .page .canvasWrapper, div#viewer .page .textLayer {
 .annotation-popup .editor .content:empty::before {
  color:var(--nord2) !important;
 }
+
 [dir] .editor .bubble {
  background-color:var(--nord6) !important;
  border:1px solid var(--nord4) !important;
@@ -413,11 +449,85 @@ box#zotero-tb-split {
     
 }
 
+[dir] .toolbar {
+    background: var(--nord0) !important;
+}
+.editor .toolbar-button {
+color: var(--nord4)
+}
+
+.primary-editor p {
+
+    color: var(--nord6);
+
+}
+
+[dir] .splitToolbarButton .button, [dir] .tool-group button, [dir] .annotation-tools button, .toolbar button {
+    box-shadow: none !important;
+    background: none !important;
+    cursor: pointer !important;
+}
+
+
+[dir] .splitToolbarButton .button, [dir] .tool-group button, [dir] .annotation-tools button, .toolbar button {
+    background: none;
+}
+
 [dir] .toolbar #pageNumber {
  padding:0 4px;
- background:linear-gradient(to bottom, var(--nord6), var(--nord5)) !important;
+ background:linear-gradient(to bottom, var(--nord2), var(--nord1)) !important;
+ box-shadow: none !important;
+ color: var(--nord5) !important;
+
  border-radius:3px;
- box-shadow:inset 0 1px 0 rgba(255,255,255,.33),0 -1px 0 rgba(255,255,255,.1),0 1px 0 rgba(0,0,0,.1),0 0 0 1px var(--nord3) !important
 }
+.toolbar #numPages {
+    color: var(--nord4) !important;
+}
+
+[theme='dark'] .zotero-editpane-tabs {
+  background: var(--nord1) !important;
+}
+
+[theme='dark'] .zotero-editpane-tabs .tab {
+  background: var(--nord3);
+}
+[theme="dark"] #zotero-context-pane-inner {
+    background-color: var(--nord0);
+}
+
+[theme='dark'] .zotero-context-pane-editor-parent-line {
+    background-color: var(--nord0);
+    color: var(--nord4);
+}
+[theme='dark'] #links-container{
+    background-color: var(--nord0);
+    color: var(--nord4);
+}
+[theme="dark"] .toolbar .annotation-tools .toolbarButton > span {
+    background: none !important;
+}
+
+#main-window[theme='dark'] .zotero-editpane-tabs tab label:not(.zotero-clicky) {
+  color: var(--nord4);
+}
+
+#main-window[theme='dark'] .zotero-editpane-tabs tab[selected='true'] {
+  filter: var(--nord-filter) !important;
+}
+
+
+#main-window[theme='dark'] toolbarbutton {
+  background: none;
+}
+
+#main-window[theme='dark'] toolbarbutton dropmarker {
+  filter: var(--nord-filter);
+}
+
+#main-window[theme='dark'] .toolbarbutton span {
+  background: none !important;
+}
+
 ${editor}
                 `

@@ -181,4 +181,6 @@ export const nord = `
   --noticebar-background: var(--nord13);
   --icon-color-border: rgba(0, 0, 0, 0.08);
 
+  --nord-filter: brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65) hue-rotate(180deg);
+    --nord4-rgba0.7: rgba(216,222,233,0.5))
 }`
