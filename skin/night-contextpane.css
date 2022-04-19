@@ -39,11 +39,7 @@
   pointer-events: auto;
 }
 
-[theme='dark'] /*#zotero-context-pane.standard .stacked-splitter {*/
-/*    display: none;*/
-/*}*/
-
-#zotero-tab-toolbar {
+[theme='dark'] #zotero-tab-toolbar {
   position: fixed;
   z-index: 1;
   -moz-appearance: none;
@@ -110,9 +106,19 @@
 }
 
 [theme='dark'] #zotero-context-pane[collapsed='true'] .notes-list-container,
-#zotero-context-pane-inner[collapsed='true'] .notes-list-container,
-#zotero-context-pane[collapsed='true'] .zotero-view-item > tabpanel > *,
-#zotero-context-pane-inner[collapsed='true'] .zotero-view-item > tabpanel > * {
+[theme='dark']
+  #zotero-context-pane-inner[collapsed='true']
+  .notes-list-container,
+[theme='dark']
+  #zotero-context-pane[collapsed='true']
+  .zotero-view-item
+  > tabpanel
+  > *,
+[theme='dark']
+  #zotero-context-pane-inner[collapsed='true']
+  .zotero-view-item
+  > tabpanel
+  > * {
   overflow: unset !important;
 }
 

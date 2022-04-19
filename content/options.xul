@@ -14,8 +14,12 @@
     <prefpane label="Night Preferences" id="night-prefpane">
         <preferences>
             <preference id="pref-night-default-pdf" name="extensions.night.default_pdf" type="string" />
+            <preference id="pref-night-enabled" name="extensions.night.enabled" type="boolean" />
         </preferences>
 
+        <checkbox id="id-night-enabled" label="Enable Dark Theme" preference="pref-night-enabled" oncommand='Zotero.Night.toggleDarkTheme(this.checked)' />
+
+        <separator class="thin" />
         <groupbox>
             <caption label="Default PDF filter" />
             <radiogroup id="id-night-default-pdf" preference="pref-night-default-pdf">
@@ -24,7 +28,6 @@
                 <radio label="Dark" value='dark' />
             </radiogroup>
         </groupbox>
-        <separator class="thin" />
 
 
     </prefpane>

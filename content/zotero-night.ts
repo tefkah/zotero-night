@@ -7,7 +7,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/require-await */
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import { isDebuggerStatement } from 'typescript'
+import {
+  createTypePredicateNodeWithModifier,
+  isDebuggerStatement,
+} from 'typescript'
 import { css } from './css'
 import { debug } from './debug'
 
@@ -25,6 +28,14 @@ function patch(object, method, patcher) {
   object[method][monkey_patch_marker] = true
 }
 
+export type NightEvent = Record<string, any>
+export type NightEventType = string
+export type NightEventListener = (event: NightEvent) => void
+export type NightEventListenerObject = {
+  priority: number
+  listener: NightEventListener
+  type: string
+}
 class Night {
   // tslint:disable-line:variable-name
   private initialized = false
@@ -35,6 +46,7 @@ class Night {
   public _nordFilter: string
   public _darkFilter: string
   public _sepiaFilter: string
+  public _eventListeners: NightEventListenerObject[]
 
   constructor() {
     this._nordFilter =
@@ -44,6 +56,14 @@ class Night {
       'brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65) hue-rotate(180deg)'
   }
 
+  public addEventListener(
+    type: NightEventType,
+    listener: NightEventListener,
+    priority?: number
+  ): void {
+    this._eventListeners.push({ priority: priority ?? 10, listener, type })
+    this._eventListeners.sort((obj1, obj2) => obj1.priority - obj2.priority)
+  }
   /**
    * Open the preference window for Night
    */
@@ -115,6 +135,7 @@ class Night {
     const defaultFilter = this.getPref('default_pdf')
 
     toggle.setAttribute('data:filter', defaultFilter)
+
     const icon =
       defaultFilter === 'match' ? '✨' : defaultFilter === 'dark' ? '🌙' : '☀️'
     toggle.textContent = icon
@@ -143,6 +164,78 @@ class Night {
     readerWindow.document.head.appendChild(st)
   }
 
+  public addAllStyles() {
+    let counter = 0
+    let win: Window | undefined = window[counter]
+    while (win) {
+      if (win.document.URL.includes('editor.html')) {
+        this.addStyleToEditor(win)
+      }
+
+      if (win.document.URL.includes('viewer.html')) {
+        this.addEverythingForTab(win)
+      }
+      counter++
+      win = window[counter]
+    }
+  }
+
+  public setHTMLThemeAttributeForWindow(win: Window, on: boolean) {
+    const html = win.document.querySelector('html')
+    debug(
+      on ? 'removing html theme attribute' : 'removing html theme attribute'
+    )
+    debug(`Current html theme attribute${html.getAttribute('theme')}`)
+    debug(html)
+    if (!on) {
+      html.removeAttribute('theme')
+      debug(
+        `Removed html theme attribute. It is now${html.getAttribute('theme')}`
+      )
+      return
+    }
+    html.setAttribute('theme', 'dark')
+    debug(`Added html theme attribute. It is now${html.getAttribute('theme')}`)
+  }
+  public setHTMLThemeAttribute(on: boolean) {
+    let counter = 0
+    let win: Window | undefined = window[counter]
+    while (win) {
+      this.setHTMLThemeAttributeForWindow(win, on)
+      counter++
+      debug(counter)
+      win = window[counter]
+    }
+  }
+
+  public removeStyleFromEditorWindow(win: Window) {
+    win.document.querySelector('#noteStyle').remove()
+  }
+
+  public removeStyleFromViewerTab(win: Window) {
+    win.document.querySelector('#pageStyle').remove()
+  }
+
+  /**
+   * Run after disabling the theme
+   * Removes all styles
+   */
+  public removeAllStyle() {
+    let counter = 0
+    let win: Window | undefined = window[counter]
+    while (win) {
+      if (win.document.URL.includes('editor.html')) {
+        this.removeStyleFromEditorWindow(win)
+      }
+
+      if (win.document.URL.includes('viewer.html')) {
+        this.removeStyleFromViewerTab(win)
+      }
+      counter++
+      win = window[counter]
+    }
+  }
+
   public addStyleToEditor(editorWindow: Window) {
     const editorDoc = editorWindow.document
     const style = editorDoc.createElement('style')
@@ -150,6 +243,7 @@ class Night {
     style.textContent = css
     editorDoc.head.append(style)
   }
+
   public hasStyle(editorWindow: any): boolean {
     return !!editorWindow.document.querySelector('#pageStyle')
   }
@@ -170,6 +264,7 @@ class Night {
       this._tabsAdded = true
     }
   }
+
   public getTabWindowById(id: string): Window | null {
     const tabIndex = Zotero_Tabs._tabs.findIndex((tab) => tab.id === id)
 
@@ -187,7 +282,8 @@ class Night {
       'Not found'
     return name
   }
-  private doEverything(tabWindow: Window) {
+
+  private addEverythingForTab(tabWindow: Window) {
     const doc = tabWindow.document
     // if (doc.querySelector('#pageStyle')) return
 
@@ -200,7 +296,45 @@ class Night {
     doc.querySelector('html[dir]').setAttribute('theme', 'dark')
     this.addToggleButton(tabWindow)
 
-    this.editorNeedsStyle() && this.tryToAddStyleToEditor()
+    //  this.editorNeedsStyle() && this.tryToAddStyleToEditor()
+  }
+
+  public toggleDarkTheme(on?: boolean) {
+    const main = window.document.querySelector('#main-window')
+    if (on) {
+      main.setAttribute('theme', 'dark')
+      this.setHTMLThemeAttribute(true)
+      !this.getPref('enabled') && this.setPref('enabled', true)
+      return
+    }
+
+    if (main.getAttribute('theme') === 'dark' || on === false) {
+      main.removeAttribute('theme')
+      this.setHTMLThemeAttribute(false)
+      this.getPref('enabled') && this.setPref('enabled', false)
+      return
+    }
+    main.setAttribute('theme', 'dark')
+    this.setHTMLThemeAttribute(true)
+    !this.getPref('enabled') && this.setPref('enabled', true)
+  }
+
+  public addGlobalToggleButton() {
+    const toolbar = window.document.querySelector('#zotero-item-toolbar')
+    const button = window.document.createElement('div')
+    button.setAttribute('id', 'night-global-toggle')
+    button.setAttribute('tab-index', '0')
+    // TODO: Make actual icons instead of emoji
+
+    const image = window.document.createElement('span')
+    image.textContent = this.getPref('enabled') ? '🌚' : '🌞'
+    button.appendChild(image)
+    button.onclick = () => {
+      this.toggleDarkTheme()
+      image.textContent = this.getPref('enabled') ? '🌚' : '🌞'
+    }
+
+    toolbar.appendChild(button)
   }
   // eslint-disable-next-line @typescript-eslint/require-await
   public async load(globals: Record<string, any>) {
@@ -211,6 +345,7 @@ class Night {
 
     this._tabsAdded = false
     const mainWindow = window.document.querySelector('#main-window')
+
     mainWindow.setAttribute('theme', 'dark')
 
     const editorWin1 = window[0]
@@ -218,6 +353,7 @@ class Night {
     const editorWin2 = window[1]
     this.addStyleToEditor(editorWin2)
 
+    this.addGlobalToggleButton()
     // const toggle = window.document.querySelector('#zotero-tb-toggle-notes-pane')
     // toggle.addEventListener('click', async () => {
     //   debug('clickyyy')
@@ -247,6 +383,7 @@ class Night {
 
     const notifierCallback = {
       notify: async (event: string, type, ids: string[], extraData) => {
+        // if (!this.getPref('enabled')) return
         if (event === 'add') {
           debug(`Tab with id ${ids[0]} added`)
 
@@ -272,12 +409,12 @@ class Night {
                   `Added tab windw readystate is ${tabWindow.document.readyState}`
                 )
 
-                this.doEverything(tabWindow)
+                this.addEverythingForTab(tabWindow)
                 return
               }, 300)
             }
             case 'complete': {
-              this.doEverything(tabWindow)
+              this.addEverythingForTab(tabWindow)
             }
           }
         }

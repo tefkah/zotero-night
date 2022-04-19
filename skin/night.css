@@ -256,7 +256,14 @@
   background: var(--nord0) !important;
 }
 
-.drag-image-container .cell:not(:first-child) {
+#main-window[theme='dark'] .virtualized-table-body .row .cell {
+  background-image: none !important;
+}
+
+#main-window[theme='dark']
+  .virtualized-table-body
+  .drag-image-container
+  .cell:not(:first-child) {
   background: none !important;
 }
 #main-window[theme='dark'] .virtualized-table .row {
@@ -496,7 +503,7 @@
   border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
 }
 
-#main-window[theme='dark']#tab-bar-container tab:hover {
+#main-window[theme='dark'] #tab-bar-container tab:hover {
   color: var(--nord6) !important;
   background: var(--nord2) !important;
 }
@@ -568,12 +575,12 @@
 }
 
 #main-window[theme='dark'] #zotero-prefpane-general,
-#zotero-prefpane-sync,
-#zotero-prefpane-export,
-#zotero-prefpane-advanced-keys-tab,
-#wordProcessors,
-#zotero-quickCopy-format,
-#sync-reset-form {
+[theme='dark'] #zotero-prefpane-sync,
+[theme='dark'] #zotero-prefpane-export,
+[theme='dark'] #zotero-prefpane-advanced-keys-tab,
+[theme='dark'] #wordProcessors,
+[theme='dark'] #zotero-quickCopy-format,
+[theme='dark'] #sync-reset-form {
   color: var(--label-color) !important;
   background: var(--row-hover-background) !important;
 }
@@ -715,7 +722,7 @@
   color: var(--nord2) !important;
 }
 
-#zotero-tb-split .toolbarButton:last-child > span:first-child {
+[theme='dark'] #zotero-tb-split .toolbarButton:last-child > span:first-child {
   margin-left: 20px;
   background: var(--nord0) !important;
 }
@@ -724,8 +731,30 @@
 }
 
 [theme='dark'] #links-container {
-  background-color: var(--nord0);
+  background: var(--nord0) !important;
+  background-image: none !important;
   color: var(--nord4);
+}
+
+#night-global-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 20px !important;
+  height: 30px !important;
+  width: 20px !important;
+  background: none !important;
+  background-image: none !important;
+  border: 0px solid black;
+  border-radius: 4px;
+  padding: 10px 10px 10px 10px;
+}
+#main-window[theme='dark'] #night-global-toggle:hover {
+  background-color: var(--nord3) !important;
+}
+
+#night-global-toggle:hover {
+  background-color: var(--nord4) !important;
 }
 
 /*

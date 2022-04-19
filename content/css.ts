@@ -2,315 +2,315 @@ import { nord } from './nord'
 
 const editor = `
 
-[dir] body {
+[theme='dark'] body {
   background-color: var(--body-background-color) !important;
 }
 
-[dir] a {
+[theme='dark'] a {
   background-color: var(--a-background-color) !important;
 }
 
-[dir] .ProseMirror-hideselection *::-moz-selection {
+[theme='dark'] .ProseMirror-hideselection *::-moz-selection {
   background: var(--a-background-color) !important;
 }
 
-[dir] .ProseMirror-hideselection *::selection {
+[theme='dark'] .ProseMirror-hideselection *::selection {
   background: var(--a-background-color) !important;
 }
 
-[dir] .ProseMirror-hideselection *::-moz-selection {
+[theme='dark'] .ProseMirror-hideselection *::-moz-selection {
   background: var(--a-background-color) !important;
 }
 
-.ProseMirror-hideselection {
+[theme='dark'] .ProseMirror-hideselection {
   caret-color: var(--a-background-color) !important;
 }
 
-[dir] .citation.selected,
-[dir] .citation:hover {
+[theme='dark'] .citation.selected,
+[theme='dark'] .citation:hover {
   background-color: var(--citation-hover-background-color) !important;
 }
 
-[dir] .citation.ProseMirror-selectednode {
+[theme='dark'] .citation.ProseMirror-selectednode {
   background-color: var(--citation-ProseMirror-selectednode-background-color) !important;
 }
 
-[dir] .find {
+[theme='dark'] .find {
   background-color: var(--find-background-color) !important;
 }
 
-[dir] .primary-editor.column-resize-handle {
+[theme='dark'] .primary-editor.column-resize-handle {
   background-color: var(--primary-editor-column-resize-handle-background-color) !important;
 }
 
-[dir] .primary-editor.selectedCell:after {
+[theme='dark'] .primary-editor.selectedCell:after {
   background: var(--primary-editor-selectedCell-after-background) !important;
 }
 
-[dir] .ProseMirror-gapcursor:after {
+[theme='dark'] .ProseMirror-gapcursor:after {
   border-top: 1px solid var(--ProseMirror-gapcursor-after-border-top) !important;
 }
 
-.primary-editor p,
-.primary-editor h1,
-.primary-editor h2,
-.primary-editor h3,
-.primary-editor h4,
-.primary-editor h5,
-.primary-editor h6 {
+[theme='dark'] .primary-editor p,
+[theme='dark'] .primary-editor h1,
+[theme='dark'] .primary-editor h2,
+[theme='dark'] .primary-editor h3,
+[theme='dark'] .primary-editor h4,
+[theme='dark'] .primary-editor h5,
+[theme='dark'] .primary-editor h6 {
   color: var(--h6-color) !important;
 }
 
-[dir='ltr'] .primary-editor blockquote {
+[theme='dark'='ltr'] .primary-editor blockquote {
   border-left: 3px solid var(--blockquote-border-left) !important;
 }
 
-[dir='rtl'] .primary-editor blockquote {
+[theme='dark'='rtl'] .primary-editor blockquote {
   border-right: 3px solid var(--blockquote-border-left) !important;
 }
 
-[dir] .primary-editor pre {
+[theme='dark'] .primary-editor pre {
   background: var(--pre-background) !important;
 }
 
-[dir] .primary-editor p code {
+[theme='dark'] .primary-editor p code {
   background: var(--pre-background) !important;
 }
 
-[dir] .primary-editor table {
+[theme='dark'] .primary-editor table {
   border: 1px solid var(--table-border) !important;
 }
 
-[dir] .primary-editor table td,
-[dir] .primary-editor table th {
+[theme='dark'] .primary-editor table td,
+[theme='dark'] .primary-editor table th {
   border: 1px solid var(--table-border) !important;
 }
 
-[dir] .primary-editor table .selectedCell:after {
+[theme='dark'] .primary-editor table .selectedCell:after {
   background: var(--primary-editor-selectedCell-after-background) !important;
 }
 
-[dir] .primary-editor table .column-resize-handle {
+[theme='dark'] .primary-editor table .column-resize-handle {
   background-color: var(--primary-editor-column-resize-handle-background-color) !important;
 }
 
-.ProseMirror .empty-node::before {
+[theme='dark'] .ProseMirror .empty-node::before {
   color: var(--empty-node--before-color) !important;
 }
 
-[dir] .node-selected {
+[theme='dark'] .node-selected {
   background-color: var(--node-selected-background-color) !important;
 }
 
-[dir] .blocks-selected *::-moz-selection {
+[theme='dark'] .blocks-selected *::-moz-selection {
   background-color: var(--a-background-color) !important;
 }
 
-[dir] .blocks-selected *::selection {
+[theme='dark'] .blocks-selected *::selection {
   background-color: var(--a-background-color) !important;
 }
 
-[dir] .ProseMirror-selectednode {
+[theme='dark'] .ProseMirror-selectednode {
   background-color: var(--citation-ProseMirror-selectednode-background-color) !important;
 }
 
-[dir] .primary-editor hr {
+[theme='dark'] .primary-editor hr {
   background-color: var(--table-border) !important;
 }
 
-[dir] .primary-editor hr.ProseMirror-selectednode {
+[theme='dark'] .primary-editor hr.ProseMirror-selectednode {
   background-color: var(--primary-editor-column-resize-handle-background-color) !important;
 }
 
-[dir] .regular-image .resized-wrapper .image {
+[theme='dark'] .regular-image .resized-wrapper .image {
   border: 1px solid var(--image-border) !important;
 }
 
-[dir] .external-image .resized-wrapper {
+[theme='dark'] .external-image .resized-wrapper {
   border: 1px solid var(--image-border) !important;
 }
 
-[dir] .import-placeholder-image .image {
+[theme='dark'] .import-placeholder-image .image {
   background-color: var(--image-background-color) !important;
 }
 
-[dir] .popup-container .popup {
+[theme='dark'] .popup-container .popup {
   background-color: var(--body-background-color) !important;
   border: 1px solid var(--image-border) !important;
   box-shadow: 0 0 24px 0 var(--popup-box-shadow) !important;
 }
 
-[dir] .popup-container .popup::before,
-[dir] .popup-container .popup::after {
+[theme='dark'] .popup-container .popup::before,
+[theme='dark'] .popup-container .popup::after {
   border: solid var(--a-background-color) !important;
 }
 
-[dir] .popup-container .popup[class*='bottom']::before {
+[theme='dark'] .popup-container .popup[class*='bottom']::before {
   border-bottom-color: var(--before-border-bottom-color) !important;
 }
 
-[dir] .popup-container .popup[class*='bottom']::after {
+[theme='dark'] .popup-container .popup[class*='bottom']::after {
   border-bottom-color: var(--body-background-color) !important;
 }
 
-[dir] .popup-container .popup[class*='top']::before {
+[theme='dark'] .popup-container .popup[class*='top']::before {
   border-top-color: var(--before-border-bottom-color) !important;
 }
 
-[dir] .popup-container .popup[class*='top']::after {
+[theme='dark'] .popup-container .popup[class*='top']::after {
   border-top-color: var(--body-background-color) !important;
 }
 
-[dir] .popup-container .popup button {
+[theme='dark'] .popup-container .popup button {
   background: var(--body-background-color) !important;
 }
 
-[dir] .popup-container .popup button:hover {
+[theme='dark'] .popup-container .popup button:hover {
   background: var(--button-hover-background) !important;
 }
 
-.findbar {
+[theme='dark'] .findbar {
   color: var(--findbar-color) !important;
 }
 
-[dir] .findbar {
+[theme='dark'] .findbar {
   border-bottom: 1px solid var(--image-border) !important;
 }
 
-[dir] .findbar .line .input-box {
+[theme='dark'] .findbar .line .input-box {
   border: 1px solid var(--image-border) !important;
 }
 
-.findbar .line .input-box .buttons .button {
+[theme='dark'] .findbar .line .input-box .buttons .button {
   color: var(--button-color) !important;
 }
 
-[dir] .findbar .line .input-box .buttons .button:hover {
+[theme='dark'] .findbar .line .input-box .buttons .button:hover {
   background-color: var(--button-hover-background) !important;
 }
 
-.findbar .line .input-box .buttons .button:active,
-.findbar .line .input-box .buttons .button.active {
+[theme='dark'] .findbar .line .input-box .buttons .button:active,
+[theme='dark'] .findbar .line .input-box .buttons .button.active {
   color: var(--body-background-color) !important;
 }
 
-[dir] .findbar .line .input-box .buttons .button:active,
-[dir] .findbar .line .input-box .buttons .button.active {
+[theme='dark'] .findbar .line .input-box .buttons .button:active,
+[theme='dark'] .findbar .line .input-box .buttons .button.active {
   background-color: var(--button-color) !important;
 }
 
-[dir] .findbar .line .input-box .buttons .text-button {
+[theme='dark'] .findbar .line .input-box .buttons .text-button {
   border: 1px solid var(--image-background-color) !important;
 }
 
-.noticebar {
+[theme='dark'] .noticebar {
   color: var(--ProseMirror-gapcursor-after-border-top) !important;
 }
 
-[dir] .noticebar {
+[theme='dark'] .noticebar {
   border-bottom: 1px solid var(--image-border) !important;
   background: var(--noticebar-background) !important;
 }
 
-.toolbar {
+[theme='dark'] .toolbar {
   color: var(--button-color) !important;
 }
 
-[dir] .toolbar {
+[theme='dark'] .toolbar {
   border-bottom: 1px solid var(--image-border) !important;
 }
 
-.toolbar-button {
+[theme='dark'] .toolbar-button {
   color: var(--button-color) !important;
 }
 
-[dir] .toolbar-button:hover {
+[theme='dark'] .toolbar-button:hover {
   background-color: var(--button-hover-background) !important;
 }
 
-.toolbar-button:active,
-.toolbar-button.active {
+[theme='dark'] .toolbar-button:active,
+[theme='dark'] .toolbar-button.active {
   color: var(--body-background-color) !important;
 }
 
-[dir] .toolbar-button:active,
-[dir] .toolbar-button.active {
+[theme='dark'] .toolbar-button:active,
+[theme='dark'] .toolbar-button.active {
   background-color: var(--button-color) !important;
 }
 
-[dir] .dropdown .popup {
+[theme='dark'] .dropdown .popup {
   background-color: var(--body-background-color) !important;
   border: 1px solid var(--image-border) !important;
   box-shadow: 0 0 24px 0 var(--popup-box-shadow) !important;
 }
 
-[dir] .text-dropdown .popup .inline-options {
+[theme='dark'] .text-dropdown .popup .inline-options {
   border-bottom: 1px solid var(--image-border) !important;
 }
 
-[dir] .text-dropdown .popup .block-options .option:hover {
+[theme='dark'] .text-dropdown .popup .block-options .option:hover {
   background-color: var(--button-hover-background) !important;
 }
 
-.text-dropdown .popup .block-options .option.active {
+[theme='dark'] .text-dropdown .popup .block-options .option.active {
   color: var(--body-background-color) !important;
 }
 
-[dir] .text-dropdown .popup .block-options .option.active {
+[theme='dark'] .text-dropdown .popup .block-options .option.active {
   background-color: var(--button-color) !important;
 }
 
-[dir] .colors-dropdown .popup .grid {
+[theme='dark'] .colors-dropdown .popup .grid {
   border-bottom: 1px solid var(--image-border) !important;
 }
 
-[dir] .colors-dropdown .popup .grid .color-button:hover {
+[theme='dark'] .colors-dropdown .popup .grid .color-button:hover {
   background-color: var(--button-hover-background) !important;
 }
 
-[dir] .colors-dropdown .popup .grid .icon-color {
+[theme='dark'] .colors-dropdown .popup .grid .icon-color {
   border: 1px solid var(--icon-color-border) !important;
 }
 
-[dir] .colors-dropdown .popup .grid .clear {
+[theme='dark'] .colors-dropdown .popup .grid .clear {
   border: 2px solid var(--ProseMirror-gapcursor-after-border-top) !important;
 }
 
-[dir] .font-colors-dropdown .popup .grid {
+[theme='dark'] .font-colors-dropdown .popup .grid {
   border-bottom: 1px solid var(--image-border) !important;
 }
 
-[dir] .font-colors-dropdown .popup .grid .color-button:hover {
+[theme='dark'] .font-colors-dropdown .popup .grid .color-button:hover {
   background-color: var(--button-hover-background) !important;
 }
 
-[dir] .font-colors-dropdown .popup .grid .icon-color {
+[theme='dark'] .font-colors-dropdown .popup .grid .icon-color {
   border: 1px solid var(--icon-color-border) !important;
 }
 
-[dir] .font-colors-dropdown .popup .grid .clear {
+[theme='dark'] .font-colors-dropdown .popup .grid .clear {
   border: 2px solid var(--ProseMirror-gapcursor-after-border-top) !important;
 }
 
-[dir] .more-dropdown .popup hr {
+[theme='dark'] .more-dropdown .popup hr {
   border-bottom: 1px solid var(--image-border) !important;
 }
 
-[dir] .more-dropdown .popup .option:hover {
+[theme='dark'] .more-dropdown .popup .option:hover {
   background-color: var(--button-hover-background) !important;
 }
 
 `
 
 export const css = `${nord}
-* {
+[theme='dark'] * {
     border: 0 !important;
     transition: color 0.15s ease, background-color 0.15s ease, filter 0.4s ease;
 }
-body {
+[theme='dark'] body {
    background: var(--nord0) !important;
 }
-[dir] sidebarResizer {
+[theme='dark'] sidebarResizer {
 background:    var(--nord0) !important
 }
 
@@ -324,66 +324,66 @@ background:    var(--nord0) !important
 	        	}
                 */
 
-                #viewer {
+[theme='dark']                 #viewer {
                     background-color: var(--nord0) !important;
                 }
                 
-                #sidebarContent {
+[theme='dark']                 #sidebarContent {
                     background-color: var(--nord0) !important;
                 }
                 
-                #toolbarSidebar {
+[theme='dark']                 #toolbarSidebar {
                     background-color: var(--nord0) !important;
                     color: var(--nord5) !important;
                     border: 0;
                 }
 
-                [dir] #toolbarContainer, [dir] #toolbarViewer {
+                [theme='dark'] #toolbarContainer, [theme='dark'] #toolbarViewer {
                     background-color: var(--nord0) !important;
                     color: var(--nord5) !important;
                 }
 
-                #toolbarViewer button {
+[theme='dark']                 #toolbarViewer button {
 	        	  filter: brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65) hue-rotate(180deg) !important;
         		  border-image: none !important;
                 }
                 
-                #selector .tags {
+[theme='dark']                 #selector .tags {
                     color: var(--nord5) !important;
                 }
 
-                .search {
+[theme='dark']                 .search {
                     background-color: var(--nord2) !important;
                     color: var(--nord4) !important;
                     border: 0 !important;
                 }
                 
-                .annotation {
+[theme='dark']                 .annotation {
                     background-color: var(--nord2) !important;
                     color: var(--nord5) !important;
                     padding: .3rem;
                     border-color: var(--nord3) !important;
                 }
                 
-                .annotation .highlight {
+[theme='dark']                 .annotation .highlight {
                     color: var(--nord4) !important;
                 }
-                .annotation:hover {
+[theme='dark']                 .annotation:hover {
                     background-color: var(--nord3) !important;
                 }
-                #toolbarViewer button:hover{
+[theme='dark']                 #toolbarViewer button:hover{
                     background: var(--nord3) !important;
                     cursor: pointer !important;
                 }
 
-.splitToolbarButton {
+[theme='dark'] .splitToolbarButton {
     filter: var(--dark-filter) !important;
 }
 
-[dir] #outlineView .treeItem > a{
+[theme='dark'] #outlineView .treeItem > a{
     color: var(--nord4) !important;
 }
-[dir] #annotationsView .search {
+[theme='dark'] #annotationsView .search {
     margin: 6px 5px !important;
 }
 
@@ -391,95 +391,95 @@ background:    var(--nord0) !important
     background: var(--nord4);
 }
 
-[dir] .editor .content:focus {
+[theme='dark'] .editor .content:focus {
  cursor:text;
  background:var(--nord1) !important;
 }
 
-.editor .content:empty::before {
+[theme='dark'] .editor .content:empty::before {
  content:attr(placeholder) !important;
  color:var(--nord9) !important;
 }
-.editor .content:empty:focus::before {
+[theme='dark'] .editor .content:empty:focus::before {
  color:var(--nord2) !important;
 }
-.annotation-popup .editor .content:empty::before {
+[theme='dark'] .annotation-popup .editor .content:empty::before {
  color:var(--nord2) !important;
 }
 
-[dir] .editor .bubble {
+[theme='dark'] .editor .bubble {
  background-color:var(--nord6) !important;
  border:1px solid var(--nord4) !important;
  margin-top:-15px;
  border-radius:5px
 }
-[dir] .editor .bubble .button:hover {
+[theme='dark'] .editor .bubble .button:hover {
  background-color: var(--nord4) !important;
 }
-#zotero-context-toolbar-extension {
+[theme='dark'] #zotero-context-toolbar-extension {
     background:var(--nord0) !important;
     background-color:var(--nord0) !important;
 }
-box#zotero-tab-toolbar{
+[theme='dark'] box#zotero-tab-toolbar{
     background:var(--nord0) !important;
     background-color:var(--nord0) !important;
 }
-box#zotero-tb-split {
+[theme='dark'] box#zotero-tb-split {
     background:var(--nord0) !important;
     background-color:var(--nord0) !important;
 }
-.notes-container, .zotero-context-notes-list {
+[theme='dark'] .notes-container, .zotero-context-notes-list {
     background-color: var(--nord1) !important;
 }
 
-#zotero-context-notes-list textbox {
+[theme='dark'] #zotero-context-notes-list textbox {
     background-color: var(--nord4) !important;
 }
 
-.notes-list {
+[theme='dark'] .notes-list {
     color: var(--nord6) !important;
 }
 
-[dir] .notes-list .body-line {
+[theme='dark'] .notes-list .body-line {
     color: var(--nord4) !important;
 }
 
-[dir] .note-row .inner, .more-row{
+[theme='dark'] .note-row .inner, .more-row{
     background-color: var(--nord1) !important
 }
 
-[dir] .header-row button {
+[theme='dark'] .header-row button {
     background-color: var(--nord6) !important;
     color: var(--nord1) !important;
     border-radius: 5px !important;
     
 }
 
-[dir] .toolbar {
+[theme='dark'] .toolbar {
     background: var(--nord0) !important;
 }
-.editor .toolbar-button {
+[theme='dark'] .editor .toolbar-button {
 color: var(--nord4)
 }
 
-.primary-editor p {
+[theme='dark'] .primary-editor p {
 
     color: var(--nord6);
 
 }
 
-[dir] .splitToolbarButton .button, [dir] .tool-group button, [dir] .annotation-tools button, .toolbar button {
+[theme='dark'] .splitToolbarButton .button, [theme='dark'] .tool-group button, [theme='dark'] .annotation-tools button, .toolbar button {
     box-shadow: none !important;
     background: none !important;
     cursor: pointer !important;
 }
 
 
-[dir] .splitToolbarButton .button, [dir] .tool-group button, [dir] .annotation-tools button, .toolbar button {
+[theme='dark'] .splitToolbarButton .button, [theme='dark'] .tool-group button, [theme='dark'] .annotation-tools button, .toolbar button {
     background: none;
 }
 
-[dir] .toolbar #pageNumber {
+[theme='dark'] .toolbar #pageNumber {
  padding:0 4px;
  background:linear-gradient(to bottom, var(--nord2), var(--nord1)) !important;
  box-shadow: none !important;
@@ -487,7 +487,7 @@ color: var(--nord4)
 
  border-radius:3px;
 }
-.toolbar #numPages {
+[theme='dark'] .toolbar #numPages {
     color: var(--nord4) !important;
 }
 
@@ -514,24 +514,24 @@ color: var(--nord4)
     background: none !important;
 }
 
-#main-window[theme='dark'] .zotero-editpane-tabs tab label:not(.zotero-clicky) {
+[theme='dark'] .zotero-editpane-tabs tab label:not(.zotero-clicky) {
   color: var(--nord4);
 }
 
-#main-window[theme='dark'] .zotero-editpane-tabs tab[selected='true'] {
+[theme='dark'] .zotero-editpane-tabs tab[selected='true'] {
   filter: var(--dark-filter) !important;
 }
 
 
-#main-window[theme='dark'] toolbarbutton {
+[theme='dark'] toolbarbutton {
   background: none;
 }
 
-#main-window[theme='dark'] toolbarbutton dropmarker {
+[theme='dark'] toolbarbutton dropmarker {
   filter: var(--dark-filter);
 }
 
-#main-window[theme='dark'] .toolbarbutton span {
+[theme='dark'] .toolbarbutton span {
   background: none !important;
 }
 
