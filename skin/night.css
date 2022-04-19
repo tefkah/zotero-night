@@ -254,23 +254,26 @@
   background: none !important;
 }
 #main-window[theme='dark'] .virtualized-table .row {
-  background: var(--main-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
+  transition: background-color 0.1s !important;
+  background: var(--nord0) !important;
+  color: var(--nord6) !important;
 }
 
 #main-window[theme='dark'] .virtualized-table .row.selected {
   background: var(--nord2) !important;
   border-bottom: 0px solid var(--zotero-toolbar-border-bottom) !important;
+  border: 0 !important;
 }
 
 #main-window[theme='dark'] .virtualized-table:not(:focus) .row.selected {
   background: var(--input-background) !important;
-  border-bottom: 0px solid var(--zotero-toolbar-border-bottom) !important;
+  border: 0 !important;
 }
 
 #main-window[theme='dark'] .row:hover {
   background: var(--row-hover-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
+  border: 0 !important;
 }
 
 #main-window[theme='dark'] #zotero-item-pane-content {
@@ -278,10 +281,13 @@
   color: var(--nord5) !important;
 }
 
+#main-window[theme='dark'] #tab-bar-container {
+  background-color: var(--nord0);
+}
+
 #main-window[theme='dark'] #tab-bar-container .tabs {
   background: var(--background);
   color: var(--main-text-color-toolbox-color);
-  border: 0px solid var(--tabs-border);
 }
 
 #main-window[theme='dark'] #tab-bar-container .tab {
@@ -312,7 +318,7 @@
 
 #main-window[theme='dark'] #tab-bar-container .tabs::before,
 #main-window[theme='dark'] #tab-bar-container .tabs::after {
-  filter: brightness(0.8);
+  filter: brightness(0.7);
   background: var(--nord0);
   border: 0px solid var(--nord0);
 }

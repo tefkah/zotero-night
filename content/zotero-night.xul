@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://zotero-night/skin/night.css" type="text/css"?>
-<?xml-stylesheet href="chrome://zotero-night/skin/night-viewer.css" type="text/css"?>
-<?xml-stylesheet href="chrome://zotero-night/skin/night-editor.css" type="text/css"?>
 <?xml-stylesheet href="chrome://zotero-night/skin/night-contextpane.css" type="text/css"?>
 <!DOCTYPE window SYSTEM "chrome://zotero-night/locale/zotero-night.dtd">
 

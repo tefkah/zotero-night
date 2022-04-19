@@ -139,59 +139,57 @@ class Night {
           }
         }
         if (event === 'add') {
-          debug(`Added tab ${ids[0]}`)
-
-          debug(extraData)
-          // const magicNumber = 10000
-          const id = ids[0] // 'tab-WJgG9Ojg'
-          const allTabs = Array.from(
-            //  there are some "context" vboxes, no clue what they do but i hate m
-            document.querySelectorAll('vbox[id^=tab]:not([class])')
-          )
-          const tabIndex = allTabs.findIndex((tab) => tab.id === id)
-          const activeTabWindow = window[1 + tabIndex]
-          debug(activeTabWindow)
-          debug(tabIndex)
-          // const activeTabWindow = Zotero.Reader.getByTabID(id)._iframeWindow
-
-          if (activeTabWindow.document.readyState === 'complete') {
-            try {
-              debug(activeTabWindow.document.readyState)
-              // const reader = Zotero.Reader.getByTabID(id)
-              // debug({ reader: JSON.stringify(reader, null, 2) })
-              const style = activeTabWindow.document.createElement('style')
-              style.setAttribute('id', 'pageStyle')
-              style.textContent = css
-              debug(style)
-              activeTabWindow.document.head.appendChild(style)
-              activeTabWindow.document
-                .querySelector('html[dir]')
-                .setAttribute('theme', 'dark')
-              debug('delayyyy')
-            } catch (e) {
-              debug('Error in readystate check tab add notifierCallback')
-              debug(e)
-            }
-            return
-          }
-          activeTabWindow.addEventListener('DOMContentLoaded', (e) => {
-            try {
-              debug(e)
-              // const reader = Zotero.Reader.getByTabID(id)
-              // debug({ reader: JSON.stringify(reader, null, 2) })
-              const style = activeTabWindow.document.createElement('style')
-              style.setAttribute('id', 'pageStyle')
-              style.textContent = css
-              debug(style)
-              activeTabWindow.document.head.appendChild(style)
-              activeTabWindow.document
-                .querySelector('html[dir]')
-                .setAttribute('theme', 'dark')
-            } catch (e) {
-              debug('Error in readystate check tab add notifierCallback')
-              debug(e)
-            }
-          })
+          // debug(`Added tab ${ids[0]}`)
+          // debug(extraData)
+          // // const magicNumber = 10000
+          // const id = ids[0] // 'tab-WJgG9Ojg'
+          // const allTabs = Array.from(
+          //   //  there are some "context" vboxes, no clue what they do but i hate m
+          //   document.querySelectorAll('vbox[id^=tab]:not([class])')
+          // )
+          // const tabIndex = allTabs.findIndex((tab) => tab.id === id)
+          // const activeTabWindow = window[1 + tabIndex]
+          // debug(activeTabWindow)
+          // debug(tabIndex)
+          // // const activeTabWindow = Zotero.Reader.getByTabID(id)._iframeWindow
+          // if (activeTabWindow.document.readyState === 'complete') {
+          //   try {
+          //     debug(activeTabWindow.document.readyState)
+          //     // const reader = Zotero.Reader.getByTabID(id)
+          //     // debug({ reader: JSON.stringify(reader, null, 2) })
+          //     const style = activeTabWindow.document.createElement('style')
+          //     style.setAttribute('id', 'pageStyle')
+          //     style.textContent = css
+          //     debug(style)
+          //     activeTabWindow.document.head.appendChild(style)
+          //     activeTabWindow.document
+          //       .querySelector('html[dir]')
+          //       .setAttribute('theme', 'dark')
+          //     debug('delayyyy')
+          //   } catch (e) {
+          //     debug('Error in readystate check tab add notifierCallback')
+          //     debug(e)
+          //   }
+          //   return
+          // }
+          // activeTabWindow.addEventListener('DOMContentLoaded', (e) => {
+          //   try {
+          //     debug(e)
+          //     // const reader = Zotero.Reader.getByTabID(id)
+          //     // debug({ reader: JSON.stringify(reader, null, 2) })
+          //     const style = activeTabWindow.document.createElement('style')
+          //     style.setAttribute('id', 'pageStyle')
+          //     style.textContent = css
+          //     debug(style)
+          //     activeTabWindow.document.head.appendChild(style)
+          //     activeTabWindow.document
+          //       .querySelector('html[dir]')
+          //       .setAttribute('theme', 'dark')
+          //   } catch (e) {
+          //     debug('Error in readystate check tab add notifierCallback')
+          //     debug(e)
+          //   }
+          // })
           // window.document[2].appendChild(style);
         }
       },

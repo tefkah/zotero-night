@@ -313,7 +313,12 @@ body {
 [dir] sidebarResizer {
 background:    var(--nord0) !important
 }
-div#viewer .page .canvasWrapper, div#viewer .page .textLayer {
+
+[theme='dark'] div#viewer .page {
+    background-color: var(--nord0) !important;
+}
+
+div#viewer .page .canvasWrapper {
 	        	  filter: var(--nord-filter) !important;
         		  border-image: none;
 	        	}
