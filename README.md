@@ -7,6 +7,10 @@ Night theme for Zotero UI &amp; Pdf
 
 Kind of jank but it works
 
+# Gifs/Screenshots
+
+https://user-images.githubusercontent.com/21983833/164006109-5615d800-fbab-4174-b04e-1ad721238a61.mov
+
 # Install
 
 Download the xpi from [Releases](https://github.com/ThomasFKJorna/zotero-night/releases). As always, if you're on Firefox, right-click.
