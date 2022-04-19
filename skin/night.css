@@ -169,8 +169,10 @@
   --tab-hover-background: var(--nord9);
   --retraction-details-background: var(--nord11);
 
-  --nord-filter: brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65)
+  --dark-filter: brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65)
     hue-rotate(180deg);
+  --nord-filter: invert(81%) sepia(23%) saturate(459%) hue-rotate(181deg)
+    brightness(90%) contrast(93%);
 }
 
 * {
@@ -426,7 +428,7 @@
   border-right: 0;
 }
 #main-window[theme='dark'] #zotero-items-tree .virtualized-table-header .icon {
-  filter: var(--nord-filter);
+  filter: var(--dark-filter);
 }
 
 #main-window[theme='dark'] toolbarbutton {
@@ -438,7 +440,7 @@
 }
 
 #main-window[theme='dark'] toolbarbutton dropmarker {
-  filter: var(--nord-filter);
+  filter: var(--dark-filter);
 }
 
 #main-window[theme='dark'] .toolbarbutton span {
@@ -633,7 +635,7 @@
 }
 
 #main-window[theme='dark'] .zotero-editpane-tabs tab[selected='true'] {
-  filter: var(--nord-filter);
+  filter: var(--dark-filter);
   color: var(--nord1);
 }
 
@@ -642,7 +644,7 @@
 }
 
 #main-window[theme='dark'] tab[selected='true'] {
-  filter: var(--nord-filter) !important;
+  filter: var(--dark-filter) !important;
 }
 #main-window[theme='dark']
   #zotero-item-pane-content
@@ -653,7 +655,7 @@
 
 #main-window[theme='dark'] .tags-box .tags-box-header button {
   border-radius: 4px;
-  filter: var(--nord-filter);
+  filter: var(--dark-filter);
 }
 
 #main-window[theme='dark'] .tags-box .tags-box-list .editable-container {
@@ -669,7 +671,7 @@
 }
 
 #main-window[theme='dark'] tabpanel button {
-  filter: var(--nord-filter) !important;
+  filter: var(--dark-filter) !important;
   color: var(--nord1);
 }
 
@@ -685,7 +687,7 @@
   color: var(--nord6) !important;
 }
 #main-window[theme='dark'] #zotero-tb-search {
-  filter: var(--nord-filter);
+  filter: var(--dark-filter);
 }
 #main-window[theme='dark'] .toolbarbutton-icon {
   background: none !important;
@@ -698,7 +700,7 @@
 #main-window[theme='dark'] .tag-selector-filter-container {
   border: none !important;
   box-shadow: 0 !important;
-  filter: var(--nord-filter);
+  filter: var(--dark-filter);
 }
 
 #main-window[theme='dark'] #zotero-tags-splitter {

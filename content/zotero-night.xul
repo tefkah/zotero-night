@@ -25,4 +25,8 @@
       }
     })
   </script>
+
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="menu_Tools-night-preferences" label="Night Preferences" oncommand="Zotero.Night.openPreferenceWindow();" />
+  </menupopup>
 </overlay>

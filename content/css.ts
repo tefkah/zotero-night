@@ -305,7 +305,7 @@ const editor = `
 export const css = `${nord}
 * {
     border: 0 !important;
-    transition: color 0.15s ease, background-color 0.15s ease
+    transition: color 0.15s ease, background-color 0.15s ease, filter 0.4s ease;
 }
 body {
    background: var(--nord0) !important;
@@ -318,10 +318,11 @@ background:    var(--nord0) !important
     background-color: var(--nord0) !important;
 }
 
-div#viewer .page .canvasWrapper {
-	        	  filter: var(--nord-filter) !important;
+/* div#viewer .page .canvasWrapper {
+	        	  filter: var(--dark-filter) !important;
         		  border-image: none;
 	        	}
+                */
 
                 #viewer {
                     background-color: var(--nord0) !important;
@@ -376,7 +377,7 @@ div#viewer .page .canvasWrapper {
                 }
 
 .splitToolbarButton {
-    filter: var(--nord-filter) !important;
+    filter: var(--dark-filter) !important;
 }
 
 [dir] #outlineView .treeItem > a{
@@ -518,7 +519,7 @@ color: var(--nord4)
 }
 
 #main-window[theme='dark'] .zotero-editpane-tabs tab[selected='true'] {
-  filter: var(--nord-filter) !important;
+  filter: var(--dark-filter) !important;
 }
 
 
@@ -527,7 +528,7 @@ color: var(--nord4)
 }
 
 #main-window[theme='dark'] toolbarbutton dropmarker {
-  filter: var(--nord-filter);
+  filter: var(--dark-filter);
 }
 
 #main-window[theme='dark'] .toolbarbutton span {

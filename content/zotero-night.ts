@@ -1,3 +1,5 @@
+/* eslint-disable no-constant-condition */
+/* eslint-disable @typescript-eslint/indent */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable @typescript-eslint/no-shadow */
@@ -27,8 +29,115 @@ class Night {
   private globals: Record<string, any>
   private strings: any
   private _tabsAdded: boolean
+  public _nordFilter: string
+  public _darkFilter: string
+  public _sepiaFilter: string
 
-  public addStyleToEditor(editorWindow: any) {
+  constructor() {
+    this._nordFilter =
+      'invert(81%) sepia(23%) saturate(459%) hue-rotate(181deg) brightness(90%) contrast(93%)'
+
+    this._darkFilter =
+      'brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65) hue-rotate(180deg)'
+  }
+
+  /**
+   * Open the preference window for Night
+   */
+  public openPreferenceWindow(paneID: any, action: any) {
+    const io = {
+      pane: paneID,
+      action,
+    }
+    // @ts-expect-error
+    window.openDialog(
+      'chrome://zotero-night/content/options.xul',
+      'night-options',
+      `chrome,titlebar,toolbar,centerscreen${Zotero.Prefs.get(
+        'browser.preferences.instantApply',
+        true
+      )}`
+        ? 'dialog=no'
+        : 'modal',
+      io
+    )
+  }
+
+  public getPref(pref: string) {
+    return Zotero.Prefs.get(`extensions.night.${pref}`, true) as string
+  }
+
+  public setPref(pref: string, value: any) {
+    return Zotero.Prefs.set(`extensions.night.${pref}`, value, true) as string
+  }
+
+  private hasToggle(readerWindow: Window): boolean {
+    return !!readerWindow.document.querySelector('#night-toggle')
+  }
+  private hasFilter(readerWindow: Window): boolean {
+    return !!readerWindow.document.querySelector('#filter-style')
+  }
+
+  private createFilterStyle(readerWindow: Window, nextStyle: string) {
+    const filterStyle = readerWindow.document.createElement('style')
+    const filter = nextStyle === 'match' ? this._nordFilter : this._darkFilter
+    filterStyle.setAttribute('id', 'filter-style')
+    filterStyle.textContent = `[theme='dark'] #viewer .page .canvasWrapper { filter:  ${filter} }`
+    return filterStyle
+  }
+
+  // TODO: Just change the textcontents of the style, don't remove and append it constantly
+  public toggleOnClick(readerWindow: Window, nextStyle: string) {
+    if (this.hasFilter(readerWindow)) {
+      readerWindow.document.querySelector('#filter-style').remove()
+    }
+    if (nextStyle === 'none') return
+
+    const filterStyle = this.createFilterStyle(readerWindow, nextStyle)
+    readerWindow.document.head.appendChild(filterStyle)
+    return
+  }
+
+  // TODO: Figure out some way to remember per window setting
+  private addToggleButton(readerWindow: Window) {
+    if (this.hasToggle(readerWindow)) return
+
+    const toggle: HTMLButtonElement =
+      readerWindow.document.createElement('button')
+
+    toggle.setAttribute('id', 'night-toggle')
+    const defaultFilter = this.getPref('default_pdf')
+
+    toggle.setAttribute('data:filter', defaultFilter)
+    const icon =
+      defaultFilter === 'match' ? '✨' : defaultFilter === 'dark' ? '🌙' : '☀️'
+    toggle.textContent = icon
+    toggle.setAttribute(
+      'style',
+      'filter:none !important; height: 20px; width: 20px'
+    )
+    toggle.onclick = () => {
+      const filter = toggle.getAttribute('data:filter')
+      const nextStyle =
+        filter === 'none' ? 'match' : filter === 'match' ? 'dark' : 'none'
+
+      const icon = filter === 'none' ? '✨' : filter === 'match' ? '🌙' : '☀️'
+
+      toggle.textContent = icon
+      this.toggleOnClick(readerWindow, nextStyle)
+      toggle.setAttribute('data:filter', nextStyle)
+    }
+
+    const middleToolbar = readerWindow.document.querySelector(
+      '#toolbarViewerMiddle'
+    )
+    middleToolbar.appendChild(toggle)
+
+    const st = this.createFilterStyle(readerWindow, defaultFilter)
+    readerWindow.document.head.appendChild(st)
+  }
+
+  public addStyleToEditor(editorWindow: Window) {
     const editorDoc = editorWindow.document
     const style = editorDoc.createElement('style')
     style.setAttribute('id', 'noteStyle')
@@ -117,6 +226,7 @@ class Night {
             if (tabIndex === -1) return
 
             const activeTabWindow = window[2 + tabIndex]
+            this.addToggleButton(activeTabWindow)
 
             debug(`Select tab event activeTabWindow: ${activeTabWindow}`)
 
