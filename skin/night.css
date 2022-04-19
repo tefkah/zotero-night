@@ -251,7 +251,11 @@
   background: var(--main-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
 }
-#main-window[theme='dark'] .virtualized-table-body .cell:not(:first-child),
+
+#main-window[theme='dark'] .virtualized-table-body {
+  background: var(--nord0) !important;
+}
+
 .drag-image-container .cell:not(:first-child) {
   background: none !important;
 }
