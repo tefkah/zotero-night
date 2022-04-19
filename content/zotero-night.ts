@@ -215,17 +215,17 @@ class Night {
           try {
             // add stylesheet to the editor window
             const id = ids[0] // 'tab-WJgG9Ojg'
-            const allTabs = Array.from(
-              //  there are some "context" vboxes, no clue what they do but i hate m
-              document.querySelectorAll('vbox[id^=tab]:not([class])')
-            )
-            const tabIndex = allTabs.findIndex((tab) => tab.id === id)
+            // const allTabs = Array.from(
+            //   //  there are some "context" vboxes, no clue what they do but i hate m
+            //   document.querySelectorAll('vbox[id^=tab]:not([class])')
+            // )
+            const tabIndex = Zotero_Tabs._tabs.findIndex((tab) => tab.id === id)
 
             debug(`Select tab event tabindex: ${tabIndex}`)
 
             if (tabIndex === -1) return
 
-            const activeTabWindow = window[2 + tabIndex]
+            const activeTabWindow = window[1 + tabIndex]
             this.addToggleButton(activeTabWindow)
 
             debug(`Select tab event activeTabWindow: ${activeTabWindow}`)

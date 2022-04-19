@@ -723,3 +723,47 @@
   background-color: var(--nord0);
   color: var(--nord4);
 }
+
+/*
+Scrollable tabs
+
+#main-window[theme="dark"] #tab-bar-container .tabs {
+background: var(--background);
+    color: var(--main-text-color-toolbox-color);
+    overflow-x: visible;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 4rem;
+}
+
+#main-window[theme="dark"] #tab-bar-container .tab {
+
+    color: var(--row-hover-background);
+    background: var(--main-background);
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+.tab .tab-close {
+width: auto;
+height: auto;
+line-height: 12px;
+border-radius: 3px;
+
+
+
+}
+
+
+#main-window[theme="dark"] #tab-bar-container {
+
+    background-color: var(--nord0);
+    overflow-x: scroll;
+    width: 200px;
+    height: 3.3rem;
+
+}
+*/
