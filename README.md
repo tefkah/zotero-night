@@ -37,9 +37,9 @@ Download the xpi from [Releases](https://github.com/ThomasFKJorna/zotero-night/r
 
 ## 😢 Limitations
 
-- Currently the css can only load after switching tabs as that is the only moment im sure that the contents have been loaded. Probably a way to do this.
 - Popup menus do not have proper styling on some platforms.
-- Extension cannot be toggled off.
+- currently using CSS filter functions in order to make the pdfs dark, however this is rather slow. 
+
 
 ## ✅ To-do
 - [ ] Make prettier, more curves. Basically redesign zotero a bit
