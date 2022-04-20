@@ -46,7 +46,8 @@
   <div style="background-color:#d8dee9; width=60; height=60"></div>
   Styleguide Nord - Snow Storm
   */
-  --nord4: #d8dee9;
+  --nord35: #c8d0e0;
+  --nord4: rgb(216, 222, 233);
 
   /*
   Lighter shade color of the base component color.
@@ -180,11 +181,15 @@
   transition: color 0.15s ease, background-color 0.15s ease;
 }
 
-#main-window[theme='dark'] label {
+#main-window[theme='dark'] zoteroitembox label {
   color: var(--label-color) !important;
 }
-#main-window[theme='dark'] label:not(.zotero-clicky) {
+#main-window[theme='dark'] zoteroitembox label:not(.zotero-clicky) {
   color: var(--main-text-color-toolbox-color) !important;
+}
+
+#main-window[theme='dark'] #zotero-tb-toggle-item-pane > span {
+  background: var(--nord0) !important;
 }
 
 #main-window[theme='dark'] #zotero-tb,
@@ -202,7 +207,7 @@
   color: var(--main-text-color-toolbox-color) !important;
 }
 
-#main-window[theme='dark'] #manage-attachments-menu label,
+/*#main-window[theme='dark'] #manage-attachments-menu label,
 #main-window[theme='dark'] #developer-menu label,
 #main-window[theme='dark'] #layout-menu label,
 #main-window[theme='dark'] #note-font-size-menu label,
@@ -210,7 +215,7 @@
 #main-window[theme='dark'] #debug-output-menu label,
 #main-window[theme='dark'] #new-item label {
   color: var(--label-color) !important;
-}
+}*/
 
 #main-window[theme='dark'] #zotero-tag-selector-container {
   border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
@@ -258,6 +263,12 @@
 
 #main-window[theme='dark'] .virtualized-table-body .row .cell {
   background-image: none !important;
+}
+
+[theme='dark'] .virtualized-table.multi-select:focus .row.focused {
+  margin: 0px !important;
+  width: 100% !important
+;
 }
 
 #main-window[theme='dark']
@@ -311,6 +322,7 @@
 #main-window[theme='dark'] #tab-bar-container .tab:hover {
   background: var(--nord2) !important;
   color: var(--nord3);
+  cursor: pointer;
 }
 
 #main-window[theme='dark'] .toolbar .annotation-tools .toolbarButton > span {
@@ -445,6 +457,7 @@
 #main-window[theme='dark'] toolbarbutton {
   background: none;
   pointer: cursor !important;
+  border-radius: 4px !important;
 }
 #main-window[theme='dark'] toolbarbutton:hover {
   background: var(--nord3);
@@ -469,6 +482,13 @@
   .cell:hover {
   background: var(--row-hover-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
+}
+
+[theme='dark'] #zotero-items-tree .virtualized-table .row.selected .twisty svg {
+  fill: var(--nord6) !important;
+}
+[theme='dark'] #zotero-items-tree .virtualized-table .twisty svg {
+  fill: var(--nord35) !important;
 }
 
 #main-window[theme='dark'] .treecol-image {
@@ -800,3 +820,19 @@ border-radius: 3px;
 
 }
 */
+
+/* [theme='dark'] tooltip {
+  animation: popup-intro ease-out 0.3s;
+} */
+/*
+✨ Animations
+*/
+
+@keyframes popup-intro {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

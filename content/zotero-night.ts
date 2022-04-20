@@ -7,10 +7,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/require-await */
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import {
-  createTypePredicateNodeWithModifier,
-  isDebuggerStatement,
-} from 'typescript'
 import { css } from './css'
 import { debug } from './debug'
 
