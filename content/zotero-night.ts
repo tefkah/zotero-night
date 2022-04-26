@@ -13,6 +13,11 @@ import { debug } from './debug'
 declare const Zotero: any
 declare const ZoteroContextPane: any
 declare const Zotero_Tabs: any
+declare class ReaderObj {
+  itemID: number
+  _iframeWindow: Window
+  _initPromise: any
+}
 // declare const Components: any
 
 const monkey_patch_marker = 'NightMonkeyPatched'
@@ -277,6 +282,56 @@ class Night {
       (Zotero_Tabs._tabs.find((tab) => tab.id === id)?.title as string) ??
       'Not found'
     return name
+  }
+
+  public getWindowReaders(): ReaderObj[] {
+    const windowReaders: ReaderObj[] = []
+    const tabIDs = Zotero_Tabs._tabs.map((e) => e.id as string)
+    for (const reader of Zotero.Reader._readers) {
+      let flag = false
+      for (const tabID of tabIDs) {
+        if (reader.tabID === tabID) {
+          flag = true
+          break
+        }
+      }
+      if (!flag) {
+        windowReaders.push(reader as ReaderObj)
+      }
+    }
+    return windowReaders
+  }
+
+  public async addEverythingForStandaloneWindowReaders() {
+    const readers: ReaderObj[] = this.getWindowReaders()
+    for (const reader of readers) {
+      await reader._initPromise
+      const tabWindow = reader._iframeWindow
+      debug(tabWindow)
+      debug('Added standalone window')
+      debug(
+        `Added standalone window readystate is ${tabWindow.document.readyState}`
+      )
+      switch (tabWindow.document.readyState) {
+        // @ts-expect-error
+        case 'uninitialized': {
+          setTimeout(() => {
+            tabWindow.document.onreadystatechange = () =>
+              debug('in readystatechange eventlistener:')
+
+            debug(
+              `Added standalone windw readystate is ${tabWindow.document.readyState}`
+            )
+
+            this.addEverythingForTab(tabWindow)
+            return
+          }, 300)
+        }
+        case 'complete': {
+          this.addEverythingForTab(tabWindow)
+        }
+      }
+    }
   }
 
   private addEverythingForTab(tabWindow: Window) {
@@ -550,6 +605,20 @@ class Night {
       },
     }
     Zotero.Notifier.registerObserver(notifierCallback, ['tab'])
+
+    const windowNotifierCallback = {
+      notify: async (event: string, type, ids: string[], extraData) => {
+        if (
+          (event === 'close' && type === 'tab') ||
+          (event === 'open' && type === 'file')
+        ) {
+          debug('zotero-night: open window event detected.')
+          debug('Trying to find window')
+          await this.addEverythingForStandaloneWindowReaders()
+        }
+      }
+    }
+    Zotero.Notifier.registerObserver(windowNotifierCallback, ['tab', 'file'])
 
     this.strings = globals.document.getElementById('zotero-night-strings')
   }
