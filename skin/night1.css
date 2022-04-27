@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   /*
   Base component color of "Polar Night".
@@ -8,7 +9,6 @@
   */
   --nord4-rgba7: rgba(216, 222, 233, 0.5);
   --nord0: #2e3440;
-
   /*
   Lighter shade color of the base component color.
   Used as a lighter background color for UI elements like status bars.
@@ -17,7 +17,6 @@
   Styleguide Nord - Polar Night
   */
   --nord1: #3b4252;
-
   /*
   Lighter shade color of the base component color.
   Used as line highlighting in the editor.
@@ -27,7 +26,6 @@
   Styleguide Nord - Polar Night
   */
   --nord2: #434c5e;
-
   /*
   Lighter shade color of the base component color.
   Used for comments, invisibles, indent- and wrap guide marker.
@@ -37,7 +35,6 @@
   Styleguide Nord - Polar Night
   */
   --nord3: #4c566a;
-
   /*
   Base component color of "Snow Storm".
   Main color for text, variables, constants and attributes.
@@ -48,7 +45,6 @@
   */
   --nord35: #c8d0e0;
   --nord4: rgb(216, 222, 233);
-
   /*
   Lighter shade color of the base component color.
   Used as a lighter background color for UI elements like status bars.
@@ -58,7 +54,6 @@
   Styleguide Nord - Snow Storm
   */
   --nord5: #e5e9f0;
-
   /*
   Lighter shade color of the base component color.
   Used for punctuations, carets and structuring characters like curly- and square brackets.
@@ -68,7 +63,6 @@
   Styleguide Nord - Snow Storm
   */
   --nord6: #eceff4;
-
   /*
   Bluish core color.
   Used for classes, types and documentation tags.
@@ -77,7 +71,6 @@
   Styleguide Nord - Frost
   */
   --nord7: #8fbcbb;
-
   /*
   Bluish core accent color.
   Represents the accent color of the color palette.
@@ -90,7 +83,6 @@
   Styleguide Nord - Frost
   */
   --nord8: #88c0d0;
-
   /*
   Bluish core color.
   Used for language-specific syntactic/reserved support characters and keywords, operators, tags, units and
@@ -100,7 +92,6 @@
   Styleguide Nord - Frost
   */
   --nord9: #81a1c1;
-
   /*
   Bluish core color.
   Used for markup doctypes, import/include/require statements, pre-processor statements and at-rules. 
@@ -109,7 +100,6 @@
   Styleguide Nord - Frost
   */
   --nord10: #5e81ac;
-
   /*
   Colorful component color.
   Used for errors, git/diff deletion and linter marker.
@@ -118,7 +108,6 @@
   Styleguide Nord - Aurora
   */
   --nord11: #bf616a;
-
   /*
   Colorful component color.
   Used for annotations.
@@ -127,7 +116,6 @@
   Styleguide Nord - Aurora
   */
   --nord12: #d08770;
-
   /*
   Colorful component color.
   Used for escape characters, regular expressions and markup entities.
@@ -137,7 +125,6 @@
   Styleguide Nord - Aurora
   */
   --nord13: #ebcb8b;
-
   /*
   Colorful component color.
   Main color for strings and attribute values.
@@ -147,7 +134,6 @@
   Styleguide Nord - Aurora
   */
   --nord14: #a3be8c;
-
   /*
   Colorful component color.
   Used for numbers.
@@ -169,193 +155,188 @@
   --tab-color: var(--nord4);
   --tab-hover-background: var(--nord9);
   --retraction-details-background: var(--nord11);
-
   --dark-filter: brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65)
     hue-rotate(180deg);
   --nord-filter: invert(81%) sepia(23%) saturate(459%) hue-rotate(181deg)
     brightness(90%) contrast(93%);
 }
 
-* {
+#main-window[theme=dark] {
+  /*#manage-attachments-menu label,
+  #developer-menu label,
+  #layout-menu label,
+  #note-font-size-menu label,
+  #font-size-menu label,
+  #debug-output-menu label,
+  #new-item label {
+    color: var(--label-color) !important;
+  }*/
+  /*
+  Scrollable tabs
+
+  #main-window[theme="dark"] #tab-bar-container .tabs {
+  background: var(--background);
+      color: var(--main-text-color-toolbox-color);
+      overflow-x: visible;
+      overflow-y: hidden;
+      width: 100vw;
+      height: 4rem;
+  }
+
+  #main-window[theme="dark"] #tab-bar-container .tab {
+
+      color: var(--row-hover-background);
+      background: var(--main-background);
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      justify-content: space-between;
+      padding-right: 10px;
+  }
+  .tab .tab-close {
+  width: auto;
+  height: auto;
+  line-height: 12px;
+  border-radius: 3px;
+
+
+
+  }
+
+
+  #main-window[theme="dark"] #tab-bar-container {
+
+      background-color: var(--nord0);
+      overflow-x: scroll;
+      width: 200px;
+      height: 3.3rem;
+
+  }
+  */
+  /*  tooltip {
+    animation: popup-intro ease-out 0.3s;
+  } */
+  /*
+  ✨ Animations
+  */
+}
+#main-window[theme=dark] * {
   border: 0 !important;
   transition: color 0.15s ease, background-color 0.15s ease;
 }
-
-#main-window[theme='dark'] zoteroitembox label {
+#main-window[theme=dark] zoteroitembox label {
   color: var(--label-color) !important;
 }
-#main-window[theme='dark'] zoteroitembox label:not(.zotero-clicky) {
+#main-window[theme=dark] zoteroitembox label:not(.zotero-clicky) {
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark'] #zotero-tb-toggle-item-pane > span {
+#main-window[theme=dark] #zotero-tb-toggle-item-pane > span {
   background: var(--nord0) !important;
 }
-
-#main-window[theme='dark'] #zotero-tb,
-#main-window[theme='dark'] #zotero-toolbar,
-#main-window[theme='dark'] #main-text-color-toolbox {
+#main-window[theme=dark] #zotero-tb,
+#main-window[theme=dark] #zotero-toolbar,
+#main-window[theme=dark] #main-text-color-toolbox {
   background: var(--main-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark'] #zotero-toolbar {
+#main-window[theme=dark] #zotero-toolbar {
   border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
 }
-
-#main-window[theme='dark'] #main-text-color-toolbox menu {
+#main-window[theme=dark] #main-text-color-toolbox menu {
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-/*#main-window[theme='dark'] #manage-attachments-menu label,
-#main-window[theme='dark'] #developer-menu label,
-#main-window[theme='dark'] #layout-menu label,
-#main-window[theme='dark'] #note-font-size-menu label,
-#main-window[theme='dark'] #font-size-menu label,
-#main-window[theme='dark'] #debug-output-menu label,
-#main-window[theme='dark'] #new-item label {
-  color: var(--label-color) !important;
-}*/
-
-#main-window[theme='dark'] #zotero-tag-selector-container {
+#main-window[theme=dark] #zotero-tag-selector-container {
   border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
   border-top: 1px solid var(--zotero-toolbar-border-bottom) !important;
 }
-
-#main-window[theme='dark'] #zotero-tag-selector-container input {
+#main-window[theme=dark] #zotero-tag-selector-container input {
   background: var(--input-background) !important;
   border: 1px solid var(--zotero-toolbar-border-bottom) !important;
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark'] .tag-selector-list-container {
+#main-window[theme=dark] .tag-selector-list-container {
   background: var(--nord1) !important;
   color: var(--nord5) !important;
 }
-
-#main-window[theme='dark'] .tag-selector-item:hover {
+#main-window[theme=dark] .tag-selector-item:hover {
   background: var(--tag-selector-item-hover-background) !important;
   color: var(--label-color) !important;
 }
-
-#main-window[theme='dark'] .tag-selector-item {
+#main-window[theme=dark] .tag-selector-item {
   background: var(--input-background) !important;
 }
-
-#main-window[theme='dark'] #zotero-tb-search {
+#main-window[theme=dark] #zotero-tb-search {
   border: none !important;
   box-shadow: 0 !important;
 }
-
-#main-window[theme='dark'] #zotero-pane {
+#main-window[theme=dark] #zotero-pane {
   background: var(--main-background) !important;
   color: var(--label-color) !important;
 }
-
-#main-window[theme='dark'] treechildren {
+#main-window[theme=dark] treechildren {
   background: var(--main-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark'] .virtualized-table-body {
+#main-window[theme=dark] .virtualized-table-body {
   background: var(--nord0) !important;
 }
-
-#main-window[theme='dark'] .virtualized-table-body .row .cell {
+#main-window[theme=dark] .virtualized-table-body .row .cell {
   background-image: none !important;
 }
-
-[theme='dark'] .virtualized-table.multi-select:focus .row.focused {
+#main-window[theme=dark] .virtualized-table.multi-select:focus .row.focused {
   margin: 0px !important;
-  width: 100% !important
-;
+  width: calc(100% - 2px) !important;
 }
-
-#main-window[theme='dark']
-  .virtualized-table-body
-  .drag-image-container
-  .cell:not(:first-child) {
+#main-window[theme=dark] .virtualized-table-body .drag-image-container .cell:not(:first-child) {
   background: none !important;
 }
-#main-window[theme='dark'] .virtualized-table .row {
+#main-window[theme=dark] .virtualized-table .row {
   transition: background-color 0.1s !important;
   background: var(--nord0) !important;
   color: var(--nord6) !important;
 }
-
-#main-window[theme='dark'] .virtualized-table .row.selected {
+#main-window[theme=dark] .virtualized-table .row.selected {
   background: var(--nord2) !important;
   border-bottom: 0px solid var(--zotero-toolbar-border-bottom) !important;
   border: 0 !important;
 }
-
-#main-window[theme='dark'] .virtualized-table:not(:focus) .row.selected {
+#main-window[theme=dark] .virtualized-table:not(:focus) .row.selected {
   background: var(--input-background) !important;
   border: 0 !important;
 }
-
-#main-window[theme='dark'] .row:hover {
+#main-window[theme=dark] .row:hover {
   background: var(--row-hover-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
   border: 0 !important;
 }
-
-#main-window[theme='dark'] #zotero-item-pane-content {
-  background: var(--nord0) !important;
-  color: var(--nord5) !important;
+#main-window[theme=dark] #tab-bar-container {
+  background-color: #1f242d;
 }
-
-#main-window[theme='dark'] #tab-bar-container {
-  background-color: var(--nord0);
-}
-
-#main-window[theme='dark'] #tab-bar-container .tabs {
+#main-window[theme=dark] #tab-bar-container .tabs {
   background: var(--background);
   color: var(--main-text-color-toolbox-color);
 }
-
-#main-window[theme='dark'] #tab-bar-container .tab {
+#main-window[theme=dark] #tab-bar-container .tab {
   color: var(--row-hover-background);
   background: var(--main-background);
 }
-
-#main-window[theme='dark'] #tab-bar-container .tab:hover {
+#main-window[theme=dark] #tab-bar-container .tab:hover {
   background: var(--nord2) !important;
   color: var(--nord3);
   cursor: pointer;
 }
-
-#main-window[theme='dark'] .toolbar .annotation-tools .toolbarButton > span {
-  background: none;
-}
-
-#main-window[theme='dark'] #tab-bar-container .tab:not(:focus) {
+#main-window[theme=dark] #tab-bar-container .tab:not(:focus) {
   color: var(--nord6);
   padding-top: 0.2rem;
-  background: var(--nord0);
+  background-color: #1f242d;
   border-top: 0px solid var(--tab-not-border-top);
   border-left: 0px solid var(--tab-not-border-left);
   border-right: none;
-  filter: brightness(0.7)
-    /*1px solid var(--zotero-toolbar-border-bottom) !important*/;
+  /*1px solid var(--zotero-toolbar-border-bottom) !important*/
   border-bottom: none;
 }
-
-#main-window[theme='dark'] #tab-bar-container .tabs::before,
-#main-window[theme='dark'] #tab-bar-container .tabs::after {
-  filter: brightness(0.7);
-  background: var(--nord0);
-  border: 0px solid var(--nord0);
-}
-
-#main-window[theme='dark'] #tab-bar-container .tabs::before {
-  border-bottom-right-radius: 4px;
-}
-#main-window[theme='dark'] #tab-bar-container .tabs::after {
-  border-bottom-left-radius: 4px;
-}
-
-#main-window[theme='dark'] #tab-bar-container .tab.selected:not(.highlighted) {
+#main-window[theme=dark] #tab-bar-container .tab.selected:not(.highlighted) {
   color: var(--main-text-color-toolbox-color);
   background: var(--nord0);
   border-top: 3px solid var(--tab-not-border-top);
@@ -363,397 +344,361 @@
   border-right: none;
   filter: none;
 }
-#main-window[theme='dark']
-  #tab-bar-container
-  .tab.selected:not(.highlighted):hover {
+#main-window[theme=dark] #tab-bar-container .tab.selected:not(.highlighted):hover {
   background: var(--nord0);
 }
-
-#main-window[theme='dark'] tab[selected] label {
+#main-window[theme=dark] #tab-bar-container .tabs::before, #main-window[theme=dark] #tab-bar-container .tabs::after {
+  filter: brightness(0.7);
+  background: var(--nord0);
+  border: 0px solid var(--nord0);
+}
+#main-window[theme=dark] #tab-bar-container .tabs::before {
+  border-bottom-right-radius: 4px;
+}
+#main-window[theme=dark] #tab-bar-container .tabs::after {
+  border-bottom-left-radius: 4px;
+}
+#main-window[theme=dark] .toolbar .annotation-tools .toolbarButton > span {
+  background: none;
+}
+#main-window[theme=dark] tab[selected] label {
   color: var(--nord0) !important;
 }
-
-#main-window[theme='dark'] tab label:hover {
+#main-window[theme=dark] tab label:hover {
   color: var(--nord3);
 }
-#main-window[theme='dark'] #zotero-collections-tree {
-  background: var(--main-background) !important;
-}
-#main-window[theme='dark'] .zotero-context-pane-editor-parent-line {
+#main-window[theme=dark] .zotero-context-pane-editor-parent-line {
   background-color: var(--nord0);
   color: var(--nord4);
 }
-#main-window[theme='dark']
-  #zotero-collections-tree
-  treechildren::-moz-tree-row(hover) {
+#main-window[theme=dark] #zotero-collections-tree {
+  background: var(--main-background) !important;
+}
+#main-window[theme=dark] #zotero-collections-tree treechildren {
+  border-right: 1px solid var(--nord1) !important;
+}
+#main-window[theme=dark] #zotero-collections-tree treechildren::-moz-tree-row(hover) {
   background: var(--row-hover-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark']
-  #zotero-collections-tree
-  treechildren::-moz-tree-cell(selected) {
+#main-window[theme=dark] #zotero-collections-tree treechildren::-moz-tree-cell(selected) {
   background: var(--input-background) !important;
   /*border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;*/
 }
-
-#main-window[theme='dark']
-  #zotero-collections-tree
-  treechildren::-moz-tree-cell-text(selected) {
+#main-window[theme=dark] #zotero-collections-tree treechildren::-moz-tree-cell-text(selected) {
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark'] #zotero-collections-tree treechildren {
-  border-right: 1px solid var(--nord1) !important;
-}
-
-#main-window[theme='dark'] #zotero-collections-tree .virtualized-table {
+#main-window[theme=dark] #zotero-collections-tree .virtualized-table {
   border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
 }
-
-#main-window[theme='dark'] #zotero-items-tree {
+#main-window[theme=dark] #zotero-items-tree {
   border-right: 1px solid var(--nord1) !important;
   background: var(--main-background) !important;
 }
-
-#main-window[theme='dark']
-  #zotero-items-tree
-  treechildren::-moz-tree-row(hover) {
+#main-window[theme=dark] #zotero-items-tree treechildren::-moz-tree-row(hover) {
   background: var(--row-hover-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark']
-  #zotero-items-tree
-  treechildren::-moz-tree-row(selected) {
+#main-window[theme=dark] #zotero-items-tree treechildren::-moz-tree-row(selected) {
   background: var(--input-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
   border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
 }
-
-#main-window[theme='dark']
-  #zotero-items-tree
-  treechildren::-moz-tree-cell-text(selected) {
+#main-window[theme=dark] #zotero-items-tree treechildren::-moz-tree-cell-text(selected) {
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark'] #zotero-items-tree treecol {
+#main-window[theme=dark] #zotero-items-tree treecol {
   background: var(--input-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
   border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
   border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
 }
-
-#main-window[theme='dark'] #zotero-items-tree .virtualized-table-header {
+#main-window[theme=dark] #zotero-items-tree .virtualized-table-header {
   background: var(--nord1) !important;
   color: var(--nord4) !important;
   border-bottom: 0;
   border-right: 0;
 }
-#main-window[theme='dark'] #zotero-items-tree .virtualized-table-header .icon {
+#main-window[theme=dark] #zotero-items-tree .virtualized-table-header .icon {
   filter: var(--dark-filter);
 }
-
-#main-window[theme='dark'] toolbarbutton {
-  background: none;
-  pointer: cursor !important;
-  border-radius: 4px !important;
-}
-#main-window[theme='dark'] toolbarbutton:hover {
-  background: var(--nord3);
-}
-
-#main-window[theme='dark'] toolbarbutton dropmarker {
-  filter: var(--dark-filter);
-}
-
-#main-window[theme='dark'] .toolbarbutton span {
-  background: none !important;
-}
-#main-window[theme='dark']
-  .zotero-tb-button:-moz-window-inactive
-  > .toolbarbutton-icon {
-  background: none;
-}
-
-#main-window[theme='dark']
-  #zotero-items-tree
-  .virtualized-table-header
-  .cell:hover {
+#main-window[theme=dark] #zotero-items-tree .virtualized-table-header .cell:hover {
   background: var(--row-hover-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-[theme='dark'] #zotero-items-tree .virtualized-table .row.selected .twisty svg {
+#main-window[theme=dark] #zotero-items-tree .virtualized-table .row.selected .twisty svg {
   fill: var(--nord6) !important;
 }
-[theme='dark'] #zotero-items-tree .virtualized-table .twisty svg {
+#main-window[theme=dark] #zotero-items-tree .virtualized-table .twisty svg {
   fill: var(--nord35) !important;
 }
-
-#main-window[theme='dark'] .treecol-image {
+#main-window[theme=dark] toolbarbutton {
+  background: none;
+  cursor: pointer !important;
+  border-radius: 4px !important;
+}
+#main-window[theme=dark] toolbarbutton:hover {
+  background: var(--nord3);
+}
+#main-window[theme=dark] toolbarbutton dropmarker {
+  filter: var(--dark-filter);
+}
+#main-window[theme=dark] toolbarbutton span {
+  background: none !important;
+}
+#main-window[theme=dark] .zotero-tb-button:-moz-window-inactive > .toolbarbutton-icon {
+  background: none;
+}
+#main-window[theme=dark] .treecol-image {
   background: var(--input-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
   border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
 }
-
-#main-window[theme='dark'] #zotero-item-pane-content .zotero-clicky:hover {
+#main-window[theme=dark] #zotero-item-pane-content {
+  background: var(--nord0) !important;
+  color: var(--nord5) !important;
+}
+#main-window[theme=dark] #zotero-item-pane-content .zotero-clicky:hover {
   color: var(--nord2) !important;
 }
-
-#main-window[theme='dark'] .tab:not(:first-child) .tab-close {
-  filter: invert(0.3);
+#main-window[theme=dark] #zotero-item-pane-content > groupbox > .groupbox-body {
+  background: var(--main-background) !important;
+  color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark'] tabpanel {
+#main-window[theme=dark] #zotero-item-pane-content #retraction-details {
+  background: var(--retraction-details-background) !important;
+}
+#main-window[theme=dark] #zotero-item-pane-content tab {
+  color: var(--tab-color) !important;
+  background: var(--main-background) !important;
+  border-top: 0px solid var(--tab-not-border-top) !important;
+  border-left: 0px solid var(--tab-not-border-left) !important;
+}
+#main-window[theme=dark] #zotero-item-pane-content tab:hover {
+  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--nord3);
+}
+#main-window[theme=dark] #zotero-item-pane-content tab[selected=true] {
+  background: var(--input-background);
+}
+#main-window[theme=dark] #zotero-item-pane-content tab[selected=true]:hover {
+  background: var(--nord0);
+}
+#main-window[theme=dark] .tab:not(:first-child) .tab-close {
+  filter: invert(0.7);
+}
+#main-window[theme=dark] tabpanel {
   color: var(--label-color) !important;
   background: var(--nord1) !important;
 }
-
-#main-window[theme='dark'] tab[selected='true'] {
+#main-window[theme=dark] tab[selected=true] {
   color: var(--label-color) !important;
   background: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark'] tab {
+#main-window[theme=dark] tab {
   color: var(--tab-color) !important;
   background: var(--input-background) !important;
   border-top: 0px solid var(--label-color) !important;
   border-left: 0px solid var(--label-color) !important;
   border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
 }
-
-#main-window[theme='dark'] #tab-bar-container tab:hover {
+#main-window[theme=dark] #tab-bar-container tab:hover {
   color: var(--nord6) !important;
   background: var(--nord2) !important;
 }
-
-#main-window[theme='dark']
-  #zotero-duplicates-merge-pane
-  > groupbox
-  > .groupbox-body {
+#main-window[theme=dark] #zotero-duplicates-merge-pane > groupbox > .groupbox-body {
   background: var(--main-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark']
-  #zotero-item-pane-content
-  > groupbox
-  > .groupbox-body {
-  background: var(--main-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
-}
-
-#main-window[theme='dark'] #retraction-details {
-  background: var(--retraction-details-background) !important;
-}
-
-#main-window[theme='dark'] #zotero-item-pane-content {
-  background: var(--main-background) !important;
-}
-
-#main-window[theme='dark'] #zotero-item-pane-content tabpanel {
-  background: var(--input-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
-}
-
-#main-window[theme='dark'] #tags-box-container ul li ul {
+#main-window[theme=dark] #tags-box-container ul li ul {
   background: var(--row-hover-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark'] #tags-box-container input {
+#main-window[theme=dark] #tags-box-container input {
   background-color: var(--row-hover-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
   border: 1px solid var(--zotero-toolbar-border-bottom) !important;
 }
-
-#main-window[theme='dark'] #zotero-item-pane-content tab[selected='true'] {
-  background: var(--input-background) !important;
-  border-top: 3px solid var(--tab-not-border-top) !important;
-}
-
-#main-window[theme='dark'] #zotero-item-pane-content tab {
-  color: var(--tab-color) !important;
-  background: var(--main-background) !important;
-  border-top: 0px solid var(--tab-not-border-top) !important;
-  border-left: 0px solid var(--tab-not-border-left) !important;
-  border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
-}
-
-#main-window[theme='dark'] #zotero-item-pane-content tab:hover {
-  color: var(--main-text-color-toolbox-color) !important;
-  background: var(--row-hover-background) !important;
-}
-
-#main-window[theme='dark'] #item-type-menu {
+#main-window[theme=dark] #item-type-menu {
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark'] #zotero-date-field-status {
+#main-window[theme=dark] #zotero-date-field-status {
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark'] #zotero-prefpane-general,
-[theme='dark'] #zotero-prefpane-sync,
-[theme='dark'] #zotero-prefpane-export,
-[theme='dark'] #zotero-prefpane-advanced-keys-tab,
-[theme='dark'] #wordProcessors,
-[theme='dark'] #zotero-quickCopy-format,
-[theme='dark'] #sync-reset-form {
+#main-window[theme=dark] #zotero-prefpane-general,
+#main-window[theme=dark] #zotero-prefpane-sync,
+#main-window[theme=dark] #zotero-prefpane-export,
+#main-window[theme=dark] #zotero-prefpane-advanced-keys-tab,
+#main-window[theme=dark] #wordProcessors,
+#main-window[theme=dark] #zotero-quickCopy-format,
+#main-window[theme=dark] #sync-reset-form {
   color: var(--label-color) !important;
   background: var(--row-hover-background) !important;
 }
-
-#main-window[theme='dark'] #zotero-prefpane-general title {
+#main-window[theme=dark] #zotero-prefpane-general title {
   background: var(--input-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark'] prefwindow {
+#main-window[theme=dark] prefwindow {
   color: var(--label-color) !important;
   background: var(--row-hover-background) !important;
 }
-
-#main-window[theme='dark'] prefwindow .chromeclass-toolbar {
+#main-window[theme=dark] prefwindow .chromeclass-toolbar {
   color: var(--main-text-color-toolbox-color) !important;
   background: var(--main-background) !important;
 }
-
-#main-window[theme='dark'] #aboutcontent {
+#main-window[theme=dark] #aboutcontent {
   background: var(--input-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark'] #version {
+#main-window[theme=dark] #version {
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark']
-  #zotero-advanced-search-dialog
-  #zotero-search-box-controls {
+#main-window[theme=dark] #zotero-advanced-search-dialog #zotero-search-box-controls {
   color: var(--label-color) !important;
   background: var(--row-hover-background) !important;
 }
-
-#main-window[theme='dark'] #zotero-note-editor linksbox {
+#main-window[theme=dark] #zotero-note-editor linksbox {
   background-color: var(--input-background) !important;
   color: var(--main-text-color-toolbox-color) !important;
 }
-
-#main-window[theme='dark'] #zotero-note-window blockquote {
-  color: var(--main-text-color-toolbox-color) (255, 248, 248);
+#main-window[theme=dark] #zotero-note-window blockquote {
+  color: var(--main-text-color-toolbox-color) 255, 248, 248;
 }
-
-[theme='dark'] splitter {
+#main-window[theme=dark] splitter {
   background: var(--nord0) !important;
 }
-
-[theme='dark'] #tab-bar-container .tab:not(.selected) .tab-name {
+#main-window[theme=dark] #tab-bar-container .tab:not(.selected) .tab-name {
   color: var(--nord4-rgba7) !important;
 }
-
-[theme='dark'] #zotero-toolbar {
+#main-window[theme=dark] #zotero-toolbar {
   border: 0 !important;
 }
-
-[theme='dark'] .zotero-editpane-tabs {
+#main-window[theme=dark] .zotero-editpane-tabs {
   background: var(--nord1) !important;
 }
-
-#main-window[theme='dark'] .zotero-editpane-tabs tab label:not(.zotero-clicky) {
+#main-window[theme=dark] .zotero-editpane-tabs tab label:not(.zotero-clicky) {
   color: var(--nord4);
 }
-
-#main-window[theme='dark'] .zotero-editpane-tabs tab[selected='true'] {
+#main-window[theme=dark] .zotero-editpane-tabs tab[selected=true] {
   filter: var(--dark-filter);
   color: var(--nord1);
 }
-
-#main-window[theme='dark'] .zotero-editpane-tabs tab label:not(.zotero-clicky) {
-  color: var(--nord4);
-}
-
-#main-window[theme='dark'] tab[selected='true'] {
+#main-window[theme=dark] tab[selected=true] {
   filter: var(--dark-filter) !important;
 }
-#main-window[theme='dark']
-  #zotero-item-pane-content
-  tab[selected='true']
-  .tab-text {
-  color: var(--nord0) !important;
-}
-
-#main-window[theme='dark'] .tags-box .tags-box-header button {
+#main-window[theme=dark] .tags-box .tags-box-header button {
   border-radius: 4px;
   filter: var(--dark-filter);
 }
-
-#main-window[theme='dark'] .tags-box .tags-box-list .editable-container {
+#main-window[theme=dark] .tags-box .tags-box-list .editable-container {
   border-radius: 0px;
 }
-
-#main-window[theme='dark'] .zotero-clicky {
+#main-window[theme=dark] .zotero-clicky {
   border-radius: 1px;
   padding-left: 1rem;
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
   color: var(--nord5);
 }
-
-#main-window[theme='dark'] tabpanel button {
+#main-window[theme=dark] tabpanel button {
   filter: var(--dark-filter) !important;
   color: var(--nord1);
 }
-
-#main-window[theme='dark'] zoteroitembox {
+#main-window[theme=dark] zoteroitembox {
   background: var(--nord0) !important;
 }
-
-#main-window[theme='dark'] #better-bibtex-fields {
+#main-window[theme=dark] #better-bibtex-fields {
   background: var(--nord0) !important;
 }
-
-#main-window[theme='dark'] #better-bibtex-citekey-display {
+#main-window[theme=dark] #better-bibtex-citekey-display {
   color: var(--nord6) !important;
 }
-#main-window[theme='dark'] #zotero-tb-search {
+#main-window[theme=dark] #zotero-tb-search {
   filter: var(--dark-filter);
 }
-#main-window[theme='dark'] .toolbarbutton-icon {
+#main-window[theme=dark] .toolbarbutton-icon {
   background: none !important;
 }
-
-#main-window[theme='dark'] .resizer {
+#main-window[theme=dark] .resizer {
   background: none !important;
 }
-
-#main-window[theme='dark'] .tag-selector-filter-container {
+#main-window[theme=dark] .tag-selector-filter-container {
   border: none !important;
   box-shadow: 0 !important;
   filter: var(--dark-filter);
 }
-
-#main-window[theme='dark'] #zotero-tags-splitter {
+#main-window[theme=dark] #zotero-tags-splitter {
   background: var(--nord0) !important;
 }
-
-#main-window[theme='dark'] menuitem label:not(.zotero-clicky) {
-  color: var(--nord2) !important;
-}
-
-[theme='dark'] #zotero-tb-split .toolbarButton:last-child > span:first-child {
+#main-window[theme=dark] #zotero-tb-split .toolbarButton:last-child > span:first-child {
   margin-left: 20px;
   background: var(--nord0) !important;
 }
-#main-window[theme='dark'] #zotero-pane .menuitem label {
-  color: var(--nord3) !important;
-}
-
-[theme='dark'] #links-container {
+#main-window[theme=dark] #links-container {
   background: var(--nord0) !important;
   background-image: none !important;
   color: var(--nord4);
+}
+#main-window[theme=dark] .tag-selector .tag-selector-item.zotero-clicky {
+  border-radius: 1rem;
+  padding-top: 1px;
+  padding-right: 4px;
+  padding-bottom: 3px;
+  padding-left: 4px;
+}
+#main-window[theme=dark] menuitem,
+#main-window[theme=dark] menupopup,
+#main-window[theme=dark] menu {
+  -moz-appearance: none !important;
+}
+#main-window[theme=dark] menu {
+  background: var(--nord1) !important;
+  color: var(--nord4) !important;
+}
+#main-window[theme=dark] menu:hover {
+  color: var(--nord4) !important;
+  background: var(--nord3) !important;
+}
+#main-window[theme=dark] menuitem {
+  background: var(--nord1) !important;
+  color: var(--nord4) !important;
+}
+#main-window[theme=dark] menuitem:hover {
+  color: var(--nord4) !important;
+  background: var(--nord3) !important;
+}
+#main-window[theme=dark] menuitem .menu-text {
+  color: var(--nord4) !important;
+}
+#main-window[theme=dark] menuitem label {
+  color: var(--nord4) !important;
+}
+#main-window[theme=dark] menupopup {
+  background: var(--nord1);
+  border-radius: 0.5rem;
+}
+#main-window[theme=dark] menupopup menu hbox {
+  filter: invert(1);
+}
+#main-window[theme=dark] menupopup menu:hover hbox {
+  filter: invert(0);
+}
+@-webkit-keyframes popup-intro {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes popup-intro {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #night-global-toggle {
@@ -769,70 +714,9 @@
   border-radius: 4px;
   padding: 10px 10px 10px 10px;
 }
-#main-window[theme='dark'] #night-global-toggle:hover {
+#night-global-toggle:hover {
   background-color: var(--nord3) !important;
 }
-
 #night-global-toggle:hover {
   background-color: var(--nord4) !important;
-}
-
-/*
-Scrollable tabs
-
-#main-window[theme="dark"] #tab-bar-container .tabs {
-background: var(--background);
-    color: var(--main-text-color-toolbox-color);
-    overflow-x: visible;
-    overflow-y: hidden;
-    width: 100vw;
-    height: 4rem;
-}
-
-#main-window[theme="dark"] #tab-bar-container .tab {
-
-    color: var(--row-hover-background);
-    background: var(--main-background);
-    height: 4rem;
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    justify-content: space-between;
-    padding-right: 10px;
-}
-.tab .tab-close {
-width: auto;
-height: auto;
-line-height: 12px;
-border-radius: 3px;
-
-
-
-}
-
-
-#main-window[theme="dark"] #tab-bar-container {
-
-    background-color: var(--nord0);
-    overflow-x: scroll;
-    width: 200px;
-    height: 3.3rem;
-
-}
-*/
-
-/* [theme='dark'] tooltip {
-  animation: popup-intro ease-out 0.3s;
-} */
-/*
-✨ Animations
-*/
-
-@keyframes popup-intro {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+}/*# sourceMappingURL=night1.css.map */

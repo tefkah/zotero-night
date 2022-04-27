@@ -346,7 +346,13 @@ background:    var(--nord0) !important
 [theme='dark']                 #toolbarViewer button {
 	        	  filter: brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65) hue-rotate(180deg) !important;
         		  border-image: none !important;
+              border-radius: 1rem;
                 }
+
+
+[theme='dark']                 #toolbarViewer #reader-toolbar-button-color-picker {
+      filter: none !important;
+    }
                 
 [theme='dark']                 #selector .tags {
                     color: var(--nord5) !important;
