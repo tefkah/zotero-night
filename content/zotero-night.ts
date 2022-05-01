@@ -193,6 +193,7 @@ class Night {
     html.setAttribute('theme', 'dark')
     debug(`Added html theme attribute. It is now${html.getAttribute('theme')}`)
   }
+
   public setHTMLThemeAttribute(on: boolean) {
     let counter = 0
     let win: Window | undefined = window[counter]
@@ -555,4 +556,4 @@ class Night {
   }
 }
 
-if (!Zotero.Night) Zotero.Night = new Night()
+Zotero.Night = new Night()
