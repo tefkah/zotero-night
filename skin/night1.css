@@ -647,6 +647,9 @@
   padding-bottom: 3px;
   padding-left: 4px;
 }
+#main-window[theme=dark] #navigator-toolbox {
+  background: var(--nord1);
+}
 #main-window[theme=dark] menuitem,
 #main-window[theme=dark] menupopup,
 #main-window[theme=dark] menu {
