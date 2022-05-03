@@ -1,39 +1,27 @@
-name: release
+name: Release
 
 on:
   push:
 
 jobs:
   release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: install node
-        uses: actions/setup-node@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: 16.x
-      # - name: Cache node dependencies
-      #   uses: actions/cache@v2
-      #   env:
-      #     cache-name: cache-dependencies
-      #   with:
-      #     path: |
-      #       ~/.yarn
-      #     key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn-lock.json') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-build-${{ env.cache-name }}-
-      #       ${{ runner.os }}-build-
-      #       ${{ runner.os }}-
-      - name: install node dependencies
-        run: yarn
-      - name: build
-        run: yarn run build
-      # - name: release npm
-      #   run: yarn run release
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: release gh
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: xpi/*
+          node-version: '16.14.2'
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install
+      - name: Verify
+        run: yarn verify
+      - name: Build
+        run: yarn build
+      - name: Release
+        run: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
