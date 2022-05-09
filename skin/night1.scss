@@ -551,26 +551,59 @@
       font-weight: 600 !important;
     }
 
-    tab {
+    #zotero-editpane-tabs {
+      -moz-appearance: none !important;
       color: var(--nord4) !important;
-      background: var(--nord0) !important;
-      // border-top: 0px solid var(--nord9) !important;
-      // border-left: 0px solid var(--nord3) !important;
-      //   border-right: 1px solid var(--nord2) !important;
+      background: var(--nord0);
 
-      &:hover {
-        color: var(--nord5) !important;
-        background: var(--nord3);
-      }
-
-      &[selected='true'] {
-        background: var(--nord3);
-
+      tab {
+        background: var(--nord1);
+        border: 1px solid var(--nord2) !important;
+        label:not(.zotero-clicky) {
+          color: var(--nord4);
+        }
+        &:first-child {
+          border-top-left-radius: 0.3rem !important;
+          border-bottom-left-radius: 0.3rem !important;
+        }
+        &:last-child {
+          border-top-right-radius: 0.3rem !important;
+          border-bottom-right-radius: 0.3rem !important;
+        }
+        &[selected='true'] {
+          // filter: var(--dark-filter);
+          color: var(--nord6) !important;
+          background: var(--nord3) !important;
+          label {
+            color: var(--nord6) !important;
+          }
+        }
         &:hover {
-          background: var(--nord0);
+          background: var(--nord3) !important;
+          cursor: pointer;
         }
       }
     }
+    // tab {
+    //   color: var(--nord4) !important;
+    //   background: var(--nord1) !important;
+    //   // border-top: 0px solid var(--nord9) !important;
+    //   // border-left: 0px solid var(--nord3) !important;
+    //   //   border-right: 1px solid var(--nord2) !important;
+
+    //   &:hover {
+    //     color: var(--nord5) !important;
+    //     background: var(--nord3);
+    //   }
+
+    //   &[selected='true'] {
+    //     background: var(--nord3);
+
+    //     &:hover {
+    //       background: var(--nord0);
+    //     }
+    //   }
+    // }
   }
 
   .tab:not(:first-child) .tab-close {
@@ -583,21 +616,21 @@
   }
 
   tab {
-    color: var(--nord4) !important;
-    background: var(--nord3) !important;
-    border-top: 0px solid var(--nord4) !important;
-    border-left: 0px solid var(--nord4) !important;
-    border-right: 1px solid var(--nord2) !important;
+    color: var(--nord4);
+    background: var(--nord3);
+    border-top: 0px solid var(--nord4);
+    border-left: 0px solid var(--nord4);
+    border-right: 1px solid var(--nord2);
   }
 
   #tab-bar-container tab:hover {
-    color: var(--nord6) !important;
-    background: var(--nord2) !important;
+    color: var(--nord6);
+    background: var(--nord2);
   }
 
   #zotero-duplicates-merge-pane > groupbox > .groupbox-body {
-    background: var(--nord0) !important;
-    color: var(--nord5) !important;
+    background: var(--nord0);
+    color: var(--nord5);
   }
 
   #tags-box-container {
@@ -687,39 +720,6 @@
   **/
   .zotero-view-tabbox > tabs > tab {
     -moz-appearance: none !important;
-  }
-
-  .zotero-editpane-tabs {
-    background: var(--nord1) !important;
-    -moz-appearance: none !important;
-    color: var(--nord4) !important;
-
-    tab {
-      border-radius: 0 !important;
-      border: 1px solid var(--nord2) !important;
-      label:not(.zotero-clicky) {
-        color: var(--nord4);
-      }
-      &:first-child {
-        border-top-left-radius: 0.3rem !important;
-        border-bottom-left-radius: 0.3rem !important;
-      }
-      &:last-child {
-        border-top-right-radius: 0.3rem !important;
-        border-bottom-right-radius: 0.3rem !important;
-      }
-      &[selected='true'] {
-        // filter: var(--dark-filter);
-        color: var(--nord6) !important;
-        background: var(--nord3) !important;
-        label {
-          color: var(--nord6) !important;
-        }
-      }
-      &:hover {
-        background: var(--nord3) !important;
-      }
-    }
   }
 
   .tags-box .tags-box-header button {

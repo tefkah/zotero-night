@@ -512,19 +512,36 @@
 #main-window[theme=dark] #zotero-item-pane-content row > label:first-of-type {
   font-weight: 600 !important;
 }
-#main-window[theme=dark] #zotero-item-pane-content tab {
+#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs {
+  -moz-appearance: none !important;
   color: var(--nord4) !important;
-  background: var(--nord0) !important;
-}
-#main-window[theme=dark] #zotero-item-pane-content tab:hover {
-  color: var(--nord5) !important;
-  background: var(--nord3);
-}
-#main-window[theme=dark] #zotero-item-pane-content tab[selected=true] {
-  background: var(--nord3);
-}
-#main-window[theme=dark] #zotero-item-pane-content tab[selected=true]:hover {
   background: var(--nord0);
+}
+#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs tab {
+  background: var(--nord1);
+  border: 1px solid var(--nord2) !important;
+}
+#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs tab label:not(.zotero-clicky) {
+  color: var(--nord4);
+}
+#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs tab:first-child {
+  border-top-left-radius: 0.3rem !important;
+  border-bottom-left-radius: 0.3rem !important;
+}
+#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs tab:last-child {
+  border-top-right-radius: 0.3rem !important;
+  border-bottom-right-radius: 0.3rem !important;
+}
+#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs tab[selected=true] {
+  color: var(--nord6) !important;
+  background: var(--nord3) !important;
+}
+#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs tab[selected=true] label {
+  color: var(--nord6) !important;
+}
+#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs tab:hover {
+  background: var(--nord3) !important;
+  cursor: pointer;
 }
 #main-window[theme=dark] .tab:not(:first-child) .tab-close {
   filter: invert(0.7);
@@ -534,19 +551,19 @@
   background: var(--nord0) !important;
 }
 #main-window[theme=dark] tab {
-  color: var(--nord4) !important;
-  background: var(--nord3) !important;
-  border-top: 0px solid var(--nord4) !important;
-  border-left: 0px solid var(--nord4) !important;
-  border-right: 1px solid var(--nord2) !important;
+  color: var(--nord4);
+  background: var(--nord3);
+  border-top: 0px solid var(--nord4);
+  border-left: 0px solid var(--nord4);
+  border-right: 1px solid var(--nord2);
 }
 #main-window[theme=dark] #tab-bar-container tab:hover {
-  color: var(--nord6) !important;
-  background: var(--nord2) !important;
+  color: var(--nord6);
+  background: var(--nord2);
 }
 #main-window[theme=dark] #zotero-duplicates-merge-pane > groupbox > .groupbox-body {
-  background: var(--nord0) !important;
-  color: var(--nord5) !important;
+  background: var(--nord0);
+  color: var(--nord5);
 }
 #main-window[theme=dark] #tags-box-container ul li ul {
   background: var(--nord3) !important;
@@ -614,36 +631,6 @@
 }
 #main-window[theme=dark] .zotero-view-tabbox > tabs > tab {
   -moz-appearance: none !important;
-}
-#main-window[theme=dark] .zotero-editpane-tabs {
-  background: var(--nord1) !important;
-  -moz-appearance: none !important;
-  color: var(--nord4) !important;
-}
-#main-window[theme=dark] .zotero-editpane-tabs tab {
-  border-radius: 0 !important;
-  border: 1px solid var(--nord2) !important;
-}
-#main-window[theme=dark] .zotero-editpane-tabs tab label:not(.zotero-clicky) {
-  color: var(--nord4);
-}
-#main-window[theme=dark] .zotero-editpane-tabs tab:first-child {
-  border-top-left-radius: 0.3rem !important;
-  border-bottom-left-radius: 0.3rem !important;
-}
-#main-window[theme=dark] .zotero-editpane-tabs tab:last-child {
-  border-top-right-radius: 0.3rem !important;
-  border-bottom-right-radius: 0.3rem !important;
-}
-#main-window[theme=dark] .zotero-editpane-tabs tab[selected=true] {
-  color: var(--nord6) !important;
-  background: var(--nord3) !important;
-}
-#main-window[theme=dark] .zotero-editpane-tabs tab[selected=true] label {
-  color: var(--nord6) !important;
-}
-#main-window[theme=dark] .zotero-editpane-tabs tab:hover {
-  background: var(--nord3) !important;
 }
 #main-window[theme=dark] .tags-box .tags-box-header button {
   border-radius: 4px;
