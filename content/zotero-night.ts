@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 /* eslint-disable no-constant-condition */
 /* eslint-disable @typescript-eslint/indent */
@@ -18,7 +22,7 @@ declare const Zotero_Tabs: any
 const monkey_patch_marker = 'NightMonkeyPatched'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-inner-declarations, prefer-arrow/prefer-arrow-functions
-function patch(object, method, patcher) {
+function patch(object: any, method: any, patcher: any) {
   if (object[method][monkey_patch_marker]) return
   object[method] = patcher(object[method])
   object[method][monkey_patch_marker] = true
@@ -74,7 +78,7 @@ class Night {
   public addEventListener(
     type: NightEventType,
     listener: NightEventListener,
-    priority?: number
+    priority?: number,
   ): void {
     this._eventListeners.push({ priority: priority ?? 10, listener, type })
     this._eventListeners.sort((obj1, obj2) => obj1.priority - obj2.priority)
@@ -87,17 +91,17 @@ class Night {
       pane: paneID,
       action,
     }
-    // @ts-expect-error
+    // @ts-expect-error shush
     window.openDialog(
       'chrome://zotero-night/content/options.xul',
       'night-options',
       `chrome,titlebar,toolbar,centerscreen${Zotero.Prefs.get(
         'browser.preferences.instantApply',
-        true
+        true,
       )}`
         ? 'dialog=no'
         : 'modal',
-      io
+      io,
     )
   }
   private isEnabled(pref: string): pref is 'enabled' {
@@ -199,7 +203,7 @@ class Night {
     toggle.textContent = icon
     toggle.setAttribute(
       'style',
-      'filter:none !important; height: 20px; width: 20px'
+      'filter:none !important; height: 20px; width: 20px; margin-right: 20px',
     )
     toggle.onclick = () => {
       this.toggleFilterOnClick(readerWindow)
@@ -210,7 +214,7 @@ class Night {
     }
 
     const middleToolbar = readerWindow.document.querySelector(
-      '#toolbarViewerMiddle'
+      '#toolbarViewerMiddle',
     )
     middleToolbar.appendChild(toggle)
 
@@ -237,14 +241,14 @@ class Night {
   public setHTMLThemeAttributeForWindow(win: Window, on: boolean) {
     const html = win.document.querySelector('html')
     debug(
-      on ? 'removing html theme attribute' : 'removing html theme attribute'
+      on ? 'removing html theme attribute' : 'removing html theme attribute',
     )
     debug(`Current html theme attribute${html.getAttribute('theme')}`)
     debug(html)
     if (!on) {
       html.removeAttribute('theme')
       debug(
-        `Removed html theme attribute. It is now${html.getAttribute('theme')}`
+        `Removed html theme attribute. It is now${html.getAttribute('theme')}`,
       )
       return
     }
@@ -331,7 +335,7 @@ class Night {
   }
 
   public getTabWindowById(id: string): Window | null {
-    const tabIndex = Zotero_Tabs._tabs.findIndex((tab) => tab.id === id)
+    const tabIndex = Zotero_Tabs._tabs.findIndex((tab: any) => tab.id === id)
 
     debug(`Select tab event tabindex: ${tabIndex}`)
 
@@ -343,7 +347,7 @@ class Night {
 
   public getTabNameById(id: string): string {
     const name =
-      (Zotero_Tabs._tabs.find((tab) => tab.id === id)?.title as string) ??
+      (Zotero_Tabs._tabs.find((tab: any) => tab.id === id)?.title as string) ??
       'Not found'
     return name
   }
@@ -418,7 +422,12 @@ class Night {
     this.addGlobalToggleButton()
 
     const notifierCallback = {
-      notify: async (event: string, type, ids: string[], extraData) => {
+      notify: async (
+        event: string,
+        type: string,
+        ids: string[],
+        extraData: any,
+      ) => {
         // if (!this.getPref('enabled')) return
         if (event === 'add') {
           debug(`Tab with id ${ids[0]} added`)
@@ -432,17 +441,17 @@ class Night {
           debug(tabWindow)
           debug(`Added tab "${this.getTabNameById(ids[0])}"`)
           debug(
-            `Added tab window readystate is ${tabWindow.document.readyState}`
+            `Added tab window readystate is ${tabWindow.document.readyState}`,
           )
           switch (tabWindow.document.readyState) {
-            // @ts-expect-error
+            // @ts-expect-error uninitialized does exist actually
             case 'uninitialized': {
               setTimeout(() => {
                 tabWindow.document.onreadystatechange = () =>
                   debug('in readystatechange eventlistener:')
 
                 debug(
-                  `Added tab windw readystate is ${tabWindow.document.readyState}`
+                  `Added tab windw readystate is ${tabWindow.document.readyState}`,
                 )
 
                 if (this.getPref('enabled')) {
@@ -451,6 +460,7 @@ class Night {
                   return
                 }
               }, 300)
+              return
             }
             case 'complete': {
               if (this.getPref('enabled')) {
