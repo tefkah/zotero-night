@@ -673,9 +673,19 @@
     border-radius: 0px;
   }
 
-  .zotero-clicky {
-    border-radius: 1px;
-    padding-left: 1rem;
+  /**
+    * The input fields in the item-info pane
+    **/
+
+  .zotero-clicky,
+  // .creator-name-box,
+  //.date-box,
+ // .menulist-label-box ,
+  #itembox-field-value-dateAdded,
+  #itembox-field-value-dateModified {
+    border-radius: 0.2rem;
+    padding-left: 1rem !important;
+    // padding-right: 1rem !important;
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
     color: var(--nord5);
