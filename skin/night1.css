@@ -171,6 +171,9 @@
   #new-item label {
     color: var(--label-color) !important;
   }*/
+  /**
+  * The thingy Zotero uses to indicate that you can move something. Totally outdated, people know they can move edges 
+  **/
   /*
   Scrollable tabs
 
@@ -246,9 +249,13 @@
 #main-window[theme=dark] #main-text-color-toolbox menu {
   color: var(--main-text-color-toolbox-color) !important;
 }
+#main-window[theme=dark] grippy {
+  display: none !important;
+}
 #main-window[theme=dark] #zotero-tag-selector-container {
-  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
-  border-top: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  border-bottom: 1px solid var(--nord1) !important;
+  border-top: 1px solid var(--nord1) !important;
+  border-right: 1px solid var(--nord1) !important;
 }
 #main-window[theme=dark] #zotero-tag-selector-container input {
   background: var(--input-background) !important;
@@ -256,15 +263,18 @@
   color: var(--main-text-color-toolbox-color) !important;
 }
 #main-window[theme=dark] .tag-selector-list-container {
-  background: var(--nord1) !important;
+  background: var(--nord0) !important;
   color: var(--nord5) !important;
 }
+#main-window[theme=dark] .tag-selector-item {
+  background: var(--nord0) !important;
+}
 #main-window[theme=dark] .tag-selector-item:hover {
-  background: var(--tag-selector-item-hover-background) !important;
+  background: var(--nord2) !important;
   color: var(--label-color) !important;
 }
-#main-window[theme=dark] .tag-selector-item {
-  background: var(--input-background) !important;
+#main-window[theme=dark] .tag-selector-item.selected {
+  background: var(--nord2) !important;
 }
 #main-window[theme=dark] #zotero-tb-search {
   border: none !important;

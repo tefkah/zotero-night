@@ -218,29 +218,40 @@
   color: var(--label-color) !important;
 }*/
 
-  #zotero-tag-selector-container {
-    border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
-    border-top: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  /**
+  * The thingy Zotero uses to indicate that you can move something. Totally outdated, people know they can move edges 
+  **/
+  grippy {
+    display: none !important;
   }
 
-  #zotero-tag-selector-container input {
-    background: var(--input-background) !important;
-    border: 1px solid var(--zotero-toolbar-border-bottom) !important;
-    color: var(--main-text-color-toolbox-color) !important;
+  #zotero-tag-selector-container {
+    border-bottom: 1px solid var(--nord1) !important;
+    border-top: 1px solid var(--nord1) !important;
+    border-right: 1px solid var(--nord1) !important;
+
+    input {
+      background: var(--input-background) !important;
+      border: 1px solid var(--zotero-toolbar-border-bottom) !important;
+      color: var(--main-text-color-toolbox-color) !important;
+    }
   }
 
   .tag-selector-list-container {
-    background: var(--nord1) !important;
+    background: var(--nord0) !important;
     color: var(--nord5) !important;
   }
 
-  .tag-selector-item:hover {
-    background: var(--tag-selector-item-hover-background) !important;
-    color: var(--label-color) !important;
-  }
-
   .tag-selector-item {
-    background: var(--input-background) !important;
+    background: var(--nord0) !important;
+
+    &:hover {
+      background: var(--nord2) !important;
+      color: var(--label-color) !important;
+    }
+    &.selected {
+      background: var(--nord2) !important;
+    }
   }
 
   #zotero-tb-search {
