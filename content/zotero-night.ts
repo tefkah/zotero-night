@@ -239,6 +239,9 @@ class Night {
     style.setAttribute('id', 'noteStyle')
     style.textContent = css
     editorDoc.head.append(style)
+
+    const editorHTML = editorDoc.querySelector('html')
+    editorHTML.setAttribute('theme', 'dark')
   }
 
   public hasStyle(editorWindow: any): boolean {
