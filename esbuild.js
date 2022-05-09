@@ -1,15 +1,16 @@
 const path = require('path')
-const rmrf = require('rimraf')
 const fs = require('fs')
 const esbuild = require('esbuild')
 
+fs.existsSync(path.join(__dirname, 'gen')) &&
+  fs.rmSync(path.join(__dirname, 'gen'), { recursive: true, force: true })
+
 require('zotero-plugin/copy-assets')
-require('zotero-plugin/rdf')
 require('zotero-plugin/version')
+require('zotero-plugin/rdf')
 const { sassPlugin } = require('esbuild-sass-plugin')
 
 async function build() {
-  rmrf.sync('gen')
   await esbuild.build({
     bundle: true,
     format: 'iife',
@@ -17,6 +18,7 @@ async function build() {
     entryPoints: ['content/zotero-night.ts'],
     outdir: 'build/content',
     color: true,
+    plugins: [sassPlugin()],
   })
 }
 
