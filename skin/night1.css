@@ -687,6 +687,23 @@
 #main-window[theme=dark] menupopup menu:hover hbox {
   filter: invert(0);
 }
+#main-window[theme=dark] #zotero-item-pane-content tab {
+  -moz-appearance: none !important;
+  color: var(--nord4) !important;
+  background: var(--nord0) !important;
+  border: 1px solid var(--nord4);
+  border-radius: 0.5rem;
+}
+#main-window[theme=dark] #zotero-item-pane-content tab[selected=true] {
+  background: var(--nord1) !important;
+}
+#main-window[theme=dark] #zotero-item-pane-content tab[selected=true] label:not(.zotero-clicky) {
+  color: var(--nord4) !important;
+}
+#main-window[theme=dark] #zotero-item-pane-content tab:hover {
+  color: var(--nord6) !important;
+  background: var(--nord3) !important;
+}
 @-webkit-keyframes popup-intro {
   0% {
     opacity: 0;

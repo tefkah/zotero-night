@@ -790,6 +790,33 @@
     }
   }
 
+  #zotero-item-pane-content tab {
+    -moz-appearance: none !important;
+    color: var(--nord4) !important;
+    background: var(--nord0) !important;
+    border: 1px solid var(--nord4);
+    border-radius: 0.5rem;
+
+    &[selected='true'] {
+      background: var(--nord1) !important;
+
+      label:not(.zotero-clicky) {
+        color: var(--nord4) !important;
+      }
+    }
+
+    &:hover {
+      color: var(--nord6) !important;
+      background: var(--nord3) !important;
+    }
+    // border-top: 0px solid #0a84ff !important;
+    // border-left: 0px solid rgba(127, 127, 127, 0.2) !important;
+    //  border-right: 1px solid #1d1d1d !important;
+    //   border-radius: 0px !important;
+    //   border-bottom-left-radius: 0px !important;
+    //   border-bottom-right-radius: 0px !important;
+  }
+
   /*
 Scrollable tabs
 
