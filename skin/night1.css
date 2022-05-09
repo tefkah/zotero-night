@@ -477,7 +477,7 @@
   color: var(--nord5) !important;
   border-bottom: 1px solid var(--nord2) !important;
 }
-#main-window[theme=dark] #zotero-item-pane-content {
+#main-window[theme=dark] .zotero-item-pane-content {
   background: var(--nord0) !important;
   color: var(--nord5) !important;
   /**
@@ -487,59 +487,59 @@
   * Make the label bold
   **/
 }
-#main-window[theme=dark] #zotero-item-pane-content .zotero-clicky:hover {
+#main-window[theme=dark] .zotero-item-pane-content .zotero-clicky:hover {
   background: var(--nord3) !important;
 }
-#main-window[theme=dark] #zotero-item-pane-content .zotero-clicky :not([disabled=true]):not(.disabled):hover {
+#main-window[theme=dark] .zotero-item-pane-content .zotero-clicky :not([disabled=true]):not(.disabled):hover {
   background: var(--nord3) !important;
 }
-#main-window[theme=dark] #zotero-item-pane-content > groupbox > .groupbox-body {
+#main-window[theme=dark] .zotero-item-pane-content > groupbox > .groupbox-body {
   background: var(--nord0) !important;
   color: var(--nord5) !important;
 }
-#main-window[theme=dark] #zotero-item-pane-content #retraction-details {
+#main-window[theme=dark] .zotero-item-pane-content #retraction-details {
   background: var(--nord11) !important;
 }
-#main-window[theme=dark] #zotero-item-pane-content .zotero-clicky,
-#main-window[theme=dark] #zotero-item-pane-content #itembox-field-value-dateAdded,
-#main-window[theme=dark] #zotero-item-pane-content #itembox-field-value-dateModified {
+#main-window[theme=dark] .zotero-item-pane-content .zotero-clicky,
+#main-window[theme=dark] .zotero-item-pane-content #itembox-field-value-dateAdded,
+#main-window[theme=dark] .zotero-item-pane-content #itembox-field-value-dateModified {
   border-radius: 0.2rem;
   padding-left: 1rem !important;
   padding-top: 0.2rem !important;
   padding-bottom: 0.2rem !important;
   color: var(--nord5);
 }
-#main-window[theme=dark] #zotero-item-pane-content row > label:first-of-type {
+#main-window[theme=dark] .zotero-item-pane-content row > label:first-of-type {
   font-weight: 600 !important;
 }
-#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs {
+#main-window[theme=dark] .zotero-item-pane-content #zotero-editpane-tabs {
   -moz-appearance: none !important;
   color: var(--nord4) !important;
   background: var(--nord0);
 }
-#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs tab {
+#main-window[theme=dark] .zotero-item-pane-content #zotero-editpane-tabs tab {
   background: var(--nord1);
   border: 1px solid var(--nord2) !important;
 }
-#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs tab label:not(.zotero-clicky) {
+#main-window[theme=dark] .zotero-item-pane-content #zotero-editpane-tabs tab label:not(.zotero-clicky) {
   color: var(--nord4);
 }
-#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs tab:first-child {
+#main-window[theme=dark] .zotero-item-pane-content #zotero-editpane-tabs tab:first-child {
   border-top-left-radius: 0.3rem !important;
   border-bottom-left-radius: 0.3rem !important;
 }
-#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs tab:last-child {
+#main-window[theme=dark] .zotero-item-pane-content #zotero-editpane-tabs tab:last-child {
   border-top-right-radius: 0.3rem !important;
   border-bottom-right-radius: 0.3rem !important;
 }
-#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs tab[selected=true] {
+#main-window[theme=dark] .zotero-item-pane-content #zotero-editpane-tabs tab[selected=true] {
   color: var(--nord6) !important;
   background: var(--nord3) !important;
 }
-#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs tab[selected=true] label {
+#main-window[theme=dark] .zotero-item-pane-content #zotero-editpane-tabs tab[selected=true] label {
   color: var(--nord6) !important;
 }
-#main-window[theme=dark] #zotero-item-pane-content #zotero-editpane-tabs tab:hover {
+#main-window[theme=dark] .zotero-item-pane-content #zotero-editpane-tabs tab:hover {
   background: var(--nord3) !important;
   cursor: pointer;
 }
