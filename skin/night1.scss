@@ -263,10 +263,12 @@
       background-image: none !important;
     }
 
-    &:focus .row.focused {
-      margin: 0px !important;
-      width: calc(100% - 2px) !important
-;
+    &:focus {
+      .row.focused,
+      .row.selected {
+        margin: 0px !important;
+        // width: calc(100% - 2px) !important
+      }
     }
 
     .drag-image-container .cell:not(:first-child) {
@@ -274,22 +276,44 @@
     }
   }
 
+  /**
+    * Incredibly annoying thing that makes the selected collection row shift slightly
+    **/
+  .virtualized-table.multi-select:focus .row.focused {
+    width: 100% !important;
+    & > * {
+      width: 100% !important;
+      margin: 0px !important;
+      &:first-child {
+        margin-inline-start: 0px !important;
+      }
+      &:last-child {
+        margin-inline-end: 0px !important;
+      }
+    }
+  }
   .virtualized-table {
     .row {
+      border: 0 !important;
+      margin: 0px !important;
       transition: background-color 0.1s !important;
       background: var(--nord0) !important;
       color: var(--nord6) !important;
+
+      &:focus.selected {
+        margin: 0px !important;
+      }
 
       &.selected {
         background: var(--nord2) !important;
         border-bottom: 0px solid var(--nord2) !important;
         border: 0 !important;
       }
-    }
 
-    &:not(:focus) .row.selected {
-      background: var(--nord3) !important;
-      border: 0 !important;
+      &:not(:focus) .row.selected {
+        background: var(--nord3) !important;
+        border: 0 !important;
+      }
     }
   }
 

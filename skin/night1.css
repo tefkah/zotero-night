@@ -162,6 +162,9 @@
   * The thingy Zotero uses to indicate that you can move something. Totally outdated, people know they can move edges 
   **/
   /**
+    * Incredibly annoying thing that makes the selected collection row shift slightly
+    **/
+  /**
   * Override these dang moz-appearances
   **/
   /*
@@ -284,24 +287,44 @@
 #main-window[theme=dark] .virtualized-table-body .row .cell {
   background-image: none !important;
 }
-#main-window[theme=dark] .virtualized-table-body:focus .row.focused {
+#main-window[theme=dark] .virtualized-table-body:focus .row.focused,
+#main-window[theme=dark] .virtualized-table-body:focus .row.selected {
   margin: 0px !important;
-  width: calc(100% - 2px) !important;
 }
 #main-window[theme=dark] .virtualized-table-body .drag-image-container .cell:not(:first-child) {
   background: none !important;
 }
+#main-window[theme=dark] .virtualized-table.multi-select:focus .row.focused {
+  width: 100% !important;
+}
+#main-window[theme=dark] .virtualized-table.multi-select:focus .row.focused > * {
+  width: 100% !important;
+  margin: 0px !important;
+}
+#main-window[theme=dark] .virtualized-table.multi-select:focus .row.focused > *:first-child {
+  -webkit-margin-start: 0px !important;
+          margin-inline-start: 0px !important;
+}
+#main-window[theme=dark] .virtualized-table.multi-select:focus .row.focused > *:last-child {
+  -webkit-margin-end: 0px !important;
+          margin-inline-end: 0px !important;
+}
 #main-window[theme=dark] .virtualized-table .row {
+  border: 0 !important;
+  margin: 0px !important;
   transition: background-color 0.1s !important;
   background: var(--nord0) !important;
   color: var(--nord6) !important;
+}
+#main-window[theme=dark] .virtualized-table .row:focus.selected {
+  margin: 0px !important;
 }
 #main-window[theme=dark] .virtualized-table .row.selected {
   background: var(--nord2) !important;
   border-bottom: 0px solid var(--nord2) !important;
   border: 0 !important;
 }
-#main-window[theme=dark] .virtualized-table:not(:focus) .row.selected {
+#main-window[theme=dark] .virtualized-table .row:not(:focus) .row.selected {
   background: var(--nord3) !important;
   border: 0 !important;
 }
