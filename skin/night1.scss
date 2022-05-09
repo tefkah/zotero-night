@@ -505,6 +505,28 @@
       background: var(--nord11) !important;
     }
 
+    /**
+    * The input fields in the item-info pane
+    **/
+
+    .zotero-clicky,
+    #itembox-field-value-dateAdded,
+    #itembox-field-value-dateModified {
+      border-radius: 0.2rem;
+      padding-left: 1rem !important;
+      // padding-right: 1rem !important;
+      padding-top: 0.2rem !important;
+      padding-bottom: 0.2rem !important;
+      color: var(--nord5);
+    }
+
+    /**
+    * Make the label bold
+    **/
+    row > label:first-of-type {
+      font-weight: 600 !important;
+    }
+
     tab {
       color: var(--nord4) !important;
       background: var(--nord0) !important;
@@ -519,7 +541,6 @@
 
       &[selected='true'] {
         background: var(--nord3);
-        //  border-top: 3px solid var(--nord9) !important;
 
         &:hover {
           background: var(--nord0);
@@ -671,24 +692,6 @@
 
   .tags-box .tags-box-list .editable-container {
     border-radius: 0px;
-  }
-
-  /**
-    * The input fields in the item-info pane
-    **/
-
-  .zotero-clicky,
-  // .creator-name-box,
-  //.date-box,
- // .menulist-label-box ,
-  #itembox-field-value-dateAdded,
-  #itembox-field-value-dateModified {
-    border-radius: 0.2rem;
-    padding-left: 1rem !important;
-    // padding-right: 1rem !important;
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
-    color: var(--nord5);
   }
 
   tabpanel button {
