@@ -674,7 +674,7 @@
 #main-window[theme=dark] #zotero-tb-split .toolbarButton::before {
   filter: var(--nord-filter);
 }
-#main-window[theme=dark] #zotero-tb-split .toolbarButton::before.toggled {
+#main-window[theme=dark] #zotero-tb-split .toolbarButton.toggled::before {
   filter: none;
 }
 #main-window[theme=dark] #zotero-tb-split .toolbarButton:last-child > span:first-child {

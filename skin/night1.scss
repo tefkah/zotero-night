@@ -783,15 +783,15 @@
     .toolbarButton {
       &::before {
         filter: var(--nord-filter);
-        &.toggled {
-          filter: none;
-        }
       }
-    }
+      &.toggled::before {
+        filter: none;
+      }
 
-    .toolbarButton:last-child > span:first-child {
-      margin-left: 20px;
-      background: var(--nord0) !important;
+      &:last-child > span:first-child {
+        margin-left: 20px;
+        background: var(--nord0) !important;
+      }
     }
   }
   //  #zotero-pane .menuitem label {
