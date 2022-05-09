@@ -1,6 +1,6 @@
 {
   "name": "zotero-night",
-  "version": "0.2.7",
+  "version": "0.2.9",
   "description": "Night theme for Zotero UI & Pdf",
   "scripts": {
     "dev": "nodemon --exec 'node esbuild.js' ./content/* ./skin/*",
