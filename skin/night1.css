@@ -142,19 +142,6 @@
   Styleguide Nord - Aurora
   */
   --nord15: #b48ead;
-  --main-background: var(--nord0);
-  --main-text-color-toolbox-color: var(--nord5);
-  --zotero-toolbar-border-bottom: var(--nord2);
-  --label-color: var(--nord4);
-  --input-background: var(--nord3);
-  --tag-selector-item-hover-background: var(--nord9);
-  --row-hover-background: var(--nord3);
-  --tabs-border: var(--nord11);
-  --tab-not-border-top: var(--nord9);
-  --tab-not-border-left: rgba(181, 180, 199, 0.2);
-  --tab-color: var(--nord4);
-  --tab-hover-background: var(--nord9);
-  --retraction-details-background: var(--nord11);
   --dark-filter: brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65)
     hue-rotate(180deg);
   --nord-filter: invert(81%) sepia(23%) saturate(459%) hue-rotate(181deg)
@@ -169,7 +156,7 @@
   #font-size-menu label,
   #debug-output-menu label,
   #new-item label {
-    color: var(--label-color) !important;
+    color: var(--nord4) !important;
   }*/
   /**
   * The thingy Zotero uses to indicate that you can move something. Totally outdated, people know they can move edges 
@@ -179,7 +166,7 @@
 
   #main-window[theme="dark"] #tab-bar-container .tabs {
   background: var(--background);
-      color: var(--main-text-color-toolbox-color);
+      color: var(--nord5);
       overflow-x: visible;
       overflow-y: hidden;
       width: 100vw;
@@ -188,8 +175,8 @@
 
   #main-window[theme="dark"] #tab-bar-container .tab {
 
-      color: var(--row-hover-background);
-      background: var(--main-background);
+      color: var(--nord3);
+      background: var(--nord0);
       height: 4rem;
       display: flex;
       align-items: center;
@@ -229,10 +216,10 @@
   transition: color 0.15s ease, background-color 0.15s ease;
 }
 #main-window[theme=dark] zoteroitembox label {
-  color: var(--label-color) !important;
+  color: var(--nord4) !important;
 }
 #main-window[theme=dark] zoteroitembox label:not(.zotero-clicky) {
-  color: var(--main-text-color-toolbox-color) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #zotero-tb-toggle-item-pane > span {
   background: var(--nord0) !important;
@@ -240,14 +227,14 @@
 #main-window[theme=dark] #zotero-tb,
 #main-window[theme=dark] #zotero-toolbar,
 #main-window[theme=dark] #main-text-color-toolbox {
-  background: var(--main-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--nord0) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #zotero-toolbar {
-  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  border-bottom: 1px solid var(--nord2) !important;
 }
 #main-window[theme=dark] #main-text-color-toolbox menu {
-  color: var(--main-text-color-toolbox-color) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] grippy {
   display: none !important;
@@ -258,9 +245,9 @@
   border-right: 1px solid var(--nord1) !important;
 }
 #main-window[theme=dark] #zotero-tag-selector-container input {
-  background: var(--input-background) !important;
-  border: 1px solid var(--zotero-toolbar-border-bottom) !important;
-  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--nord3) !important;
+  border: 1px solid var(--nord2) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] .tag-selector-list-container {
   background: var(--nord0) !important;
@@ -271,7 +258,7 @@
 }
 #main-window[theme=dark] .tag-selector-item:hover {
   background: var(--nord2) !important;
-  color: var(--label-color) !important;
+  color: var(--nord4) !important;
 }
 #main-window[theme=dark] .tag-selector-item.selected {
   background: var(--nord2) !important;
@@ -281,12 +268,12 @@
   box-shadow: 0 !important;
 }
 #main-window[theme=dark] #zotero-pane {
-  background: var(--main-background) !important;
-  color: var(--label-color) !important;
+  background: var(--nord0) !important;
+  color: var(--nord4) !important;
 }
 #main-window[theme=dark] treechildren {
-  background: var(--main-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--nord0) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] .virtualized-table-body {
   background: var(--nord0) !important;
@@ -294,7 +281,7 @@
 #main-window[theme=dark] .virtualized-table-body .row .cell {
   background-image: none !important;
 }
-#main-window[theme=dark] .virtualized-table.multi-select:focus .row.focused {
+#main-window[theme=dark] .virtualized-table-body:focus .row.focused {
   margin: 0px !important;
   width: calc(100% - 2px) !important;
 }
@@ -308,16 +295,16 @@
 }
 #main-window[theme=dark] .virtualized-table .row.selected {
   background: var(--nord2) !important;
-  border-bottom: 0px solid var(--zotero-toolbar-border-bottom) !important;
+  border-bottom: 0px solid var(--nord2) !important;
   border: 0 !important;
 }
 #main-window[theme=dark] .virtualized-table:not(:focus) .row.selected {
-  background: var(--input-background) !important;
+  background: var(--nord3) !important;
   border: 0 !important;
 }
 #main-window[theme=dark] .row:hover {
-  background: var(--row-hover-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--nord3) !important;
+  color: var(--nord5) !important;
   border: 0 !important;
 }
 #main-window[theme=dark] #tab-bar-container {
@@ -325,11 +312,11 @@
 }
 #main-window[theme=dark] #tab-bar-container .tabs {
   background: var(--background);
-  color: var(--main-text-color-toolbox-color);
+  color: var(--nord5);
 }
 #main-window[theme=dark] #tab-bar-container .tab {
-  color: var(--row-hover-background);
-  background: var(--main-background);
+  color: var(--nord3);
+  background: var(--nord0);
 }
 #main-window[theme=dark] #tab-bar-container .tab:hover {
   background: var(--nord2) !important;
@@ -340,17 +327,17 @@
   color: var(--nord6);
   padding-top: 0.2rem;
   background-color: #1f242d;
-  border-top: 0px solid var(--tab-not-border-top);
-  border-left: 0px solid var(--tab-not-border-left);
+  border-top: 0px solid var(--nord9);
+  border-left: 0px solid var(--nord3);
   border-right: none;
-  /*1px solid var(--zotero-toolbar-border-bottom) !important*/
+  /*1px solid var(--nord2) !important*/
   border-bottom: none;
 }
 #main-window[theme=dark] #tab-bar-container .tab.selected:not(.highlighted) {
-  color: var(--main-text-color-toolbox-color);
+  color: var(--nord5);
   background: var(--nord0);
-  border-top: 3px solid var(--tab-not-border-top);
-  border-left: 0px solid var(--tab-not-border-left);
+  border-top: 3px solid var(--nord9);
+  border-left: 0px solid var(--nord3);
   border-right: none;
   filter: none;
 }
@@ -382,46 +369,46 @@
   color: var(--nord4);
 }
 #main-window[theme=dark] #zotero-collections-tree {
-  background: var(--main-background) !important;
+  background: var(--nord0) !important;
 }
 #main-window[theme=dark] #zotero-collections-tree treechildren {
   border-right: 1px solid var(--nord1) !important;
 }
 #main-window[theme=dark] #zotero-collections-tree treechildren::-moz-tree-row(hover) {
-  background: var(--row-hover-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--nord3) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #zotero-collections-tree treechildren::-moz-tree-cell(selected) {
-  background: var(--input-background) !important;
-  /*border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;*/
+  background: var(--nord3) !important;
+  /*border-bottom: 1px solid var(--nord2) !important;*/
 }
 #main-window[theme=dark] #zotero-collections-tree treechildren::-moz-tree-cell-text(selected) {
-  color: var(--main-text-color-toolbox-color) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #zotero-collections-tree .virtualized-table {
-  border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  border-right: 1px solid var(--nord2) !important;
 }
 #main-window[theme=dark] #zotero-items-tree {
   border-right: 1px solid var(--nord1) !important;
-  background: var(--main-background) !important;
+  background: var(--nord0) !important;
 }
 #main-window[theme=dark] #zotero-items-tree treechildren::-moz-tree-row(hover) {
-  background: var(--row-hover-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--nord3) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #zotero-items-tree treechildren::-moz-tree-row(selected) {
-  background: var(--input-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
-  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  background: var(--nord3) !important;
+  color: var(--nord5) !important;
+  border-bottom: 1px solid var(--nord2) !important;
 }
 #main-window[theme=dark] #zotero-items-tree treechildren::-moz-tree-cell-text(selected) {
-  color: var(--main-text-color-toolbox-color) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #zotero-items-tree treecol {
-  background: var(--input-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
-  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
-  border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  background: var(--nord3) !important;
+  color: var(--nord5) !important;
+  border-bottom: 1px solid var(--nord2) !important;
+  border-right: 1px solid var(--nord2) !important;
 }
 #main-window[theme=dark] #zotero-items-tree .virtualized-table-header {
   background: var(--nord1) !important;
@@ -433,8 +420,8 @@
   filter: var(--dark-filter);
 }
 #main-window[theme=dark] #zotero-items-tree .virtualized-table-header .cell:hover {
-  background: var(--row-hover-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--nord3) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #zotero-items-tree .virtualized-table .row.selected .twisty svg {
   fill: var(--nord6) !important;
@@ -460,36 +447,39 @@
   background: none;
 }
 #main-window[theme=dark] .treecol-image {
-  background: var(--input-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
-  border-bottom: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  background: var(--nord3) !important;
+  color: var(--nord5) !important;
+  border-bottom: 1px solid var(--nord2) !important;
 }
 #main-window[theme=dark] #zotero-item-pane-content {
   background: var(--nord0) !important;
   color: var(--nord5) !important;
 }
 #main-window[theme=dark] #zotero-item-pane-content .zotero-clicky:hover {
-  color: var(--nord2) !important;
+  background: var(--nord3) !important;
+}
+#main-window[theme=dark] #zotero-item-pane-content .zotero-clicky :not([disabled=true]):not(.disabled):hover {
+  background: var(--nord3) !important;
 }
 #main-window[theme=dark] #zotero-item-pane-content > groupbox > .groupbox-body {
-  background: var(--main-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--nord0) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #zotero-item-pane-content #retraction-details {
-  background: var(--retraction-details-background) !important;
+  background: var(--nord11) !important;
 }
 #main-window[theme=dark] #zotero-item-pane-content tab {
-  color: var(--tab-color) !important;
-  background: var(--main-background) !important;
-  border-top: 0px solid var(--tab-not-border-top) !important;
-  border-left: 0px solid var(--tab-not-border-left) !important;
+  color: var(--nord4) !important;
+  background: var(--nord0) !important;
+  border-top: 0px solid var(--nord9) !important;
+  border-left: 0px solid var(--nord3) !important;
 }
 #main-window[theme=dark] #zotero-item-pane-content tab:hover {
-  color: var(--main-text-color-toolbox-color) !important;
+  color: var(--nord5) !important;
   background: var(--nord3);
 }
 #main-window[theme=dark] #zotero-item-pane-content tab[selected=true] {
-  background: var(--input-background);
+  background: var(--nord3);
 }
 #main-window[theme=dark] #zotero-item-pane-content tab[selected=true]:hover {
   background: var(--nord0);
@@ -498,42 +488,42 @@
   filter: invert(0.7);
 }
 #main-window[theme=dark] tabpanel {
-  color: var(--label-color) !important;
+  color: var(--nord4) !important;
   background: var(--nord1) !important;
 }
 #main-window[theme=dark] tab[selected=true] {
-  color: var(--label-color) !important;
-  background: var(--main-text-color-toolbox-color) !important;
+  color: var(--nord4) !important;
+  background: var(--nord5) !important;
 }
 #main-window[theme=dark] tab {
-  color: var(--tab-color) !important;
-  background: var(--input-background) !important;
-  border-top: 0px solid var(--label-color) !important;
-  border-left: 0px solid var(--label-color) !important;
-  border-right: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  color: var(--nord4) !important;
+  background: var(--nord3) !important;
+  border-top: 0px solid var(--nord4) !important;
+  border-left: 0px solid var(--nord4) !important;
+  border-right: 1px solid var(--nord2) !important;
 }
 #main-window[theme=dark] #tab-bar-container tab:hover {
   color: var(--nord6) !important;
   background: var(--nord2) !important;
 }
 #main-window[theme=dark] #zotero-duplicates-merge-pane > groupbox > .groupbox-body {
-  background: var(--main-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--nord0) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #tags-box-container ul li ul {
-  background: var(--row-hover-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--nord3) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #tags-box-container input {
-  background-color: var(--row-hover-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
-  border: 1px solid var(--zotero-toolbar-border-bottom) !important;
+  background-color: var(--nord3) !important;
+  color: var(--nord5) !important;
+  border: 1px solid var(--nord2) !important;
 }
 #main-window[theme=dark] #item-type-menu {
-  color: var(--main-text-color-toolbox-color) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #zotero-date-field-status {
-  color: var(--main-text-color-toolbox-color) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #zotero-prefpane-general,
 #main-window[theme=dark] #zotero-prefpane-sync,
@@ -542,38 +532,38 @@
 #main-window[theme=dark] #wordProcessors,
 #main-window[theme=dark] #zotero-quickCopy-format,
 #main-window[theme=dark] #sync-reset-form {
-  color: var(--label-color) !important;
-  background: var(--row-hover-background) !important;
+  color: var(--nord4) !important;
+  background: var(--nord3) !important;
 }
 #main-window[theme=dark] #zotero-prefpane-general title {
-  background: var(--input-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--nord3) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] prefwindow {
-  color: var(--label-color) !important;
-  background: var(--row-hover-background) !important;
+  color: var(--nord4) !important;
+  background: var(--nord3) !important;
 }
 #main-window[theme=dark] prefwindow .chromeclass-toolbar {
-  color: var(--main-text-color-toolbox-color) !important;
-  background: var(--main-background) !important;
+  color: var(--nord5) !important;
+  background: var(--nord0) !important;
 }
 #main-window[theme=dark] #aboutcontent {
-  background: var(--input-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
+  background: var(--nord3) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #version {
-  color: var(--main-text-color-toolbox-color) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #zotero-advanced-search-dialog #zotero-search-box-controls {
-  color: var(--label-color) !important;
-  background: var(--row-hover-background) !important;
+  color: var(--nord4) !important;
+  background: var(--nord3) !important;
 }
 #main-window[theme=dark] #zotero-note-editor linksbox {
-  background-color: var(--input-background) !important;
-  color: var(--main-text-color-toolbox-color) !important;
+  background-color: var(--nord3) !important;
+  color: var(--nord5) !important;
 }
 #main-window[theme=dark] #zotero-note-window blockquote {
-  color: var(--main-text-color-toolbox-color) 255, 248, 248;
+  color: var(--nord5) 255, 248, 248;
 }
 #main-window[theme=dark] splitter {
   background: var(--nord0) !important;
