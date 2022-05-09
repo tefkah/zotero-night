@@ -5,5 +5,5 @@
   "jsxSingleQuote": false,
   "proseWrap": "preserve",
   "tabWidth": 2,
-  "trailingComma": "es5"
+  "trailingComma": "all"
 }

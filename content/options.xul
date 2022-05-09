@@ -17,7 +17,7 @@
             <preference id="pref-night-enabled" name="extensions.night.enabled" type="boolean" />
         </preferences>
 
-        <checkbox id="id-night-enabled" label="Enable Dark Theme" preference="pref-night-enabled" oncommand='Zotero.Night.toggleDarkTheme(this.checked)' />
+        <checkbox id="id-night-enabled" label="Enable Dark Theme" preference="pref-night-enabled" oncommand='Zotero.Night.toggleDarkTheme(this.checked, false)' />
 
         <separator class="thin" />
         <groupbox>
@@ -27,6 +27,7 @@
                 <radio label="Matching background" value='match' />
                 <radio label="Dark" value='dark' />
             </radiogroup>
+
         </groupbox>
 
 
