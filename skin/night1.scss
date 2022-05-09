@@ -317,10 +317,17 @@
     }
   }
 
-  .row:hover {
-    background: var(--nord3) !important;
-    color: var(--nord5) !important;
-    border: 0 !important;
+  .row {
+    &:hover {
+      background: var(--nord3) !important;
+      color: var(--nord5) !important;
+      border: 0 !important;
+    }
+    label:first-child {
+      row > label:first-child {
+        color: var(--nord5) !important;
+      }
+    }
   }
 
   #tab-bar-container {
@@ -551,7 +558,7 @@
       font-weight: 600 !important;
     }
 
-    #zotero-editpane-tabs {
+    .zotero-editpane-tabs {
       -moz-appearance: none !important;
       color: var(--nord4) !important;
       background: var(--nord0);
@@ -772,9 +779,20 @@
   //    color: var(--nord2) !important;
   //  }
 
-  #zotero-tb-split .toolbarButton:last-child > span:first-child {
-    margin-left: 20px;
-    background: var(--nord0) !important;
+  #zotero-tb-split {
+    .toolbarButton {
+      &::before {
+        filter: var(--nord-filter);
+        &.toggled {
+          filter: none;
+        }
+      }
+    }
+
+    .toolbarButton:last-child > span:first-child {
+      margin-left: 20px;
+      background: var(--nord0) !important;
+    }
   }
   //  #zotero-pane .menuitem label {
   //    color: var(--nord3) !important;
