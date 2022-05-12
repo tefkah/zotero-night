@@ -35,6 +35,10 @@ Clean up the tab bar, add some animations here and there, get rid of all the bor
 
 Download the xpi from [Releases](https://github.com/ThomasFKJorna/zotero-night/releases). As always, if you're on Firefox, right-click -> Save link as....
 
+### Video instructions
+
+https://user-images.githubusercontent.com/21983833/168032714-6106b138-2725-4091-830b-770dbdff43a4.mov
+
 ## 😢 Limitations
 
 - Popup menus do not have proper styling on some platforms.
