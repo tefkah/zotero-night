@@ -1,14 +1,16 @@
 {
   "name": "zotero-night",
-  "version": "0.2.2",
+  "version": "0.4.9",
   "description": "Night theme for Zotero UI & Pdf",
   "scripts": {
     "dev": "nodemon --exec 'node esbuild.js' ./content/* ./skin/*",
     "lint": "eslint . --ext .ts --cache --cache-location .eslintcache/",
     "prebuild": "npm run lint",
+    "start": "zotero-start",
     "build": "tsc --noEmit && node esbuild.js  ",
     "postbuild": "zotero-plugin-zipup build zotero-night",
     "release": "zotero-plugin-release",
+    "typecheck": "tsc --noEmit",
     "postversion": "git push --follow-tags"
   },
   "repository": {
@@ -47,8 +49,10 @@
   },
   "devDependencies": {
     "css-colors-to-vars": "^1.0.2",
+    "eslint-config-prettier": "^8.5.0",
     "nodemon": "^2.0.15",
     "patch-package": "^6.4.7",
-    "sass": "^1.50.0"
+    "sass": "^1.50.0",
+    "standard-version": "^9.3.2"
   }
 }

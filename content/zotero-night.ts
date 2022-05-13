@@ -37,6 +37,10 @@ export type NightEventListenerObject = {
   listener: NightEventListener
   type: string
 }
+interface Filters {
+  filter: string
+  icon: string
+}
 class Night {
   // tslint:disable-line:variable-name
   private initialized = false
@@ -44,17 +48,32 @@ class Night {
   private strings: any
   private _tabsAdded: boolean
   private _editorStyled: boolean
-  public _nordFilter: string
-  public _darkFilter: string
-  public _sepiaFilter: string
+  public _currentFilter: string
+  //  public _nordFilter: string
+  //  public _darkFilter: string
+  //  public _sepiaFilter: string
   public _eventListeners: NightEventListenerObject[]
 
-  constructor() {
-    this._nordFilter =
-      'invert(81%) sepia(23%) saturate(459%) hue-rotate(181deg) brightness(90%) contrast(93%)'
+  public _filters: {
+    [filter: string]: Filters
+  }
 
-    this._darkFilter =
-      'brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65) hue-rotate(180deg)'
+  constructor() {
+    this._filters = {
+      none: { filter: 'none', icon: '☀️' },
+      nord: {
+        filter:
+          'invert(81%) sepia(23%) saturate(459%) hue-rotate(181deg) brightness(90%) contrast(93%)',
+        icon: '✨',
+      },
+      dark: {
+        filter:
+          'brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65) hue-rotate(180deg)',
+        icon: '🌙',
+      },
+    }
+
+    this._currentFilter = this.getPref('default_pdf') || 'nord'
   }
 
   public addEventListener(
@@ -86,8 +105,17 @@ class Night {
       io
     )
   }
+  private isEnabled(pref: string): pref is 'enabled' {
+    return pref === 'enabled'
+  }
 
-  public getPref(pref: string) {
+  public getPref(pref: 'enabled'): boolean
+  public getPref(pref: string): string
+  public getPref(pref: string): string | boolean {
+    if (this.isEnabled(pref)) {
+      return Zotero.Prefs.get(`extensions.night.${pref}`, true) as boolean
+    }
+
     return Zotero.Prefs.get(`extensions.night.${pref}`, true) as string
   }
 
@@ -98,32 +126,66 @@ class Night {
   private hasToggle(readerWindow: Window): boolean {
     return !!readerWindow.document.querySelector('#night-toggle')
   }
-  private hasFilter(readerWindow: Window): boolean {
-    return !!readerWindow.document.querySelector('#filter-style')
-  }
 
-  private createFilterStyle(readerWindow: Window, nextStyle: string) {
+  private createFilterStyle(readerWindow: Window) {
     const filterStyle = readerWindow.document.createElement('style')
-    const filter = nextStyle === 'match' ? this._nordFilter : this._darkFilter
-    filterStyle.setAttribute('id', 'filter-style')
-    filterStyle.textContent = `[theme='dark'] #viewer .page .canvasWrapper { filter:  ${filter} }`
-    return filterStyle
+    filterStyle.setAttribute('id', 'filterStyle')
+    const preferredFilter = this.getPref('default_pdf')
+    const setFilter = this.setFilterStyle(filterStyle, preferredFilter)
+    return setFilter
   }
 
   // TODO: Just change the textcontents of the style, don't remove and append it constantly
-  public toggleOnClick(readerWindow: Window, nextStyle: string) {
-    if (this.hasFilter(readerWindow)) {
-      readerWindow.document.querySelector('#filter-style').remove()
-    }
-    if (nextStyle === 'none') return
+  public toggleFilterOnClick(readerWindow: Window) {
+    const filter: HTMLStyleElement | null =
+      readerWindow.document.querySelector('#filterStyle')
 
-    const filterStyle = this.createFilterStyle(readerWindow, nextStyle)
-    readerWindow.document.head.appendChild(filterStyle)
+    if (filter === null) {
+      debug('No suitable filter found')
+      return
+    }
+
+    const nextStyle = this.cycleFilterStyle()
+
+    this.setFilterStyle(filter)
     return
   }
 
+  private cycleFilterStyle() {
+    const filters = Object.entries(this._filters)
+    const nextFilterName =
+      filters[
+        (filters.findIndex((filter) => filter[0] === this._currentFilter) + 1) %
+          filters.length
+      ][0]
+    this._currentFilter = nextFilterName
+    return nextFilterName
+  }
+
+  private getCurrentFilterString() {
+    return this.getFilterString(this._currentFilter)
+  }
+  private getFilterString(filter: string) {
+    return this._filters[filter].filter
+  }
+
+  private getCurrentFilterIcon() {
+    return this.getFilterIcon(this._currentFilter)
+  }
+
+  private getFilterIcon(filter: string) {
+    return this._filters[filter].icon
+  }
+
+  private setFilterStyle(styleTag: HTMLStyleElement, style?: string) {
+    styleTag.textContent = `[theme='dark'] #viewer .page .canvasWrapper { filter:  ${
+      style || this.getCurrentFilterString()
+    } }`
+    return styleTag
+  }
+
   // TODO: Figure out some way to remember per window setting
-  private addToggleButton(readerWindow: Window) {
+  private addFilterToggleButton(readerWindow: Window) {
     if (this.hasToggle(readerWindow)) {
       debug('addToggleButton: window already has toggle')
       return
@@ -145,15 +207,11 @@ class Night {
       'filter:none !important; height: 20px; width: 20px'
     )
     toggle.onclick = () => {
-      const filter = toggle.getAttribute('data:filter')
-      const nextStyle =
-        filter === 'none' ? 'match' : filter === 'match' ? 'dark' : 'none'
-
-      const icon = filter === 'none' ? '✨' : filter === 'match' ? '🌙' : '☀️'
+      this.toggleFilterOnClick(readerWindow)
+      toggle.setAttribute('data:filter', this._currentFilter)
+      const icon = this.getCurrentFilterIcon()
 
       toggle.textContent = icon
-      this.toggleOnClick(readerWindow, nextStyle)
-      toggle.setAttribute('data:filter', nextStyle)
     }
 
     const middleToolbar = readerWindow.document.querySelector(
@@ -161,11 +219,11 @@ class Night {
     )
     middleToolbar.appendChild(toggle)
 
-    const st = this.createFilterStyle(readerWindow, defaultFilter)
+    const st = this.createFilterStyle(readerWindow)
     readerWindow.document.head.appendChild(st)
   }
 
-  public addAllStyles() {
+  private addAllStyles() {
     let counter = 0
     let win: Window | undefined = window[counter]
     while (win) {
@@ -198,6 +256,7 @@ class Night {
     html.setAttribute('theme', 'dark')
     debug(`Added html theme attribute. It is now${html.getAttribute('theme')}`)
   }
+
   public setHTMLThemeAttribute(on: boolean) {
     let counter = 0
     let win: Window | undefined = window[counter]
@@ -221,7 +280,7 @@ class Night {
    * Run after disabling the theme
    * Removes all styles
    */
-  public removeAllStyle() {
+  private removeAllStyle() {
     let counter = 0
     let win: Window | undefined = window[counter]
     while (win) {
@@ -237,17 +296,27 @@ class Night {
     }
   }
 
-  public addStyleToEditor(editorWindow: Window) {
+  /**
+   * Add the noteStyle to the editor window and set its theme to "dark"
+   */
+  private addStyleToEditor(editorWindow: Window) {
     const editorDoc = editorWindow.document
     const style = editorDoc.createElement('style')
     style.setAttribute('id', 'noteStyle')
     style.textContent = css
     editorDoc.head.append(style)
+
+    const editorHTML = editorDoc.querySelector('html')
+    editorHTML.setAttribute('theme', this.getPref('enabled') ? 'dark' : 'light')
   }
 
+  /**
+   * Check whether a certain window has a "*Style" id
+   */
   public hasStyle(editorWindow: any): boolean {
-    return !!editorWindow.document.querySelector('#pageStyle')
+    return !!editorWindow.document.querySelector('[id*=Style]')
   }
+
   public editorNeedsStyle(): boolean {
     const editorWin3 = window[(Zotero_Tabs._tabs?.length ?? 0) + 1]
     if (!editorWin3) return false
@@ -344,30 +413,26 @@ class Night {
     style.textContent = css
     const header = doc.querySelector('head')
     header.appendChild(style)
-    doc.querySelector('html[dir]').setAttribute('theme', 'dark')
-    this.addToggleButton(tabWindow)
+    doc
+      .querySelector('html[dir]')
+      .setAttribute('theme', this.getPref('enabled') ? 'dark' : 'light')
+    this.addFilterToggleButton(tabWindow)
 
     //  this.editorNeedsStyle() && this.tryToAddStyleToEditor()
   }
 
-  public toggleDarkTheme(on?: boolean) {
+  public toggleDarkTheme(on?: boolean, setPreference = true) {
     const main = window.document.querySelector('#main-window')
     if (on) {
       main.setAttribute('theme', 'dark')
       this.setHTMLThemeAttribute(true)
-      !this.getPref('enabled') && this.setPref('enabled', true)
+      setPreference && !this.getPref('enabled') && this.setPref('enabled', true)
       return
     }
 
-    if (main.getAttribute('theme') === 'dark' || on === false) {
-      main.removeAttribute('theme')
-      this.setHTMLThemeAttribute(false)
-      this.getPref('enabled') && this.setPref('enabled', false)
-      return
-    }
-    main.setAttribute('theme', 'dark')
-    this.setHTMLThemeAttribute(true)
-    !this.getPref('enabled') && this.setPref('enabled', true)
+    this.setHTMLThemeAttribute(this.getPref('enabled'))
+    setPreference && this.getPref('enabled') && this.setPref('enabled', false)
+    return
   }
 
   public addGlobalToggleButton() {
@@ -387,6 +452,7 @@ class Night {
 
     toolbar.appendChild(button)
   }
+
   // eslint-disable-next-line @typescript-eslint/require-await
   public async load(globals: Record<string, any>) {
     this.globals = globals
@@ -397,7 +463,7 @@ class Night {
     this._tabsAdded = false
     const mainWindow = window.document.querySelector('#main-window')
 
-    mainWindow.setAttribute('theme', 'dark')
+    this.getPref('enabled') && mainWindow.setAttribute('theme', 'dark')
 
     const editorWin1 = window[0]
     this.addStyleToEditor(editorWin1)
@@ -405,32 +471,6 @@ class Night {
     this.addStyleToEditor(editorWin2)
 
     this.addGlobalToggleButton()
-    // const toggle = window.document.querySelector('#zotero-tb-toggle-notes-pane')
-    // toggle.addEventListener('click', async () => {
-    //   debug('clickyyy')
-    //   const editor = ZoteroContextPane.getActiveEditor()
-    //   if (editor) {
-    //     const currentEditor = editor.getCurrentInstance()
-
-    //     await currentEditor._initPromise
-
-    //     const noteWindow = currentEditor._iframeWindow
-    //     noteWindow.addEventListener('DOMContentLoaded', (ev: any) => {
-    //       debug('note loaded')
-    //       const noteDoc = noteWindow.document
-
-    //       if (noteDoc.querySelector('pageStyle')) return
-
-    //       const noteStyle = noteDoc.createElement('style')
-
-    //       noteStyle.setAttribute('id', 'pageStyle')
-    //       noteStyle.textContent = css
-
-    //       const noteHeader = noteDoc.querySelector('header')
-    //       noteHeader?.appendChild(noteStyle)
-    //     })
-    //   }
-    // })
 
     const notifierCallback = {
       notify: async (event: string, type, ids: string[], extraData) => {
@@ -460,12 +500,17 @@ class Night {
                   `Added tab windw readystate is ${tabWindow.document.readyState}`
                 )
 
-                this.addEverythingForTab(tabWindow)
-                return
+                if (this.getPref('enabled')) {
+                  this.addEverythingForTab(tabWindow)
+
+                  return
+                }
               }, 300)
             }
             case 'complete': {
-              this.addEverythingForTab(tabWindow)
+              if (this.getPref('enabled')) {
+                this.addEverythingForTab(tabWindow)
+              }
             }
           }
         }
@@ -501,107 +546,6 @@ class Night {
             this._editorStyled = true
           }
         }
-        //     debug('head of the window (select)')
-        //     debug(
-        //       `selected tab ${this.getTabNameById(ids[0])} readystate is ${
-        //         window.document.readyState
-        //       }`
-        //     )
-        //     this.editorNeedsStyle() && this.tryToAddStyleToEditor()
-        //     try {
-        //       // add stylesheet to the editor window
-        //       const id = ids[0] // 'tab-WJgG9Ojg'
-        //       // const allTabs = Array.from(
-        //       //   //  there are some "context" vboxes, no clue what they do but i hate m
-        //       //   document.querySelectorAll('vbox[id^=tab]:not([class])')
-        //       // )
-        //       const tabIndex = Zotero_Tabs._tabs.findIndex((tab) => tab.id === id)
-
-        //       debug(`Select tab event tabindex: ${tabIndex}`)
-
-        //       if (tabIndex === -1) return
-
-        //       const activeTabWindow = window[1 + tabIndex]
-        //       this.addToggleButton(activeTabWindow)
-
-        //       debug(`Select tab event activeTabWindow: ${activeTabWindow}`)
-
-        //       // const reader = Zotero.Reader.getByTabID(ids[0])
-        //       // const doc = reader?._iframeWindow?.document
-        //       const doc = activeTabWindow?.document
-        //       if (!doc) {
-        //         debug('select tab: no doc')
-        //         return
-        //       }
-        //       if (doc.querySelector('#pageStyle')) {
-        //         debug('select tab: theres already pagestyle')
-        //         return
-        //       }
-
-        //       const style = doc.createElement('style')
-        //       style.setAttribute('id', 'pageStyle')
-        //       style.textContent = css
-        //       const header = doc.querySelector('head')
-        //       header?.appendChild(style)
-        //       doc.querySelector('html[dir]').setAttribute('theme', 'dark')
-        //       debug('select tab added style')
-        //     } catch (e) {
-        //       debug('Error in Select tab notifierCallback')
-        //       debug(e)
-        //     }
-        //   }
-        //   // debug(`Added tab ${ids[0]}`)
-        //   // debug(extraData)
-        //   // // const magicNumber = 10000
-        //   // const id = ids[0] // 'tab-WJgG9Ojg'
-        //   // const allTabs = Array.from(
-        //   //   //  there are some "context" vboxes, no clue what they do but i hate m
-        //   //   document.querySelectorAll('vbox[id^=tab]:not([class])')
-        //   // )
-        //   // const tabIndex = allTabs.findIndex((tab) => tab.id === id)
-        //   // const activeTabWindow = window[1 + tabIndex]
-        //   // debug(activeTabWindow)
-        //   // debug(tabIndex)
-        //   // // const activeTabWindow = Zotero.Reader.getByTabID(id)._iframeWindow
-        //   // if (activeTabWindow.document.readyState === 'complete') {
-        //   //   try {
-        //   //     debug(activeTabWindow.document.readyState)
-        //   //     // const reader = Zotero.Reader.getByTabID(id)
-        //   //     // debug({ reader: JSON.stringify(reader, null, 2) })
-        //   //     const style = activeTabWindow.document.createElement('style')
-        //   //     style.setAttribute('id', 'pageStyle')
-        //   //     style.textContent = css
-        //   //     debug(style)
-        //   //     activeTabWindow.document.head.appendChild(style)
-        //   //     activeTabWindow.document
-        //   //       .querySelector('html[dir]')
-        //   //       .setAttribute('theme', 'dark')
-        //   //     debug('delayyyy')
-        //   //   } catch (e) {
-        //   //     debug('Error in readystate check tab add notifierCallback')
-        //   //     debug(e)
-        //   //   }
-        //   //   return
-        //   // }
-        //   // activeTabWindow.addEventListener('DOMContentLoaded', (e) => {
-        //   //   try {
-        //   //     debug(e)
-        //   //     // const reader = Zotero.Reader.getByTabID(id)
-        //   //     // debug({ reader: JSON.stringify(reader, null, 2) })
-        //   //     const style = activeTabWindow.document.createElement('style')
-        //   //     style.setAttribute('id', 'pageStyle')
-        //   //     style.textContent = css
-        //   //     debug(style)
-        //   //     activeTabWindow.document.head.appendChild(style)
-        //   //     activeTabWindow.document
-        //   //       .querySelector('html[dir]')
-        //   //       .setAttribute('theme', 'dark')
-        //   //   } catch (e) {
-        //   //     debug('Error in readystate check tab add notifierCallback')
-        //   //     debug(e)
-        //   //   }
-        //   // })
-        //   // window.document[2].appendChild(style);
       },
     }
     Zotero.Notifier.registerObserver(notifierCallback, ['tab'])
@@ -624,4 +568,4 @@ class Night {
   }
 }
 
-if (!Zotero.Night) Zotero.Night = new Night()
+Zotero.Night = new Night()
