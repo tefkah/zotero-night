@@ -18,7 +18,7 @@ async function build() {
     entryPoints: ['content/zotero-night.ts'],
     outdir: 'build/content',
     color: true,
-    plugins: [sassPlugin()],
+    plugins: [sassPlugin({ syntax: 'scss' })],
   })
 }
 

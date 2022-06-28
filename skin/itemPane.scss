@@ -1,0 +1,41 @@
+.zotero-editpane-item-box {
+  row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    & > *:first-child {
+      visibility: hidden;
+      display: none;
+    }
+
+    label[value='Item Type'] {
+      display: none;
+    }
+
+    #item-type-menu {
+      label:not(.zotero-clicky) {
+        color: var(--nord35) !important;
+      }
+      color: var(--nord3);
+    }
+    label[fieldname='title'] {
+      &[value='Title'] {
+        display: none;
+      }
+      margin-top: 2rem !important;
+
+      margin-bottom: 4rem !important;
+      font-size: x-large;
+    }
+
+    .creator-type-label {
+      .image {
+        filter: var(--nord-filter);
+      }
+      .label {
+        display: none;
+      }
+    }
+  }
+}

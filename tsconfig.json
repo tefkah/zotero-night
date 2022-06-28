@@ -9,6 +9,8 @@
     "removeComments": false,
     "preserveConstEnums": false,
     "sourceMap": false,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "downlevelIteration": true,
     "lib": ["es2017", "dom"],
     "typeRoots": ["./typings", "./node_modules/@types"]

@@ -5,11 +5,11 @@
 // from https://codepen.io/sosuke/pen/Pjoqqp
 
 class Color {
-  r: number
-  g: number
-  b: number
+  r!: number
+  g!: number
+  b!: number
 
-  constructor(r: number, g: number, b: number) {
+  constructor(r = 255, g = 255, b = 255) {
     this.set(r, g, b)
   }
 
@@ -126,10 +126,9 @@ class Color {
     const b = this.b / 255
     const max = Math.max(r, g, b)
     const min = Math.min(r, g, b)
-    let h,
-      s,
-      // eslint-disable-next-line prefer-const
-      l = (max + min) / 2
+    let h = 0
+    let s = 0
+    const l = (max + min) / 2
 
     if (max === min) {
       h = s = 0
@@ -305,7 +304,7 @@ class Solver {
   }
 }
 
-function hexToRgb(hex: string) {
+function hexToRgb(hex: string): number[] {
   // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
   const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i
   hex = hex.replace(
@@ -332,9 +331,8 @@ export const hexToFilter = (
   result: { values: number[]; loss: number; filter: string }
 } => {
   const rgb = hexToRgb(input)
-  if (rgb.length !== 3) {
-    alert('Invalid format!')
-    return
+  if (rgb?.length !== 3) {
+    throw new Error('Invalid format!')
   }
 
   const color = new Color(rgb[0], rgb[1], rgb[2])

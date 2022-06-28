@@ -1,3 +1,5 @@
+@import './itemPane.scss';
+
 :root {
   /*
   Base component color of "Polar Night".
@@ -6,8 +8,9 @@
   <div style="background-color:#2e3440; width=60; height=60"></div>
   Styleguide Nord - Polar Night
   */
+  --test: #ffffff;
   --nord4-rgba7: rgba(216, 222, 233, 0.5);
-  --nord0: #2e3440;
+  --nord0: #2e3441;
 
   /*
   Lighter shade color of the base component color.

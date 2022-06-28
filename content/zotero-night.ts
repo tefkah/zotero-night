@@ -216,7 +216,7 @@ class Night {
     const middleToolbar = readerWindow.document.querySelector(
       '#toolbarViewerMiddle',
     )
-    middleToolbar.appendChild(toggle)
+    middleToolbar.prepend(toggle)
 
     const st = this.createFilterStyle(readerWindow)
     readerWindow.document.head.appendChild(st)
@@ -328,6 +328,7 @@ class Night {
 
     if (needsStyle) {
       debug('should have added things to the editor')
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
       debug(Zotero_Tabs._tabs?.length)
       this.addStyleToEditor(editorWin3)
       this._tabsAdded = true
