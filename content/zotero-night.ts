@@ -110,15 +110,22 @@ class Night {
   }
 
   public getEnabled() {
-    return Zotero.Prefs.get('extensions.night.enabled') as boolean
+    return Zotero.Prefs.get('night.enabled') as boolean
+  }
+  public toggleEnabled(on?: boolean) {
+    if (on === true || on === false) {
+      return Zotero.Prefs.set('night.enabled', on) as boolean
+    }
+    const enable = this.getEnabled()
+    return Zotero.Prefs.set('night.enabled', !enable) as boolean
   }
 
   public getPref(pref: string): string {
-    return Zotero.Prefs.get(`extensions.night.${pref}`, true) as string
+    return Zotero.Prefs.get(`night.${pref}`) as string
   }
 
   public setPref(pref: string, value: any) {
-    return Zotero.Prefs.set(`extensions.night.${pref}`, value, true) as string
+    return Zotero.Prefs.set(`night.${pref}`, value) as string
   }
 
   private hasToggle(readerWindow: Window): boolean {
@@ -176,9 +183,10 @@ class Night {
   }
 
   private setFilterStyle(styleTag: HTMLStyleElement, style?: string) {
-    styleTag.textContent = `[theme='dark'] #viewer .page .canvasWrapper { filter:  ${
+    styleTag.textContent = `[theme='dark'] #viewer .page .canvasWrapper canvas:not(.selectionCanvas) { filter:  ${
       style || this.getCurrentFilterString()
-    } }`
+    } }
+    `
     return styleTag
   }
 
@@ -245,21 +253,28 @@ class Night {
 
   public setHTMLThemeAttributeForWindow(win: Window, on: boolean) {
     const html = win.document.querySelector('html')
-    if (!html) return
+    if (!html) {
+      debug('setHTMLThemeAttributeForWindow: no html')
+      return
+    }
     debug(
       on ? 'removing html theme attribute' : 'removing html theme attribute',
     )
-    debug(`Current html theme attribute${html.getAttribute('theme')}`)
+    debug(`Current html theme attribute: ${html.getAttribute('theme')}`)
     debug(html)
     if (!on) {
       html.removeAttribute('theme')
       debug(
-        `Removed html theme attribute. It is now${html.getAttribute('theme')}`,
+        `Removed html theme attribute. It is now: ${html.getAttribute(
+          'theme',
+        )}`,
       )
       return
     }
     html.setAttribute('theme', 'dark')
-    debug(`Added html theme attribute. It is now${html.getAttribute('theme')}`)
+    debug(
+      `Added html theme attribute. It is now: ${html.getAttribute('theme')}`,
+    )
   }
 
   public setHTMLThemeAttribute(on: boolean) {
@@ -380,19 +395,43 @@ class Night {
 
   public toggleDarkTheme(on?: boolean, setPreference = true) {
     const main = window.document.querySelector('#main-window')
+    const enable = on ?? !this.getEnabled()
     if (!main) {
-      debug('no main window')
-      return
-    }
-    if (on) {
-      main.setAttribute('theme', 'dark')
-      this.setHTMLThemeAttribute(true)
-      setPreference && !this.getEnabled() && this.setPref('enabled', true)
+      debug('toggleDarkTheme: no main window')
       return
     }
 
-    this.setHTMLThemeAttribute(this.getEnabled())
-    setPreference && this.getEnabled() && this.setPref('enabled', false)
+    // /**
+    //  * Force turn on theme
+    //  **/
+    // if (on) {
+    //   main.setAttribute('theme', 'dark')
+    //   this.setHTMLThemeAttribute(true)
+    //   setPreference && !this.getEnabled() && this.setPref('enabled', true)
+    //   return
+    // }
+
+    debug(
+      '🔜 before toggling theme. current theme is: ',
+      `${main.getAttribute('theme')}`,
+      'and enabled is: ',
+      `${!enable}`,
+    )
+
+    enable ? main.setAttribute('theme', 'dark') : main.removeAttribute('theme')
+    if (setPreference) {
+      const enabled = this.toggleEnabled(!!enable)
+      debug(`after toggling: ${enabled}`)
+    }
+
+    debug(
+      '🔚 after toggling toggling theme. current theme is: ',
+      `${main.getAttribute('theme')}`,
+      'and enabled is: ',
+      `${this.getEnabled()}`,
+    )
+
+    this.setHTMLThemeAttribute(enable)
     return
   }
 
@@ -404,6 +443,7 @@ class Night {
     // TODO: Make actual icons instead of emoji
 
     const image = window.document.createElement('span')
+
     image.textContent = this.getEnabled() ? '🌚' : '🌞'
     button.appendChild(image)
     button.onclick = () => {
@@ -526,6 +566,7 @@ class Night {
     }
     Zotero.Notifier.registerObserver(notifierCallback, ['tab'])
 
+    // Zotero.Prefs.registerObserver('extensions.night.enabled', )
     this.strings = globals.document.getElementById('zotero-night-strings')
   }
 }

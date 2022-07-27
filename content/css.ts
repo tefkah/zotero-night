@@ -316,6 +316,20 @@ background:    var(--nord0) !important
 
 [theme='dark'] div#viewer .page {
     background-color: var(--nord0) !important;
+    border: 9px solid transparent !important;
+
+}
+
+[theme='dark'] .page-popup-container .page-popup {
+  background-color: var(--nord1);
+  color: var(--nord5);
+}
+[theme='dark'] .page-popup-container .page-popup::before {
+  background-color: var(--nord1);
+  color: var(--nord5);
+}
+[theme='dark'] .page-popup[class*="bottom"]::after {
+  border-bottom-color: var(--nord1)
 }
 
 /* div#viewer .page .canvasWrapper {
@@ -404,13 +418,15 @@ background:    var(--nord0) !important
 
 [theme='dark'] .editor .content:empty::before {
  content:attr(placeholder) !important;
- color:var(--nord9) !important;
+ color:var(--nord4);
 }
+
 [theme='dark'] .editor .content:empty:focus::before {
- color:var(--nord2) !important;
+ color:var(--nord4);
 }
+
 [theme='dark'] .annotation-popup .editor .content:empty::before {
- color:var(--nord2) !important;
+ color:var(--nord4);
 }
 
 [theme='dark'] .editor .bubble {

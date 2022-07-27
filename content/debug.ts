@@ -19,7 +19,7 @@ function to_s(obj: any): string {
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function format(...msg: any[][]) {
-  return `Night: ${msg.map(to_s).join(' ')}`
+  return `🌌 Night: ${msg.map(to_s).join(' ')}`
 }
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
