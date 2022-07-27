@@ -304,9 +304,10 @@ const editor = `
 
 export const css = `${nord}
 [theme='dark'] * {
-    border: 0 !important;
+    border-width: 0px;
     transition: color 0.15s ease, background-color 0.15s ease, filter 0.4s ease;
 }
+
 [theme='dark'] body {
    background: var(--nord0) !important;
 }
@@ -377,6 +378,10 @@ background:    var(--nord0) !important
                     color: var(--nord4) !important;
                     border: 0 !important;
                 }
+
+[theme='dark'] .area-annotation {
+  border-width: 3px;
+}
                 
 [theme='dark']                 .annotation {
                     background-color: var(--nord2) !important;
