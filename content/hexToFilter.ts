@@ -202,10 +202,10 @@ class Solver {
         best = result
       }
     }
-    return best
+    return { ...best, values: [] }
   }
 
-  solveNarrow(wide: { loss: number; values?: number[] }) {
+  solveNarrow(wide: { loss: number; values: number[] }) {
     const A = wide.loss
     const c = 2
     const A1 = A + 1
@@ -238,7 +238,7 @@ class Solver {
     const alpha = 1
     const gamma = 0.16666666666666666
 
-    let best = null
+    let best: number[] = []
     let bestLoss = Infinity
     const deltas: number[] = new Array(6)
     const highArgs: number[] = new Array(6)
@@ -320,7 +320,7 @@ function hexToRgb(hex: string): number[] {
         parseInt(result[2], 16),
         parseInt(result[3], 16),
       ]
-    : null
+    : [0, 0, 0]
 }
 
 export const hexToFilter = (
