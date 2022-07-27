@@ -43,14 +43,18 @@ interface Filters {
 class Night {
   // tslint:disable-line:variable-name
   private initialized = false
+  // @ts-expect-error shush
   private globals: Record<string, any>
   private strings: any
+  // @ts-expect-error shush
   private _tabsAdded: boolean
+  // @ts-expect-error shush
   private _editorStyled: boolean
   public _currentFilter: string
   //  public _nordFilter: string
   //  public _darkFilter: string
   //  public _sepiaFilter: string
+  // @ts-expect-error shush
   public _eventListeners: NightEventListenerObject[]
 
   public _filters: {
@@ -104,17 +108,12 @@ class Night {
       io,
     )
   }
-  private isEnabled(pref: string): pref is 'enabled' {
-    return pref === 'enabled'
+
+  public getEnabled() {
+    return Zotero.Prefs.get('extensions.night.enabled') as boolean
   }
 
-  public getPref(pref: 'enabled'): boolean
-  public getPref(pref: string): string
-  public getPref(pref: string): string | boolean {
-    if (this.isEnabled(pref)) {
-      return Zotero.Prefs.get(`extensions.night.${pref}`, true) as boolean
-    }
-
+  public getPref(pref: string): string {
     return Zotero.Prefs.get(`extensions.night.${pref}`, true) as string
   }
 
@@ -216,6 +215,12 @@ class Night {
     const middleToolbar = readerWindow.document.querySelector(
       '#toolbarViewerMiddle',
     )
+
+    if (!middleToolbar) {
+      debug('addToggleButton: no middle toolbar')
+      return
+    }
+
     middleToolbar.prepend(toggle)
 
     const st = this.createFilterStyle(readerWindow)
@@ -240,6 +245,7 @@ class Night {
 
   public setHTMLThemeAttributeForWindow(win: Window, on: boolean) {
     const html = win.document.querySelector('html')
+    if (!html) return
     debug(
       on ? 'removing html theme attribute' : 'removing html theme attribute',
     )
@@ -268,11 +274,11 @@ class Night {
   }
 
   public removeStyleFromEditorWindow(win: Window) {
-    win.document.querySelector('#noteStyle').remove()
+    win.document.querySelector('#noteStyle')?.remove()
   }
 
   public removeStyleFromViewerTab(win: Window) {
-    win.document.querySelector('#pageStyle').remove()
+    win.document.querySelector('#pageStyle')?.remove()
   }
 
   /**
@@ -306,7 +312,7 @@ class Night {
     editorDoc.head.append(style)
 
     const editorHTML = editorDoc.querySelector('html')
-    editorHTML.setAttribute('theme', this.getPref('enabled') ? 'dark' : 'light')
+    editorHTML?.setAttribute('theme', this.getEnabled() ? 'dark' : 'light')
   }
 
   /**
@@ -362,10 +368,11 @@ class Night {
     style.setAttribute('id', 'pageStyle')
     style.textContent = css
     const header = doc.querySelector('head')
-    header.appendChild(style)
+    header?.appendChild(style)
+
     doc
       .querySelector('html[dir]')
-      .setAttribute('theme', this.getPref('enabled') ? 'dark' : 'light')
+      ?.setAttribute('theme', this.getEnabled() ? 'dark' : 'light')
     this.addFilterToggleButton(tabWindow)
 
     //  this.editorNeedsStyle() && this.tryToAddStyleToEditor()
@@ -373,15 +380,19 @@ class Night {
 
   public toggleDarkTheme(on?: boolean, setPreference = true) {
     const main = window.document.querySelector('#main-window')
+    if (!main) {
+      debug('no main window')
+      return
+    }
     if (on) {
       main.setAttribute('theme', 'dark')
       this.setHTMLThemeAttribute(true)
-      setPreference && !this.getPref('enabled') && this.setPref('enabled', true)
+      setPreference && !this.getEnabled() && this.setPref('enabled', true)
       return
     }
 
-    this.setHTMLThemeAttribute(this.getPref('enabled'))
-    setPreference && this.getPref('enabled') && this.setPref('enabled', false)
+    this.setHTMLThemeAttribute(this.getEnabled())
+    setPreference && this.getEnabled() && this.setPref('enabled', false)
     return
   }
 
@@ -393,11 +404,16 @@ class Night {
     // TODO: Make actual icons instead of emoji
 
     const image = window.document.createElement('span')
-    image.textContent = this.getPref('enabled') ? '🌚' : '🌞'
+    image.textContent = this.getEnabled() ? '🌚' : '🌞'
     button.appendChild(image)
     button.onclick = () => {
       this.toggleDarkTheme()
-      image.textContent = this.getPref('enabled') ? '🌚' : '🌞'
+      image.textContent = this.getEnabled() ? '🌚' : '🌞'
+    }
+
+    if (!toolbar) {
+      debug('no toolbar')
+      return
     }
 
     toolbar.appendChild(button)
@@ -413,7 +429,7 @@ class Night {
     this._tabsAdded = false
     const mainWindow = window.document.querySelector('#main-window')
 
-    this.getPref('enabled') && mainWindow.setAttribute('theme', 'dark')
+    this.getEnabled() && mainWindow?.setAttribute('theme', 'dark')
 
     const editorWin1 = window[0]
     this.addStyleToEditor(editorWin1)
@@ -429,7 +445,7 @@ class Night {
         ids: string[],
         extraData: any,
       ) => {
-        // if (!this.getPref('enabled')) return
+        // if (!this.getEnabled()) return
         if (event === 'add') {
           debug(`Tab with id ${ids[0]} added`)
 
@@ -455,7 +471,7 @@ class Night {
                   `Added tab windw readystate is ${tabWindow.document.readyState}`,
                 )
 
-                if (this.getPref('enabled')) {
+                if (this.getEnabled()) {
                   this.addEverythingForTab(tabWindow)
 
                   return
@@ -464,7 +480,7 @@ class Night {
               return
             }
             case 'complete': {
-              if (this.getPref('enabled')) {
+              if (this.getEnabled()) {
                 this.addEverythingForTab(tabWindow)
               }
             }
@@ -497,6 +513,10 @@ class Night {
           // listen for init message
           editorWindow.onmessage = (message: any) => {
             if (message?.data?.action !== 'init') return
+            if (!editorWindow) {
+              debug('no editor window')
+              return
+            }
             this.addStyleToEditor(editorWindow)
 
             this._editorStyled = true
