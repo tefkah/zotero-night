@@ -379,6 +379,15 @@ background:    var(--nord0) !important
                     border: 0 !important;
                 }
 
+
+[theme='dark'] .preview header {
+  border-width: 0px !important;
+} 
+
+[theme='dark'] .preview .comment {
+  border-width: 0px !important;
+} 
+
 [theme='dark'] .area-annotation {
   border-width: 3px;
 }
@@ -561,6 +570,12 @@ color: var(--nord4)
 [theme='dark'] .toolbarbutton span {
   background: none !important;
 }
+
+[theme='dark'] #sidebarContainer {
+  border-width: 0px !important;
+}
+
+
 
 ${editor}
                 `
