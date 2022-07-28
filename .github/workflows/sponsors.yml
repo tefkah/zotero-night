@@ -1,0 +1,35 @@
+# This is a basic workflow to help you get started with Action
+
+name: Generate Sponsors README
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 3 * * 1,5"
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+      - name: Generate Sponsors 💖
+        uses: JamesIves/github-sponsors-readme-action@v1
+        with:
+          token: ${{ secrets.PAT }}
+          file: 'README.md'
+          minimum: 500
+          template: '<a href="https://github.com/{{{ login }}}"><img src="https://github.com/{{{ login }}}.png" style="border-radius: 50%; margin-right: 1rem" width="60px" alt="{{{ name }}}" /></a>'
+
+      - name: '[commit changes]'
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git commit -m "docs: update readme sponsors" -a
+      - name: '[push changes]'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.PAT }}
+          branch: main
