@@ -72,3 +72,14 @@ What you need to do
 - [ ] Click "Inspect Main Process"
 
 Wow now you can finally do things.
+
+
+## Sponsors
+
+If you really like Zotero Night, you can sponsor me monthly! 
+
+If you donate $5/month or more, you'll be listed here and get priority for feature requests/bugfixes! (mention that you're a sponsor in the issue because i'll forget)
+
+<!-- sponsors -->
+
+<!-- sponsors -->
