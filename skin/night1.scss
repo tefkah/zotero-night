@@ -303,6 +303,11 @@
       background: var(--nord0);
       color: var(--nord6);
 
+      &.highlighted {
+        background: var(--nord13) !important;
+        color: var(--nord3) !important;
+      }
+
       &:focus.selected {
         margin: 0px !important;
       }

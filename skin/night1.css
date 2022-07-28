@@ -317,6 +317,10 @@
   background: var(--nord0);
   color: var(--nord6);
 }
+#main-window[theme=dark] .virtualized-table .row.highlighted {
+  background: var(--nord13) !important;
+  color: var(--nord3) !important;
+}
 #main-window[theme=dark] .virtualized-table .row:focus.selected {
   margin: 0px !important;
 }
