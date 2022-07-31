@@ -11,7 +11,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/require-await */
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import { css } from './css'
+// import { css } from './css'
+// @ts-expect-error its fine
+import css from '../css/tab.scss'
 import { debug } from './debug'
 
 declare const Zotero: any

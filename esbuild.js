@@ -1,3 +1,5 @@
+// @ts-check
+
 const path = require('path')
 const fs = require('fs')
 const esbuild = require('esbuild')
@@ -9,6 +11,7 @@ require('zotero-plugin/copy-assets')
 require('zotero-plugin/version')
 require('zotero-plugin/rdf')
 const { sassPlugin } = require('esbuild-sass-plugin')
+const sass = require('sass')
 
 async function build() {
   await esbuild.build({
@@ -18,8 +21,13 @@ async function build() {
     entryPoints: ['content/zotero-night.ts'],
     outdir: 'build/content',
     color: true,
-    plugins: [sassPlugin({ syntax: 'scss' })],
+    plugins: [sassPlugin({ type: 'css-text' })],
   })
+
+  const nightCss = sass.compile('css/night.scss')
+  fs.existsSync(path.join(__dirname, 'build/skin')) ||
+    fs.mkdirSync(path.join(__dirname, 'build/skin'), { recursive: true })
+  fs.writeFileSync(path.join('build', 'skin', 'night.css'), nightCss.css)
 }
 
 build().catch((err) => {
