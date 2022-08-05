@@ -1,7 +1,11 @@
 // @import './itemPane.scss';
 @import './nord.scss';
 
+// * {
+//   background-color: var(--nord0) !important;
+// }
 #main-window[theme='dark'] {
+  background-color: black;
   * {
     border: 0 !important;
     transition: color 0.15s ease, background-color 0.15s ease;
