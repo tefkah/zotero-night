@@ -72,3 +72,12 @@ What you need to do
 - [ ] Click "Inspect Main Process"
 
 Wow now you can finally do things.
+
+
+## Sponsors
+
+If you really like Zotero Night, you can sponsor me monthly! 
+
+If you donate $5/month or more, you'll be listed here and get priority for feature requests/bugfixes! (mention that you're a sponsor in the issue because i'll forget)
+
+<!-- sponsors --><a href="https://github.com/queitsch"><img src="https://github.com/queitsch.png" style="border-radius: 50%; margin-right: 1rem" width="60px" alt="Jannis Segebrecht" /></a><a href="https://github.com/meedstrom"><img src="https://github.com/meedstrom.png" style="border-radius: 50%; margin-right: 1rem" width="60px" alt="Martin Edström" /></a><a href="https://github.com/HaydenLeBaron"><img src="https://github.com/HaydenLeBaron.png" style="border-radius: 50%; margin-right: 1rem" width="60px" alt="Hayden LeBaron" /></a><a href="https://github.com/kohlworks"><img src="https://github.com/kohlworks.png" style="border-radius: 50%; margin-right: 1rem" width="60px" alt="kworks" /></a><a href="https://github.com/vg-1414"><img src="https://github.com/vg-1414.png" style="border-radius: 50%; margin-right: 1rem" width="60px" alt="" /></a><!-- sponsors -->
