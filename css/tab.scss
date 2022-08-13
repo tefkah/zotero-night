@@ -1,9 +1,9 @@
 // import { nord } from './nord'
 @import './nord.scss';
 
-* {
-  background-color: var(--nord0) !important;
-}
+// * {
+//   background-color: var(--nord0) !important;
+// }
 [theme='dark'] {
   body {
     background-color: var(--body-background-color) !important;

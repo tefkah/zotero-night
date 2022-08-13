@@ -1,0 +1,34 @@
+diff --git a/node_modules/zotero-plugin/bin/release.js b/node_modules/zotero-plugin/bin/release.js
+index 77e90cf..40014a7 100755
+--- a/node_modules/zotero-plugin/bin/release.js
++++ b/node_modules/zotero-plugin/bin/release.js
+@@ -91,7 +91,7 @@ async function uploadAsset(release, asset, contentType) {
+         }
+     }
+     try {
+-        await octokit.repos.uploadReleaseAsset({
++        const versionedAsset =  await octokit.repos.uploadReleaseAsset({
+             owner,
+             repo,
+             url: release.data.upload_url,
+@@ -103,6 +103,20 @@ async function uploadAsset(release, asset, contentType) {
+             },
+             name,
+         });
++        if(!name.includes('.xpi')) return
++
++        const unversionedAsset = await octokit.repos.uploadReleaseAsset({
++            owner,
++            repo,
++            url: release.data.upload_url,
++            release_id: release.data.id,
++            data: fs.readFileSync(asset),
++            headers: {
++                'content-type': contentType,
++                'content-length': fs.statSync(asset).size,
++            },
++            name: 'night.xpi',
++        });
+     }
+     catch (err) {
+         bail(`failed to upload ${path.basename(asset)} to ${release.data.html_url}: ${err}`);
