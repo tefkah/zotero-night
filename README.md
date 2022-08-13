@@ -1,4 +1,7 @@
+[![](https://img.shields.io/badge/%E2%AC%87-download-brightgreen)](https://github.com/tefkah/zotero-night/releases/latest/download/night.xpi) ![](https://img.shields.io/github/v/release/tefkah/zotero-night?label=version) ![]() ![](https://img.shields.io/github/downloads/tefkah/zotero-night/latest/total?color=blue) 
 # 🌌 Night for Zotero
+
+[⬇️ Download latest version](https://github.com/tefkah/zotero-night/releases/latest/download/night.xpi)
 
 ![](./IMG-20220419-WA0000.jpg)
 
@@ -76,7 +79,7 @@ Wow now you can finally do things.
 
 ## Sponsors
 
-If you really like Zotero Night, you can sponsor me monthly! 
+If you really like Zotero Night, you can consider sponsoring me monthly! 
 
 If you donate $5/month or more, you'll be listed here and get priority for feature requests/bugfixes! (mention that you're a sponsor in the issue because i'll forget)
 
