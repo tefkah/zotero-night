@@ -20,6 +20,28 @@
 }
 
 #main-window[theme='dark'] {
+  #zotero-tb-toggle-item-pane,
+  #zotero-tb-toggle-notes-pane {
+    background: var(--nord1) !important;
+  }
+  #zotero-tb-toggle-item-pane span,
+  #zotero-tb-toggle-notes-pane span {
+    display: none;
+  }
+  #zotero-tb-split {
+    background: var(--nord0) !important;
+  }
+
+  /* ------------------------------- */
+
+  /* 'deck' context notes pane */
+  #zotero-context-toolbar-extension,
+  .zotero-context-notes-list,
+  .notes-list-container {
+    background: var(--nord0) !important;
+    color: var(--nord5) !important;
+  }
+
   math-inline,
   math-display {
     color: var(--nord4) !important;

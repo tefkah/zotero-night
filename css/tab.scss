@@ -5,6 +5,85 @@
 //   background-color: var(--nord0) !important;
 // }
 [theme='dark'] {
+  #zotero-tb-toggle-item-pane,
+  #zotero-tb-toggle-notes-pane {
+    background: var(--nord1) !important;
+  }
+  #zotero-tb-toggle-item-pane span,
+  #zotero-tb-toggle-notes-pane span {
+    display: none;
+  }
+  #zotero-tb-split {
+    background: var(--nord0) !important;
+  }
+
+  /* ------------------------------- */
+
+  /* 'deck' context notes pane */
+  #zotero-context-toolbar-extension,
+  .zotero-context-notes-list,
+  .notes-list-container {
+    background: var(--nord0) !important;
+    color: var(--nord5) !important;
+  }
+
+  /* search bar at the top of context notes pane */
+  [theme='dark'] .zotero-context-notes-list textbox[type='search'] {
+    filter: var(--dark-filter);
+  }
+
+  /* '+' button */
+  [theme='dark'] .header-row button {
+    background-color: var(--nord2) !important;
+    color: var(--nord5) !important;
+  }
+
+  /* boxes/cards for notes 'rows' in context notes pane */
+  [theme='dark'] .note-row,
+  [theme='dark'] .more-row,
+  [theme='dark'] .note-row .inner .body-line .date {
+    background-color: var(--nord2) !important;
+    color: var(--nord5) !important;
+  }
+
+  /* ------------------------------- */
+
+  /* related items tab pane -> 'add' button */
+  [theme='dark'] .zotero-editpane-related #addButton {
+    -moz-appearance: none !important;
+    background-color: var(--nord2) !important;
+    color: var(--nord5) !important;
+  }
+
+  /* --------------------------------- */
+
+  /* 'add' notes button in library view*/
+  [theme='dark'] #zotero-editpane-notes-add {
+    -moz-appearance: none !important;
+    background-color: var(--nord2) !important;
+    color: var(--nord5) !important;
+  }
+
+  /* --------------------------------- */
+
+  /* new tag input in 'tags' tab pane */
+  [theme='dark'] .tag .editable.editing {
+    filter: var(--dark-filter);
+  }
+
+  /* --------------------------------- */
+
+  /* dropdown icon button of 'author'/publisher data entry field in first context tab */
+  [theme='dark'] .creator-type-label image {
+    filter: var(--dark-filter);
+  }
+
+  /* --------------------------------- */
+
+  .toolbar-button:hover {
+    background-color: var(--nord3);
+  }
+
   body {
     background-color: var(--body-background-color) !important;
   }
@@ -435,6 +514,10 @@
   }
 
   .annotation-popup .editor .content:empty::before {
+    color: var(--nord4);
+  }
+
+  .annotations {
     color: var(--nord4);
   }
 
