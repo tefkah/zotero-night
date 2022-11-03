@@ -18,7 +18,13 @@
     position: relative;
   }
 }
+
 #main-window[theme='dark'] {
+  math-inline,
+  math-display {
+    color: var(--nord4) !important;
+  }
+
   #night-global-toggle-image {
     &::before {
       content: '🌙';

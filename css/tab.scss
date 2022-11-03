@@ -66,6 +66,11 @@
       background: var(--pre-background) !important;
     }
 
+    math-inline,
+    math-display {
+      color: var(--nord6) !important;
+    }
+
     p code {
       background: var(--pre-background) !important;
     }
