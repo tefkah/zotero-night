@@ -326,7 +326,7 @@ class Night {
     editorDoc.head.append(style)
 
     const editorHTML = editorDoc.querySelector('html')
-    editorHTML?.setAttribute('theme', this.getEnabled() ? 'dark' : 'light')
+    editorHTML?.setAttribute('theme', 'dark')
   }
 
   /**
@@ -384,9 +384,7 @@ class Night {
     const header = doc.querySelector('head')
     header?.appendChild(style)
 
-    doc
-      .querySelector('html[dir]')
-      ?.setAttribute('theme', this.getEnabled() ? 'dark' : 'light')
+    doc.querySelector('html[dir]')?.setAttribute('theme', 'dark')
     this.addFilterToggleButton(tabWindow)
 
     //  this.editorNeedsStyle() && this.tryToAddStyleToEditor()
@@ -410,13 +408,19 @@ class Night {
     //   return
     // }
 
-    current ? main.removeAttribute('theme') : main.setAttribute('theme', 'dark')
+    if (current) {
+      main.removeAttribute('theme')
+      this.removeAllStyle()
+    } else {
+      main.setAttribute('theme', 'dark')
+      this.addAllStyles()
+    }
     if (setPreference) {
       const enabled = this.toggleEnabled(!current)
       debug(`after toggling: ${enabled}`)
     }
 
-    this.setHTMLThemeAttribute(current)
+    // this.setHTMLThemeAttribute(current)
     return
   }
 
