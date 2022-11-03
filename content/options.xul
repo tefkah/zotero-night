@@ -13,11 +13,11 @@
     </stringbundleset>
     <prefpane label="Night Preferences" id="night-prefpane">
         <preferences>
-            <preference id="pref-night-default-pdf" name="extensions.night.default_pdf" type="string" />
-            <preference id="pref-night-enabled" name="extensions.night.enabled" type="boolean" />
+            <preference id="pref-night-default-pdf" name="extensions.zotero.night.default_pdf" type="string" />
+            <preference id="pref-night-enabled" name="extensions.zotero.night.enabled" type="bool" />
         </preferences>
 
-        <checkbox id="id-night-enabled" label="Enable Dark Theme" preference="pref-night-enabled" oncommand='Zotero.Night.toggleDarkTheme(!!this.checked, false)' />
+        <checkbox id="id-night-enabled" label="Enable Dark Theme" preference="pref-night-enabled" oncommand='Zotero.Night.toggleDarkTheme(!this.checked)' />
 
         <separator class="thin" />
         <groupbox>

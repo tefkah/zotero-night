@@ -259,11 +259,8 @@ class Night {
       debug('setHTMLThemeAttributeForWindow: no html')
       return
     }
-    debug(
-      on ? 'removing html theme attribute' : 'removing html theme attribute',
-    )
+    debug(on ? 'setting theme=dark' : 'removing [theme]')
     debug(`Current html theme attribute: ${html.getAttribute('theme')}`)
-    debug(html)
     if (!on) {
       html.removeAttribute('theme')
       debug(
@@ -395,9 +392,9 @@ class Night {
     //  this.editorNeedsStyle() && this.tryToAddStyleToEditor()
   }
 
-  public toggleDarkTheme(on?: boolean, setPreference = true) {
+  public toggleDarkTheme(current: boolean, setPreference = true) {
     const main = window.document.querySelector('#main-window')
-    const enable = on ?? !this.getEnabled()
+    // const enable = on //?? !this.getEnabled()
     if (!main) {
       debug('toggleDarkTheme: no main window')
       return
@@ -413,27 +410,13 @@ class Night {
     //   return
     // }
 
-    debug(
-      '🔜 before toggling theme. current theme is: ',
-      `${main.getAttribute('theme')}`,
-      'and enabled is: ',
-      `${!enable}`,
-    )
-
-    enable ? main.setAttribute('theme', 'dark') : main.removeAttribute('theme')
+    current ? main.removeAttribute('theme') : main.setAttribute('theme', 'dark')
     if (setPreference) {
-      const enabled = this.toggleEnabled(!!enable)
+      const enabled = this.toggleEnabled(!current)
       debug(`after toggling: ${enabled}`)
     }
 
-    debug(
-      '🔚 after toggling toggling theme. current theme is: ',
-      `${main.getAttribute('theme')}`,
-      'and enabled is: ',
-      `${this.getEnabled()}`,
-    )
-
-    this.setHTMLThemeAttribute(enable)
+    this.setHTMLThemeAttribute(current)
     return
   }
 
@@ -445,12 +428,13 @@ class Night {
     // TODO: Make actual icons instead of emoji
 
     const image = window.document.createElement('span')
+    image.setAttribute('id', 'night-global-toggle-image')
 
-    image.textContent = this.getEnabled() ? '🌚' : '🌞'
+    // image.textContent = this.getEnabled() ? '🌚' : '🌞'
     button.appendChild(image)
     button.onclick = () => {
-      this.toggleDarkTheme()
-      image.textContent = this.getEnabled() ? '🌚' : '🌞'
+      this.toggleDarkTheme(this.getEnabled())
+      // image.textContent = this.getEnabled() ? '🌚' : '🌞'
     }
 
     if (!toolbar) {

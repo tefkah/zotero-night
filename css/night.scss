@@ -4,7 +4,35 @@
 // * {
 //   background-color: var(--nord0) !important;
 // }
+
+#night-global-toggle-image {
+  &::before {
+    content: '☀️';
+    display: flex;
+    font-size: 1em;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    position: relative;
+  }
+}
 #main-window[theme='dark'] {
+  #night-global-toggle-image {
+    &::before {
+      content: '🌙';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1em;
+      font-weight: bold;
+      width: 1em;
+      height: 1em;
+      position: relative;
+    }
+  }
+
   background-color: black;
   * {
     border: 0 !important;

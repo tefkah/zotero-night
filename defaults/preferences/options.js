@@ -1,2 +1,2 @@
-// pref('extensions.night.default_pdf', 'match')
-// pref('extensions.night.enabled', 'true')
+user_pref('extensions.zotero.night.default_pdf', 'match')
+user_pref('extensions.zotero.night.enabled', 'true')
