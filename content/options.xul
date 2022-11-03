@@ -24,7 +24,7 @@
             <caption label="Default PDF filter" />
             <radiogroup id="id-night-default-pdf" preference="pref-night-default-pdf">
                 <radio label="None" value='none' />
-                <radio label="Matching background" value='match' />
+                <radio label="Matching background" value='nord' />
                 <radio label="Dark" value='dark' />
             </radiogroup>
 

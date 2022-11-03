@@ -185,7 +185,7 @@ class Night {
   }
 
   private setFilterStyle(styleTag: HTMLStyleElement, style?: string) {
-    styleTag.textContent = `[theme='dark'] #viewer .page .canvasWrapper canvas:not(.selectionCanvas) { filter:  ${
+    styleTag.textContent = `[theme='dark'] .page .canvasWrapper canvas:not(.selectionCanvas) { filter:  ${
       style || this.getCurrentFilterString()
     } }
     `
