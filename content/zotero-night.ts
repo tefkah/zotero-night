@@ -68,7 +68,8 @@ class Night {
       none: { filter: 'none', icon: '☀️' },
       nord: {
         filter:
-          'invert(81%) sepia(23%) saturate(459%) hue-rotate(181deg) brightness(90%) contrast(93%)',
+          // 'invert(81%) sepia(23%) saturate(459%) hue-rotate(181deg) brightness(90%) contrast(93%)',
+          'invert(84%) sepia(59%) saturate(210%) hue-rotate(185deg) brightness(93%) contrast(88%)',
         icon: '✨',
       },
       dark: {
