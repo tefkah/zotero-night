@@ -55,6 +55,7 @@
     "nodemon": "^2.0.15",
     "patch-package": "^6.4.7",
     "sass": "^1.54.0",
-    "standard-version": "^9.3.2"
+    "standard-version": "^9.3.2",
+    "zotero-types": "^1.0.16"
   }
 }

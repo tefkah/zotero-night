@@ -13,8 +13,16 @@
     "forceConsistentCasingInFileNames": true,
     "downlevelIteration": true,
     "lib": ["es2017", "dom"],
-    "typeRoots": ["./typings", "./node_modules/@types"]
+    "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["content/*.ts", "content/**/*", "resource/**/*", "*.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts", "typings"]
+  "include": [
+    "content/*.ts",
+    "typing",
+    "content/**/*",
+    "resource/**/*",
+    "*.ts",
+    "node_modules/zotero-types"
+  ],
+  "exclude": ["**/*.spec.ts"]
 }

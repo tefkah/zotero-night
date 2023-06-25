@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable  @typescript-eslint/no-unsafe-return */
-declare const Zotero: any
+// declare const Zotero: any
 
 function to_s(obj: any): string {
   if (typeof obj === 'string') return obj

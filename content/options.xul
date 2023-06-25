@@ -7,7 +7,8 @@
 
 
 <!-- onload="updatePreferenceWindow('all');" -->
-<prefwindow id="night-pref" title="Night Preferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<prefwindow id="night-pref" title="Night Preferences"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
     <stringbundleset id="stringbundleset">
         <stringbundle id="night-options" src="chrome://zotero-night/locale/options.properties" />
     </stringbundleset>
@@ -24,7 +25,7 @@
             <caption label="Default PDF filter" />
             <radiogroup id="id-night-default-pdf" preference="pref-night-default-pdf">
                 <radio label="None" value='none' />
-                <radio label="Matching background" value='nord' />
+                <radio label="Matching background (nord)" value='nord' />
                 <radio label="Dark" value='dark' />
             </radiogroup>
 
