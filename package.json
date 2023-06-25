@@ -42,7 +42,7 @@
     "rimraf": "^3.0.2",
     "ts-node": "^10.5.0",
     "typescript": "^4.5.5",
-    "zotero-plugin": "^1.4.23"
+    "zotero-plugin": "^1.2.2"
   },
   "xpi": {
     "name": "Night for Zotero",
