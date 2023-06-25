@@ -16,16 +16,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ThomasFKJorna/zotero-night.git"
+    "url": "https://github.com/tefkah/zotero-night.git"
   },
   "author": {
     "name": "Thomas F. K. Jorna",
     "email": "hello@tefkah.com"
   },
   "bugs": {
-    "url": "https://github.com/ThomasFKJorna/zotero-night/issues"
+    "url": "https://github.comhomasFKJorna/tefkah/zotero-night/issues"
   },
-  "homepage": "https://github.com/ThomasFKJorna/zotero-night",
+  "homepage": "https://github.com/tefkah/zotero-night",
   "dependencies": {
     "@types/mocha": "^9.1.0",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
@@ -46,8 +46,8 @@
   },
   "xpi": {
     "name": "Night for Zotero",
-    "updateLink": "https://github.com/ThomasFKJorna/zotero-night/releases/download/v{version}/zotero-night-{version}.xpi",
-    "releaseURL": "https://github.com/ThomasFKJorna/zotero-night/releases/download/release/"
+    "updateLink": "https://github.com/tefkah//zotero-night/releases/download/v{version}/zotero-night-{version}.xpi",
+    "releaseURL": "https://github.com/tefkah/zotero-night/releases/download/release/"
   },
   "devDependencies": {
     "css-colors-to-vars": "^1.0.2",
