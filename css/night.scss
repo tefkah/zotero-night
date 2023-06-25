@@ -20,11 +20,9 @@
 }
 
 #main-window[theme='dark'] {
-  #zotero-tb-toggle-item-pane {
-    background: var(--nord0) !important;
-  }
+  #zotero-tb-toggle-item-pane,
   #zotero-tb-toggle-notes-pane {
-    background: var(--nord1) !important;
+    background: var(--nord0) !important;
   }
   #zotero-tb-toggle-item-pane span,
   #zotero-tb-toggle-notes-pane span {
