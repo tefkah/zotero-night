@@ -135,9 +135,9 @@ class Night {
   }
 
   private getFilterForItemID(itemID: string) {
-    const idsString = this.getPref(`fitlerByItems`)
+    const idsString = this.getPref(`filterByItems`)
     if (!idsString) {
-      this.setPref(`fitlerByItems`, JSON.stringify({}))
+      this.setPref(`filterByItems`, JSON.stringify({}))
     }
     const ids = idsString ? JSON.parse(idsString) : {}
     const filter = ids?.[itemID]
@@ -146,18 +146,18 @@ class Night {
   }
 
   private setFilterForItemID(itemID: string, filter: FilterNames) {
-    const idsString = this.getPref(`fitlerByItems`)
+    const idsString = this.getPref(`filterByItems`)
     let ids = JSON.parse(idsString)
 
     if (!ids) {
-      this.setPref(`fitlerByItems`, JSON.stringify({}))
+      this.setPref(`filterByItems`, JSON.stringify({}))
       ids = {}
     }
 
     ids[itemID] = filter
 
     const newIdsString = JSON.stringify(ids)
-    this.setPref(`fitlerByItems`, newIdsString)
+    this.setPref(`filterByItems`, newIdsString)
   }
 
   private hasToggle(readerWindow: Window): boolean {
