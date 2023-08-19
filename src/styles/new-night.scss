@@ -1,0 +1,441 @@
+:root {
+  --bg-tabs-unfocused: #2e3441;
+  --bg-zotero-tb-toggle-item-pane: #2e3441;
+  --bg-zotero-tb-toggle-notes-pane: #2e3441;
+  --bg-zotero-tb-split: #2e3441;
+  --bg-deck-context-notes-pane: #2e3441;
+  --text-color-deck-context-notes-pane: #e5e9f0;
+  --text-color-math-inline: rgb(216, 222, 233);
+  --night-global-toggle-image-before-color: #000;
+  --border-color-info-tab: #3b4252;
+  --border-color-tab: #3b4252;
+  --border-width-search-input: 1px;
+  --border-color-search-input: #4c566a;
+  --bg-zotero-pane: #2e3441;
+  --text-color-zotero-pane: rgb(216, 222, 233);
+  --bg-treechildren: #2e3441;
+  --text-color-treechildren: #e5e9f0;
+  --bg-virtualized-table-body: #2e3441;
+  --bg-row-cell-drag-image-container: transparent;
+  --bg-tag-selector-container: #3b4252;
+  --border-color-tag-selector-container: #3b4252;
+  --bg-tag-selector-list-container: #2e3441;
+  --text-color-tag-selector-list-container: #e5e9f0;
+  --bg-tag-selector-item: #2e3441;
+  --bg-tag-selector-item-hover: #434c5e;
+  --text-color-tag-selector-item-hover: rgb(216, 222, 233);
+  --bg-zotero-tb-search: transparent;
+  --border-width-zotero-tb-search: 0;
+  --bg-tab-bar-container: #1f242d;
+  --bg-tabs: var(--background);
+  --text-color-tabs: #e5e9f0;
+  --tab-color: #4c566a;
+  --tab-hover-color: #4c566a;
+  --tab-selected-color: #e5e9f0;
+  --tab-selected-border-color: #81a1c1;
+  --toolbar-annotation-tools-btn-bg: transparent;
+  --bg-zotero-collections-tree: #2e3441;
+  --bg-treechildren-zotero-collections-tree: #2e3441;
+  --border-color-treechildren-zotero-collections-tree: #3b4252;
+}
+
+#zotero-tb-toggle-item-pane,
+#zotero-tb-toggle-notes-pane {
+  background: var(--bg-zotero-tb-toggle-item-pane) !important;
+}
+
+#zotero-tb-toggle-item-pane span,
+#zotero-tb-toggle-notes-pane span {
+  display: none;
+}
+
+#zotero-tb-split {
+  background: var(--bg-zotero-tb-split) !important;
+}
+
+/* ------------------------------- */
+
+/* 'deck' context notes pane */
+#zotero-context-toolbar-extension,
+.zotero-context-notes-list,
+.notes-list-container {
+  background: var(--bg-deck-context-notes-pane) !important;
+  color: var(--text-color-deck-context-notes-pane) !important;
+}
+
+math-inline,
+math-display {
+  color: var(--text-color-math-inline) !important;
+}
+
+#night-global-toggle-image {
+  &::before {
+    content: '🌙';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: bold;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    color: var(--night-global-toggle-image-before-color);
+  }
+}
+
+// background-color: black;
+* {
+  border: 0 !important;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+zoteroitembox label {
+  color: var(--border-color-info-tab) !important;
+}
+
+zoteroitembox label:not(.zotero-clicky) {
+  color: var(--text-color-zotero-pane) !important;
+}
+
+#zotero-tb-toggle-item-pane > span {
+  background: var(--bg-zotero-tb-toggle-item-pane) !important;
+}
+
+#zotero-tb,
+#zotero-toolbar,
+#main-text-color-toolbox {
+  background: var(--bg-zotero-tb) !important;
+  color: var(--text-color-zotero-pane) !important;
+}
+
+#zotero-toolbar {
+  border-bottom: 1px solid var(--border-color-info-tab) !important;
+}
+
+#main-text-color-toolbox menu {
+  color: var(--text-color-zotero-pane) !important;
+}
+
+/**
+* The thingy Zotero uses to indicate that you can move something. Totally outdated, people know they can move edges 
+**/
+grippy {
+  display: none !important;
+}
+
+#zotero-tag-selector-container {
+  border-bottom: 1px solid var(--border-color-tag-selector-container) !important;
+  border-top: 1px solid var(--border-color-tag-selector-container) !important;
+  border-right: 1px solid var(--border-color-tag-selector-container) !important;
+
+  input {
+    background: var(--bg-zotero-tb-toggle-item-pane) !important;
+    border: 1px solid var(--border-color-tab) !important;
+    color: var(--text-color-zotero-pane) !important;
+  }
+}
+
+.tag-selector-list-container {
+  background: var(--bg-zotero-tb-toggle-item-pane) !important;
+  color: var(--text-color-zotero-pane) !important;
+}
+
+.tag-selector-item {
+  background: var(--bg-tag-selector-item) !important;
+
+  &:hover {
+    background: var(--bg-tag-selector-item-hover) !important;
+    color: var(--text-color-tag-selector-item-hover) !important;
+  }
+
+  &.selected {
+    background: var(--bg-tag-selector-item-hover) !important;
+  }
+}
+
+#zotero-tb-search {
+  border: none !important;
+  box-shadow: 0 !important;
+}
+
+#zotero-pane {
+  background: var(--bg-zotero-pane) !important;
+  color: var(--text-color-zotero-pane) !important;
+}
+
+treechildren {
+  background: var(--bg-treechildren) !important;
+  color: var(--text-color-treechildren) !important;
+}
+
+.virtualized-table-body {
+  background: var(--bg-virtualized-table-body) !important;
+
+  .row .cell {
+    background-image: none !important;
+  }
+
+  &:focus {
+    .row.focused,
+    .row.selected {
+      margin: 0px !important;
+      /* width: calc(100% - 2px) !important; */
+    }
+  }
+
+  .drag-image-container .cell:not(:first-child) {
+    background: var(--bg-row-cell-drag-image-container) !important;
+  }
+}
+
+/**
+  * Incredibly annoying thing that makes the selected collection row shift slightly
+  **/
+.virtualized-table.multi-select:focus .row.focused {
+  width: 100% !important;
+  & > * {
+    width: 100% !important;
+    margin: 0px !important;
+    &:first-child {
+      margin-inline-start: 0px !important;
+    }
+    &:last-child {
+      margin-inline-end: 0px !important;
+    }
+  }
+}
+.virtualized-table {
+  .row {
+    border: 0 !important;
+    margin: 0px !important;
+    transition: background-color 0.1s !important;
+    background: var(--bg-virtualized-table-body);
+    color: var(--text-color-virtualized-table);
+
+    &.highlighted {
+      background: var(--bg-tag-selector-item-hover) !important;
+      color: var(--text-color-tag-selector-item-hover) !important;
+    }
+
+    &:focus.selected {
+      margin: 0px !important;
+    }
+
+    &.selected {
+      background: var(--bg-tag-selector-item-hover);
+      border-bottom: 0px solid var(--border-color-info-tab) !important;
+      border: 0 !important;
+    }
+
+    &:not(:focus) .row.selected {
+      background: var(--border-color-tab);
+      border: 0 !important;
+    }
+
+    &.selected.highlighted {
+      background: var(--bg-tag-selector-item-hover);
+    }
+  }
+}
+
+.row {
+  &:hover {
+    background: var(--border-color-tab) !important;
+    color: var(--text-color-zotero-pane) !important;
+    border: 0 !important;
+  }
+  label:first-child {
+    row > label:first-child {
+      color: var(--text-color-zotero-pane) !important;
+    }
+  }
+}
+
+#tab-bar-container {
+  background-color: #1f242d;
+  .tabs {
+    background: var(--bg-tabs);
+    color: var(--text-color-tabs);
+  }
+
+  .tab {
+    color: var(--tab-color);
+    background: var(--bg-tab);
+
+    &:hover {
+      background: var(--tab-hover-color) !important;
+      color: var(--tab-color);
+      cursor: pointer;
+    }
+
+    &:not(:focus) {
+      color: var(--text-color-tabs);
+      padding-top: 0.2rem;
+      background-color: #1f242d;
+      border-top: 0px solid var(--nord9);
+      border-left: 0px solid var(--nord3);
+      border-right: none;
+      border-bottom: none;
+    }
+  }
+
+  .tab.selected:not(.highlighted) {
+    color: var(--tab-selected-color);
+    background: var(--bg-zotero-pane);
+    border-top: 3px solid var(--tab-selected-border-color);
+    border-left: 0px solid var(--nord3);
+    border-right: none;
+    filter: none;
+
+    &:hover {
+      background: var(--bg-zotero-pane);
+    }
+  }
+
+  .tabs {
+    &::before,
+    &::after {
+      filter: brightness(0.7);
+      background: var(--bg-zotero-pane);
+      border: 0px solid var(--bg-zotero-pane);
+    }
+
+    &::before {
+      border-bottom-right-radius: 4px;
+    }
+    &::after {
+      border-bottom-left-radius: 4px;
+    }
+  }
+}
+
+.toolbar .annotation-tools .toolbarButton > span {
+  background: var(--toolbar-annotation-tools-btn-bg);
+}
+
+tab[selected] label {
+  color: var(--bg-tab-bar-container) !important;
+}
+
+tab label:hover {
+  color: var(--tab-color);
+}
+
+.zotero-context-pane-editor-parent-line {
+  background-color: var(--bg-zotero-pane);
+  color: var(--text-color-zotero-pane);
+}
+
+#zotero-collections-tree {
+  background: var(--bg-zotero-collections-tree) !important;
+
+  treechildren {
+    border-right: 1px solid var(--border-color-tag-selector-container) !important;
+
+    &::-moz-tree-row(hover) {
+      background: var(--border-color-tab) !important;
+      color: var(--text-color-zotero-pane) !important;
+    }
+
+    &::-moz-tree-cell(selected) {
+      background: var(--border-color-tab) !important;
+      /*border-bottom: 1px solid var(--nord2) !important;*/
+    }
+
+    &::-moz-tree-cell-text(selected) {
+      color: var(--text-color-zotero-pane) !important;
+    }
+  }
+
+  .virtualized-table {
+    border-right: 1px solid var(--border-color-tab) !important;
+
+    &:-moz-window-inactive,
+    &:not(:focus) {
+      .row {
+        &.selected {
+          &:not(.highlighted) {
+            color: var(--text-color-tabs);
+            background: var(--border-color-tab);
+          }
+          &.highlighted {
+            color: var(--tab-selected-color);
+            background: var(--bg-tag-selector-item-hover);
+          }
+        }
+      }
+    }
+  }
+}
+
+#zotero-items-tree {
+  border-right: 1px solid var(--border-color-tag-selector-container) !important;
+  background: var(--bg-zotero-tag-selector-container) !important;
+
+  treechildren {
+    &::-moz-tree-row(hover) {
+      background: var(--bg-treechildren-zotero-items-tree) !important;
+      color: var(--text-color-treechildren) !important;
+    }
+
+    &::-moz-tree-row(selected) {
+      background: var(--bg-treechildren-zotero-items-tree) !important;
+      color: var(--text-color-treechildren) !important;
+      border-bottom: 1px solid var(--border-color-tag-selector-container) !important;
+    }
+
+    &::-moz-tree-cell-text(selected) {
+      color: var(--text-color-treechildren) !important;
+    }
+  }
+
+  treecol {
+    background: var(--bg-treechildren-zotero-items-tree) !important;
+    color: var(--text-color-treechildren) !important;
+    border-bottom: 1px solid var(--border-color-tag-selector-container) !important;
+    border-right: 1px solid var(--border-color-tag-selector-container) !important;
+  }
+
+  .virtualized-table-header {
+    background: var(--bg-virtualized-table-header) !important;
+    color: var(--text-color-virtualized-table-header) !important;
+    border-bottom: 0;
+    border-right: 0;
+
+    .icon {
+      filter: var(--dark-filter);
+    }
+
+    .cell:hover {
+      background: var(--bg-treechildren-zotero-items-tree) !important;
+      color: var(--text-color-treechildren) !important;
+    }
+  }
+
+  .virtualized-table {
+    .row.selected .twisty svg {
+      fill: var(--text-color-virtualized-table-selected) !important;
+    }
+    .twisty svg {
+      fill: var(--text-color-twisty-svg) !important;
+    }
+  }
+
+  .virtualized-table {
+    &:-moz-window-inactive,
+    &:not(:focus) {
+      .row {
+        &.selected {
+          &:not(.highlighted) {
+            color: var(--text-color-treechildren);
+            background: var(--bg-treechildren-zotero-items-tree);
+          }
+          &.highlighted {
+            color: var(--text-color-virtualized-table-highlighted);
+            background: var(--bg-tag-selector-item-hover);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,884 @@
+// @import './itemPane.scss';
+@import './nord.scss';
+@import './scrollbar.scss';
+
+// * {
+//   background-color: var(--nord0) !important;
+// }
+
+#night-global-toggle-image {
+  &::before {
+    content: '☀️';
+    display: flex;
+    font-size: 1em;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+    position: relative;
+  }
+}
+
+#main-window[theme='dark'] {
+  #zotero-tb-toggle-item-pane,
+  #zotero-tb-toggle-notes-pane {
+    background: var(--nord0) !important;
+  }
+  #zotero-tb-toggle-item-pane span,
+  #zotero-tb-toggle-notes-pane span {
+    display: none;
+  }
+  #zotero-tb-split {
+    background: var(--nord0) !important;
+  }
+
+  /* ------------------------------- */
+
+  /* 'deck' context notes pane */
+  #zotero-context-toolbar-extension,
+  .zotero-context-notes-list,
+  .notes-list-container {
+    background: var(--nord0) !important;
+    color: var(--nord5) !important;
+    .inner {
+      background: var(--nord2);
+    }
+  }
+
+  math-inline,
+  math-display {
+    color: var(--nord4) !important;
+  }
+
+  #night-global-toggle-image {
+    &::before {
+      content: '🌙';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1em;
+      font-weight: bold;
+      width: 1em;
+      height: 1em;
+      position: relative;
+    }
+  }
+
+  background-color: black;
+  * {
+    border: 0 !important;
+    transition:
+      color 0.15s ease,
+      background-color 0.15s ease;
+  }
+
+  item-box label {
+    color: var(--nord4) !important;
+  }
+  item-box label:not(.zotero-clicky) {
+    color: var(--nord5) !important;
+  }
+
+  #zotero-tb-toggle-item-pane > span {
+    background: var(--nord0) !important;
+  }
+
+  #zotero-tb,
+  #zotero-toolbar,
+  #main-text-color-toolbox {
+    background: var(--nord0) !important;
+    color: var(--nord5) !important;
+  }
+
+  #zotero-toolbar {
+    border-bottom: 1px solid var(--nord2) !important;
+  }
+
+  #main-text-color-toolbox menu {
+    color: var(--nord5) !important;
+  }
+
+  /**
+  * The thingy Zotero uses to indicate that you can move something. Totally outdated, people know they can move edges 
+  **/
+  grippy {
+    display: none !important;
+  }
+
+  #zotero-tag-selector-container {
+    border-bottom: 1px solid var(--nord1) !important;
+    border-top: 1px solid var(--nord1) !important;
+    border-right: 1px solid var(--nord1) !important;
+
+    input {
+      background: var(--nord3) !important;
+      border: 1px solid var(--nord2) !important;
+      color: var(--nord5) !important;
+    }
+  }
+
+  .tag-selector-list-container {
+    background: var(--nord0) !important;
+    color: var(--nord5) !important;
+  }
+
+  .tag-selector-item {
+    background: var(--nord0) !important;
+
+    &:hover {
+      background: var(--nord2) !important;
+      color: var(--nord4) !important;
+    }
+    &.selected {
+      background: var(--nord2) !important;
+    }
+  }
+
+  #zotero-tb-search {
+    border: none !important;
+    box-shadow: 0 !important;
+    filter: var(--dark-filter);
+  }
+
+  #zotero-pane {
+    background: var(--nord0) !important;
+    color: var(--nord4) !important;
+  }
+
+  treechildren {
+    background: var(--nord0) !important;
+    color: var(--nord5) !important;
+  }
+
+  .virtualized-table-body {
+    background: var(--nord0) !important;
+
+    .row .cell {
+      background-image: none !important;
+    }
+
+    &:focus {
+      .row.focused,
+      .row.selected {
+        margin: 0px !important;
+        // width: calc(100% - 2px) !important
+      }
+    }
+
+    .drag-image-container .cell:not(:first-child) {
+      background: none !important;
+    }
+  }
+
+  /**
+    * Incredibly annoying thing that makes the selected collection row shift slightly
+    **/
+  .virtualized-table.multi-select:focus .row.focused {
+    width: 100% !important;
+    & > * {
+      width: 100% !important;
+      margin: 0px !important;
+      &:first-child {
+        margin-inline-start: 0px !important;
+      }
+      &:last-child {
+        margin-inline-end: 0px !important;
+      }
+    }
+  }
+  .virtualized-table {
+    .row {
+      border: 0 !important;
+      margin: 0px !important;
+      transition: background-color 0.1s !important;
+      background: var(--nord0);
+      color: var(--nord4);
+
+      &.highlighted {
+        background: var(--nord13) !important;
+        color: var(--nord3) !important;
+      }
+
+      &:focus.selected {
+        margin: 0px !important;
+      }
+
+      &.selected {
+        background: var(--nord2);
+        border-bottom: 0px solid var(--nord2) !important;
+        border: 0 !important;
+      }
+
+      &:not(:focus) .row.selected {
+        background: var(--nord3);
+        border: 0 !important;
+      }
+
+      &.selected.highlighted {
+        background: var(--nord13);
+      }
+    }
+  }
+
+  .row {
+    &:hover {
+      background: var(--nord2) !important;
+      color: var(--nord5) !important;
+      border: 0 !important;
+    }
+    label:first-child {
+      row > label:first-child {
+        color: var(--nord5) !important;
+      }
+    }
+  }
+
+  #tab-bar-container {
+    &::before,
+    &::after {
+      border-bottom: 0;
+    }
+
+    background-color: #1f242d;
+    .tabs {
+      background: var(--background);
+      color: var(--nord5);
+    }
+
+    .tab {
+      color: var(--nord3);
+      background: var(--nord0);
+
+      &:hover {
+        background: var(--nord2) !important;
+        color: var(--nord3);
+        cursor: pointer;
+      }
+
+      &:not(:focus) {
+        color: var(--nord6);
+        padding-top: 0.2rem;
+        //    background:
+        background-color: #1f242d;
+        border-top: 0px solid var(--nord9);
+        border-left: 0px solid var(--nord3);
+        border-right: none;
+        //filter: brightness(0.7)
+        /*1px solid var(--nord2) !important*/
+        border-bottom: none;
+      }
+    }
+
+    .tab.selected:not(.highlighted) {
+      color: var(--nord5);
+      background: var(--nord0);
+      border-top: 3px solid var(--nord9);
+      border-left: 0px solid var(--nord3);
+      border-right: none;
+      filter: none;
+
+      &:hover {
+        background: var(--nord0);
+      }
+    }
+
+    .tabs {
+      &::before,
+      &::after {
+        filter: brightness(0.7);
+        background: var(--nord0);
+        border: 0px solid var(--nord0);
+      }
+
+      &::before {
+        border-bottom-right-radius: 4px;
+      }
+      &::after {
+        border-bottom-left-radius: 4px;
+      }
+    }
+  }
+
+  .toolbar .annotation-tools .toolbarButton > span {
+    background: none;
+  }
+
+  tab[selected] label {
+    color: var(--nord0) !important;
+  }
+
+  tab label:hover {
+    color: var(--nord3);
+  }
+  .zotero-context-pane-editor-parent-line {
+    background-color: var(--nord0);
+    color: var(--nord4);
+  }
+
+  #zotero-collections-tree {
+    background: var(--nord0) !important;
+
+    treechildren {
+      border-right: 1px solid var(--nord1) !important;
+
+      &::-moz-tree-row(hover) {
+        background: var(--nord3) !important;
+        color: var(--nord5) !important;
+      }
+
+      &::-moz-tree-cell(selected) {
+        background: var(--nord3) !important;
+        /*border-bottom: 1px solid var(--nord2) !important;*/
+      }
+
+      &::-moz-tree-cell-text(selected) {
+        color: var(--nord5) !important;
+      }
+    }
+
+    .virtualized-table {
+      border-right: 1px solid var(--nord2) !important;
+
+      &:-moz-window-inactive,
+      &:not(:focus) {
+        .row {
+          &.selected {
+            &:not(.highlighted) {
+              color: var(--nord5);
+              background: var(--nord3);
+            }
+            &.highlighted {
+              color: var(--nord3);
+              background: var(--nord13);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #zotero-items-tree {
+    border-right: 1px solid var(--nord1) !important;
+    background: var(--nord0) !important;
+
+    treechildren {
+      &::-moz-tree-row(hover) {
+        background: var(--nord3) !important;
+        color: var(--nord5) !important;
+      }
+
+      &::-moz-tree-row(selected) {
+        background: var(--nord3) !important;
+        color: var(--nord5) !important;
+        border-bottom: 1px solid var(--nord2) !important;
+      }
+
+      &::-moz-tree-cell-text(selected) {
+        color: var(--nord5) !important;
+      }
+    }
+
+    treecol {
+      background: var(--nord3) !important;
+      color: var(--nord5) !important;
+      border-bottom: 1px solid var(--nord2) !important;
+      border-right: 1px solid var(--nord2) !important;
+    }
+
+    .virtualized-table-header {
+      background: var(--nord1) !important;
+      color: var(--nord4) !important;
+      border-bottom: 0;
+      border-right: 0;
+
+      .icon {
+        filter: var(--dark-filter);
+      }
+
+      .cell:hover {
+        background: var(--nord3) !important;
+        color: var(--nord5) !important;
+      }
+    }
+
+    .virtualized-table {
+      .row.selected .twisty svg {
+        fill: var(--nord35) !important;
+      }
+      .twisty svg {
+        fill: var(--nord3) !important;
+      }
+    }
+
+    .virtualized-table {
+      &:-moz-window-inactive,
+      &:not(:focus) {
+        .row {
+          &.selected {
+            &:not(.highlighted) {
+              color: var(--nord4);
+              background: var(--nord3);
+            }
+            &.highlighted {
+              color: var(--nord3);
+              background: var(--nord13);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  toolbarbutton {
+    background: none;
+    cursor: pointer !important;
+    border-radius: 4px !important;
+
+    &:hover {
+      background: var(--nord3);
+    }
+
+    dropmarker {
+      filter: var(--dark-filter);
+    }
+    span {
+      background: none !important;
+    }
+  }
+
+  .zotero-tb-button:-moz-window-inactive > .toolbarbutton-icon {
+    background: none;
+  }
+
+  .treecol-image {
+    background: var(--nord3) !important;
+    color: var(--nord5) !important;
+    border-bottom: 1px solid var(--nord2) !important;
+  }
+  //   border-bottom: 1px solid var(--nord2) !important;
+
+  .zotero-item-pane-content {
+    background: var(--nord0) !important;
+    color: var(--nord5) !important;
+
+    .zotero-clicky {
+      &:hover {
+        background: var(--nord3) !important;
+      }
+      :not([disabled='true']):not(.disabled):hover {
+        background: var(--nord3) !important;
+      }
+    }
+    & > groupbox > .groupbox-body {
+      background: var(--nord0) !important;
+      color: var(--nord5) !important;
+    }
+
+    #retraction-details {
+      background: var(--nord11) !important;
+    }
+
+    /**
+    * The input fields in the item-info pane
+    **/
+
+    .zotero-clicky,
+    #itembox-field-value-dateAdded,
+    #itembox-field-value-dateModified {
+      border-radius: 0.2rem;
+      padding-left: 1rem !important;
+      // padding-right: 1rem !important;
+      padding-top: 0.2rem !important;
+      padding-bottom: 0.2rem !important;
+      color: var(--nord5);
+    }
+
+    /**
+    * Make the label bold
+    **/
+    row > label:first-of-type {
+      font-weight: 600 !important;
+    }
+
+    .zotero-editpane-tabs {
+      -moz-appearance: none !important;
+      color: var(--nord4) !important;
+      background: var(--nord0);
+
+      tab {
+        background: var(--nord1);
+        border: 1px solid var(--nord2) !important;
+        label:not(.zotero-clicky) {
+          color: var(--nord4);
+        }
+        &:first-child {
+          border-top-left-radius: 0.3rem !important;
+          border-bottom-left-radius: 0.3rem !important;
+        }
+        &:last-child {
+          border-top-right-radius: 0.3rem !important;
+          border-bottom-right-radius: 0.3rem !important;
+        }
+        &[selected='true'] {
+          // filter: var(--dark-filter);
+          color: var(--nord6) !important;
+          background: var(--nord3) !important;
+          label {
+            color: var(--nord6) !important;
+          }
+        }
+        &:hover {
+          background: var(--nord3) !important;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .tab:not(:first-child) .tab-close {
+    filter: invert(0.7);
+  }
+
+  tabpanel {
+    color: var(--nord4) !important;
+    background: var(--nord0) !important;
+  }
+
+  tab {
+    color: var(--nord4);
+    background: var(--nord3);
+    border-top: 0px solid var(--nord4);
+    border-left: 0px solid var(--nord4);
+    border-right: 1px solid var(--nord2);
+  }
+
+  #tab-bar-container tab:hover {
+    color: var(--nord6);
+    background: var(--nord2);
+  }
+
+  #zotero-duplicates-merge-pane > groupbox > .groupbox-body {
+    background: var(--nord0);
+    color: var(--nord5);
+  }
+
+  #tags-box-container {
+    ul li ul {
+      background: var(--nord3) !important;
+      color: var(--nord5) !important;
+    }
+
+    input {
+      background-color: var(--nord3) !important;
+      color: var(--nord5) !important;
+      border: 1px solid var(--nord2) !important;
+    }
+  }
+
+  #item-type-menu {
+    color: var(--nord5) !important;
+  }
+
+  #zotero-date-field-status {
+    color: var(--nord5) !important;
+  }
+
+  #zotero-prefpane-general,
+  #zotero-prefpane-sync,
+  #zotero-prefpane-export,
+  #zotero-prefpane-advanced-keys-tab,
+  #wordProcessors,
+  #zotero-quickCopy-format,
+  #sync-reset-form {
+    color: var(--nord4) !important;
+    background: var(--nord3) !important;
+  }
+
+  #zotero-prefpane-general title {
+    background: var(--nord3) !important;
+    color: var(--nord5) !important;
+  }
+
+  prefwindow {
+    color: var(--nord4) !important;
+    background: var(--nord3) !important;
+
+    .chromeclass-toolbar {
+      color: var(--nord5) !important;
+      background: var(--nord0) !important;
+    }
+  }
+
+  #aboutcontent {
+    background: var(--nord3) !important;
+    color: var(--nord5) !important;
+  }
+
+  #version {
+    color: var(--nord5) !important;
+  }
+
+  #zotero-advanced-search-dialog #zotero-search-box-controls {
+    color: var(--nord4) !important;
+    background: var(--nord3) !important;
+  }
+
+  #zotero-note-editor linksbox {
+    background-color: var(--nord3) !important;
+    color: var(--nord5) !important;
+  }
+
+  #zotero-note-window blockquote {
+    color: var(--nord5) (255, 248, 248);
+  }
+
+  splitter {
+    background: var(--nord0) !important;
+  }
+
+  #tab-bar-container .tab:not(.selected) .tab-name {
+    color: var(--nord4-rgba7) !important;
+  }
+
+  #zotero-toolbar {
+    border: 0 !important;
+  }
+
+  /**
+  * Override these dang moz-appearances
+  **/
+  .zotero-view-tabbox > tabs > tab {
+    -moz-appearance: none !important;
+  }
+
+  .tags-box .tags-box-header button {
+    border-radius: 4px;
+    filter: var(--dark-filter);
+  }
+
+  .tags-box .tags-box-list .editable-container {
+    border-radius: 0px;
+  }
+
+  tabpanel button {
+    //   filter: var(--dark-filter) !important;
+    color: var(--nord1);
+  }
+
+  zoteroitembox {
+    background: var(--nord0) !important;
+  }
+
+  #better-bibtex-fields {
+    background: var(--nord0) !important;
+  }
+
+  #better-bibtex-citekey-display {
+    color: var(--nord6) !important;
+  }
+
+  .toolbarbutton-icon {
+    background: none !important;
+  }
+
+  .resizer {
+    background: none !important;
+  }
+
+  .tag-selector-filter-container {
+    border: none !important;
+    box-shadow: 0 !important;
+    filter: var(--dark-filter);
+  }
+
+  #zotero-tags-splitter {
+    background: var(--nord0) !important;
+  }
+
+  //  menuitem label:not(.zotero-clicky) {
+  //    color: var(--nord2) !important;
+  //  }
+
+  #zotero-tb-split {
+    .toolbarButton {
+      &::before {
+        filter: var(--nord-filter);
+      }
+      &.toggled::before {
+        filter: none;
+      }
+
+      &:last-child > span:first-child {
+        margin-left: 20px;
+        background: var(--nord0) !important;
+      }
+    }
+  }
+  //  #zotero-pane .menuitem label {
+  //    color: var(--nord3) !important;
+  //  }
+
+  #links-container {
+    background: var(--nord0) !important;
+    background-image: none !important;
+    color: var(--nord4);
+    [id*='-label'] {
+      color: var(--nord4);
+    }
+  }
+
+  .tag-selector {
+    .tag-selector-item.zotero-clicky {
+      border-radius: 1rem;
+      padding-top: 1px;
+      padding-right: 4px;
+      padding-bottom: 3px;
+      padding-left: 4px;
+    }
+  }
+
+  #navigator-toolbox {
+    background: var(--nord1);
+  }
+
+  menuitem,
+  menupopup,
+  menu {
+    -moz-appearance: none !important;
+  }
+
+  menu {
+    background: var(--nord1) !important;
+    color: var(--nord4) !important;
+    &:hover {
+      color: var(--nord4) !important;
+      background: var(--nord3) !important;
+    }
+  }
+
+  menuitem {
+    background: var(--nord1) !important;
+    color: var(--nord4) !important;
+    &:hover {
+      color: var(--nord4) !important;
+      background: var(--nord3) !important;
+    }
+    .menu-text {
+      color: var(--nord4) !important;
+    }
+    label {
+      color: var(--nord4) !important;
+    }
+  }
+
+  menupopup {
+    background: var(--nord1);
+
+    border-radius: 0.5rem;
+    menu {
+      hbox {
+        filter: invert(1);
+      }
+
+      &:hover {
+        hbox {
+          filter: invert(0);
+        }
+      }
+    }
+  }
+
+  // &:hover {
+  //   color: var(--nord6) !important;
+  //   background: var(--nord3) !important;
+  // }
+  // border-top: 0px solid #0a84ff !important;
+  // border-left: 0px solid rgba(127, 127, 127, 0.2) !important;
+  //  border-right: 1px solid #1d1d1d !important;
+  //   border-radius: 0px !important;
+  //   border-bottom-left-radius: 0px !important;
+  //   border-bottom-right-radius: 0px !important;
+
+  /*
+Scrollable tabs
+
+#main-window[theme="dark"] #tab-bar-container .tabs {
+background: var(--background);
+    color: var(--nord5);
+    overflow-x: visible;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 4rem;
+}
+
+#main-window[theme="dark"] #tab-bar-container .tab {
+
+    color: var(--nord3);
+    background: var(--nord0);
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+.tab .tab-close {
+width: auto;
+height: auto;
+line-height: 12px;
+border-radius: 3px;
+
+
+
+}
+
+
+#main-window[theme="dark"] #tab-bar-container {
+
+    background-color: var(--nord0);
+    overflow-x: scroll;
+    width: 200px;
+    height: 3.3rem;
+
+}
+*/
+
+  /*  tooltip {
+  animation: popup-intro ease-out 0.3s;
+} */
+  /*
+✨ Animations
+*/
+
+  @keyframes popup-intro {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+#night-global-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 20px !important;
+  height: 30px !important;
+  width: 20px !important;
+  background: none !important;
+  background-image: none !important;
+  border: 0px solid black;
+  border-radius: 4px;
+  padding: 10px 10px 10px 10px;
+
+  &:hover {
+    background-color: var(--nord3) !important;
+  }
+
+  &:hover {
+    background-color: var(--nord4) !important;
+  }
+}

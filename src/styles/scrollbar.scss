@@ -1,0 +1,8 @@
+@import './nord.scss';
+
+#main-window,
+html {
+  &[theme='dark'] {
+    scrollbar-color: var(--nord3) var(--nord1) !important;
+  }
+}

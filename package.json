@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Zotero Addon Template",
   "config": {
-    "addonName": "Zotero Addon Template",
-    "addonID": "addontemplate@euclpts.com",
-    "addonRef": "addontemplate",
-    "addonInstance": "AddonTemplate",
-    "prefsPrefix": "extensions.zotero.addontemplate",
-    "releasepage": "https://github.com/windingwind/zotero-addon-template/releases/latest/download/zotero-addon-template.xpi",
-    "updaterdf": "https://raw.githubusercontent.com/windingwind/zotero-addon-template/main/update.json"
+    "addonName": "Night",
+    "addonID": "night@tefkah.com",
+    "addonRef": "night",
+    "addonInstance": "Night",
+    "prefsPrefix": "night",
+    "releasepage": "https://github.com/tefkah/zotero-night/releases/latest/download/night.xpi",
+    "updaterdf": "https://raw.githubusercontent.com/tefkah/zotero-night/main/update.json"
   },
   "main": "src/index.ts",
   "scripts": {
@@ -41,6 +41,7 @@
   },
   "homepage": "https://github.com/windingwind/zotero-addon-template#readme",
   "dependencies": {
+    "zod": "^3.22.1",
     "zotero-plugin-toolkit": "^2.2.2"
   },
   "devDependencies": {
@@ -51,12 +52,14 @@
     "compressing": "^1.9.0",
     "concurrently": "^8.2.0",
     "cross-env": "^7.0.3",
-    "esbuild": "^0.18.12",
+    "esbuild": "^0.19.2",
+    "esbuild-sass-plugin": "^2.12.0",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^9.0.0",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.2",
     "release-it": "^16.1.0",
     "replace-in-file": "^7.0.1",
+    "sass": "^1.66.0",
     "typescript": "^5.1.6",
     "zotero-types": "^1.0.16"
   }
