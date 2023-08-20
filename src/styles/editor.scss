@@ -1,0 +1,124 @@
+@import './nord.scss';
+@import './scrollbar.scss';
+
+[theme='dark'] {
+  .editor {
+    background: var(--nord0);
+    color: var(--nord4) !important;
+    .toolbar {
+      background: var(--nord0);
+      color: var(--nord4);
+
+      button {
+        &.toolbar-button {
+          background-color: var(--nord0);
+          color: var(--nord4) !important;
+          &:hover {
+            background-color: var(--nord1);
+            color: var(--nord6) !important;
+          }
+        }
+        &.toolbar-button-active {
+          background-color: var(--nord3);
+          color: var(--nord6) !important;
+        }
+      }
+    }
+    .popup {
+      background: var(--nord1);
+      color: var(--nord4);
+
+      button {
+        &:hover,
+        &.active {
+          background: var(--nord3) !important;
+        }
+        background: var(--nord1) !important;
+      }
+    }
+  }
+
+  .prosemirror-dropcursor-block {
+    background: var(--nord3) !important;
+  }
+  .primary-editor {
+    background: var(--nord0);
+    color: var(--nord4);
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--h6-color) !important;
+    }
+
+    .ProseMirror-selectednode {
+      background: var(--nord1) !important;
+      color: var(--nord6) !important;
+    }
+
+    blockquote {
+      border-left: 3px solid var(--blockquote-border-left) !important;
+      border-right: 3px solid var(--blockquote-border-left) !important;
+    }
+
+    pre {
+      background: var(--pre-background) !important;
+    }
+
+    math-inline,
+    math-display {
+      color: var(--nord6) !important;
+    }
+
+    p code {
+      background: var(--pre-background) !important;
+    }
+
+    table {
+      border: 1px solid var(--table-border) !important;
+
+      td,
+      th {
+        border: 1px solid var(--table-border) !important;
+      }
+
+      .selectedCell:after {
+        background: var(
+          --primary-editor-selectedCell-after-background
+        ) !important;
+      }
+
+      .column-resize-handle {
+        background-color: var(
+          --primary-editor-column-resize-handle-background-color
+        ) !important;
+      }
+    }
+
+    hr {
+      background-color: var(--table-border) !important;
+
+      &.ProseMirror-selectednode {
+        background-color: var(
+          --primary-editor-column-resize-handle-background-color
+        ) !important;
+      }
+    }
+
+    &.column-resize-handle {
+      background-color: var(
+        --primary-editor-column-resize-handle-background-color
+      ) !important;
+    }
+
+    &.selectedCell:after {
+      background: var(
+        --primary-editor-selectedCell-after-background
+      ) !important;
+    }
+  }
+}

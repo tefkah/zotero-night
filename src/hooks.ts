@@ -10,6 +10,10 @@ import { createZToolkit } from './utils/ztoolkit'
 import { registerReader } from './modules/ui/registerReader'
 import { switchTheme } from './modules/ui/switchTheme'
 import { getPref, setPref } from './utils/prefs'
+import {
+  attachInitialEditorStyles,
+  registerEditorObserver,
+} from './modules/ui/registerEditor'
 
 async function onStartup() {
   await Promise.all([
@@ -32,6 +36,8 @@ async function onMainWindowLoad(win: Window): Promise<void> {
   UIExampleFactory.registerStyleSheet()
   UIExampleFactory.registerToggleButton()
   await registerReader()
+  await registerEditorObserver()
+  attachInitialEditorStyles()
 }
 
 async function onMainWindowUnload(win: Window): Promise<void> {
