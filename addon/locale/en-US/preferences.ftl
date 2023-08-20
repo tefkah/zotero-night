@@ -1,4 +1,10 @@
-pref-title = Addon Template Example
+pref-title = Night Preferences
 pref-enable =
-    .label = Enable
+    .label = Gay
 pref-help = { $name } Build { $version } { $time }
+pref-theme = Current Theme
+pref-current-theme = Current Theme
+pref-pdf-none = None
+pref-pdf-nord = Match
+pref-pdf-dark = Dark
+pref-pdf-default-filter = Default PDF filter

@@ -1,10 +1,10 @@
-startup-begin = Addon is loading
-startup-finish = Addon is ready
+startup-begin = Night is loading
+startup-finish = Night is ready
 menuitem-label = Addon Template: Helper Examples
 menupopup-label = Addon Template: Menupopup
 menuitem-submenulabel = Addon Template
 menuitem-filemenulabel = Addon Template: File Menuitem
-prefs-title = Template
+prefs-title = Night
 prefs-table-title = Title
 prefs-table-detail = Detail
 tabpanel-lib-tab-label = Lib Tab

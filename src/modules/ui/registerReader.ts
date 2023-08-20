@@ -6,57 +6,47 @@ import { addFilterToReader, cycleFilter, getFilterByID } from './filterSchema'
 import { getSecondaryReaderDocument } from '../../utils/getSplitWindow'
 import { TagElementProps } from 'zotero-plugin-toolkit/dist/tools/ui'
 
-const filters = {
-  none: { filter: 'none', icon: '☀️' },
-  nord: {
-    filter:
-      // 'invert(81%) sepia(23%) saturate(459%) hue-rotate(181deg) brightness(90%) contrast(93%)',
-      'invert(84%) sepia(59%) saturate(210%) hue-rotate(185deg) brightness(93%) contrast(88%)',
-    icon: '✨',
-  },
-  dark: {
-    filter:
-      'brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65) hue-rotate(180deg)',
-    icon: '🌙',
-  },
-}
-
-// export function addTab() {
-//   const BNotes = Zotero.BetterNotes
-//   ztoolkit.log('BNotes', BNotes)
-
-//   const iframes = BNotes.data.workspace.tab.container.querySelectorAll('iframe')
-//   ztoolkit.log('iframes', iframes)
-
-//   iframes.forEach((iframe) => {
-//     const doc = iframe.contentDocument
-//     attachTabStylesToReaderWindow(doc!)
-//   })
-// }
-
-export function registerReader() {
+export async function registerReader() {
   ztoolkit.ReaderInstance.register('initialized', 'night', async (instance) => {
     await instance._waitForReader()
     await instance._initPromise
 
     ztoolkit.log('registerReader', instance)
-    //  await instance._splitVertically()
 
     const doc = instance._iframeWindow?.document
 
     addFilterToggleButton(instance)
     addFilterToReader(instance)
 
-    const secondViewDoc = getSecondaryReaderDocument(instance)
+    attachTabStylesToReaderWindow(doc!)
 
     addSplitMutationObserver(instance)
-    ;[doc, secondViewDoc].forEach(async (doc, idx) => {
-      if (idx === 1) {
-        await sleep(1000)
-        ztoolkit.log('registering styles for window', idx, doc)
+    try {
+      await waitUtilAsync(() => {
+        const secondviewdoc = getSecondaryReaderDocument(instance)
+        ztoolkit.log('2️⃣ secondviewdoc', secondviewdoc)
+        return (
+          secondviewdoc?.URL === 'resource://zotero/pdf-reader/viewer.html?'
+        )
+      })
+      const secondViewDoc = getSecondaryReaderDocument(instance)
+
+      if (secondViewDoc) {
+        attachTabStylesToReaderWindow(secondViewDoc!)
+        try {
+          addFilterToReader(instance)
+        } catch (e) {
+          Zotero.log(e)
+        }
       }
-      attachTabStylesToReaderWindow(doc!)
-    })
+    } catch (e) {
+      ztoolkit.log(e)
+    }
+    // ;[doc, secondViewDoc].forEach(async (doc, idx) => {
+    //   if (idx === 1) {
+    //     ztoolkit.log('registering styles for window', idx, doc)
+    //   }
+    // })
   })
 }
 
@@ -87,11 +77,6 @@ function addSplitMutationObserver(reader: _ZoteroTypes.ReaderInstance) {
         mutation.type === 'attributes' &&
         mutation.attributeName === 'class'
       ) {
-        // TODO: do something smarter like 'onload' event
-        // await waitUtilAsync(true)
-        await sleep(1000)
-
-        // Get the new class value
         // @ts-expect-error it do
         const newClassValue = mutation.target.className
 
@@ -102,6 +87,14 @@ function addSplitMutationObserver(reader: _ZoteroTypes.ReaderInstance) {
         ) {
           return
         }
+
+        await waitUtilAsync(() => {
+          const secondviewdoc = getSecondaryReaderDocument(reader)
+          ztoolkit.log('2️⃣ secondviewdoc', secondviewdoc)
+          return (
+            secondviewdoc?.URL === 'resource://zotero/pdf-reader/viewer.html?'
+          )
+        })
 
         const secondViewDoc = getSecondaryReaderDocument(reader)
         if (!secondViewDoc) {
@@ -141,6 +134,7 @@ function addFilterToggleButton(reader: _ZoteroTypes.ReaderInstance) {
       attributes: {
         id: 'night-toggle',
         'data:filter': filterForReader.icon,
+        style: 'display: none; height: 20px; width: 20px; marginRight: 20px',
       },
       properties: {
         textContent: filterForReader.icon,
@@ -152,12 +146,6 @@ function addFilterToggleButton(reader: _ZoteroTypes.ReaderInstance) {
 
           toggle.textContent = icon
         },
-      },
-      styles: {
-        filter: '0 !important',
-        height: '20px',
-        width: '20px',
-        marginRight: '20px',
       },
     },
   )
@@ -193,7 +181,9 @@ function attachTabStylesToReaderWindow(doc: Document) {
   /**
    * Set the theme to dark
    */
-  doc.querySelector('html[dir]')?.setAttribute('theme', 'dark')
+  doc
+    .querySelector('html[dir]')
+    ?.setAttribute('theme', getPref('current_theme'))
 
   if (alreadyExistingStyle) {
     ztoolkit.UI.replaceElement(props, alreadyExistingStyle)

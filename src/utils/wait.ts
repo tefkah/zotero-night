@@ -31,8 +31,8 @@ export function waitUntil(
  */
 export function waitUtilAsync(
   condition: () => boolean,
-  interval = 100,
-  timeout = 10000,
+  interval = 200,
+  timeout = 1000,
 ) {
   return new Promise<void>((resolve, reject) => {
     const start = Date.now()

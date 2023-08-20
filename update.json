@@ -3,8 +3,8 @@
     "night@tefkah.com": {
       "updates": [
         {
-          "version": "1.0.0",
-          "update_link": "https://github.com/tefkah/zotero-night/releases/latest/download/night.xpi",
+          "version": "0.0.1",
+          "update_link": "https://github.com/tefkah/zotero-night/releases/latest/download/night-7.xpi",
           "applications": {
             "zotero": {
               "strict_min_version": "6.999"

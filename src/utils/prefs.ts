@@ -5,7 +5,7 @@ import { z } from 'zod'
 import { defaultFilters } from '../modules/ui/defaultFilters.js'
 
 export const prefsSchema = {
-  current_theme: z.string(),
+  current_theme: z.enum(['light', 'dark']),
   // themes: themesSchema,
   default_pdf_filter: z.string(),
   filters: filtersSchema,
@@ -17,7 +17,7 @@ export type Prefs = {
 }
 
 export const defaultPrefs: Prefs = {
-  current_theme: 'none',
+  current_theme: 'light',
   // themes: {},
   default_pdf_filter: 'none',
   filters: defaultFilters,
@@ -41,13 +41,17 @@ export function getPref<K extends keyof typeof prefsSchema>(key: K): Prefs[K] {
     throw new Error(`Invalid pref type: ${typeof pref}`)
   }
 
+  ztoolkit.log(`Getting pref ${key} with value ${pref}`, prefsSchema)
+  if (pref.at(0) !== '{' && pref.at(0) !== '[') {
+    return pref as Prefs[K]
+  }
   try {
     const parsedPref = JSON.parse(pref)
 
     return parsedPref
   } catch (e) {
     ztoolkit.log(e)
-    return pref
+    return pref as Prefs[K]
   }
 }
 

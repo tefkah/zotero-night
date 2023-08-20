@@ -1,14 +1,25 @@
 {
-  "name": "zotero-addon-template",
-  "version": "1.0.0",
-  "description": "Zotero Addon Template",
+  "name": "zotero-night",
+  "version": "0.0.1",
+  "description": "Zotero Night",
   "config": {
     "addonName": "Night",
     "addonID": "night@tefkah.com",
     "addonRef": "night",
     "addonInstance": "Night",
     "prefsPrefix": "night",
-    "releasepage": "https://github.com/tefkah/zotero-night/releases/latest/download/night.xpi",
+    "buttonId": "night-toggle-button",
+    "themes": {
+      "light": {
+        "icon": "🌝",
+        "label": "Light"
+      },
+      "dark": {
+        "icon": "🌚",
+        "label": "Dark"
+      }
+    },
+    "releasepage": "https://github.com/tefkah/zotero-night/releases/latest/download/night-7.xpi",
     "updaterdf": "https://raw.githubusercontent.com/tefkah/zotero-night/main/update.json"
   },
   "main": "src/index.ts",
@@ -32,14 +43,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/windingwind/zotero-addon-template.git"
+    "url": "git+https://github.com/tefkah/zotero-night.git"
   },
-  "author": "windingwind",
+  "author": "Thomas F. K. Jorna",
   "license": "AGPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/windingwind/zotero-addon-template/issues"
+    "url": "https://github.com/tefkah/zotero-night/issues"
   },
-  "homepage": "https://github.com/windingwind/zotero-addon-template#readme",
+  "homepage": "https://github.com/tefkah/zotero-night#readme",
   "dependencies": {
     "zod": "^3.22.1",
     "zotero-plugin-toolkit": "^2.2.2"

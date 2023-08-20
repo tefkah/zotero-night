@@ -122,72 +122,13 @@ export class KeyExampleFactory {
       //   )
       // },
     })
-
-    // // Register an event key for Alt+L
-    // ztoolkit.Shortcut.register('event', {
-    //   id: `${config.addonRef}-key-larger`,
-    //   key: 'L',
-    //   modifiers: 'alt',
-    //   callback: (keyOptions) => {
-    //     addon.hooks.onShortcuts('larger')
-    //   },
-    // })
-    // Register an element key using <key> for Alt+S
-    ztoolkit.Shortcut.register('element', {
-      id: `${config.addonRef}-key-smaller`,
-      key: 'S',
-      modifiers: 'alt',
-      xulData: {
-        document,
-        command: cmdSmallerId,
-        _parentId: keysetId,
-        _commandOptions: {
-          id: cmdSmallerId,
-          document,
-          _parentId: cmdsetId,
-          oncommand: `Zotero.${config.addonInstance}.hooks.onShortcuts('smaller')`,
-        },
-      },
-    })
-    // Here we register an conflict key for Alt+S
-    // just to show how the confliction check works.
-    // This is something you should avoid in your plugin.
-    ztoolkit.Shortcut.register('event', {
-      id: `${config.addonRef}-key-smaller-conflict`,
-      key: 'S',
-      modifiers: 'alt',
-      callback: (keyOptions) => {
-        ztoolkit.getGlobal('alert')('Smaller! This is a conflict key.')
-      },
-    })
-    // Register an event key to check confliction
-    ztoolkit.Shortcut.register('event', {
-      id: `${config.addonRef}-key-check-conflict`,
-      key: 'C',
-      modifiers: 'alt',
-      callback: (keyOptions) => {
-        addon.hooks.onShortcuts('confliction')
-      },
-    })
-    new ztoolkit.ProgressWindow(config.addonName)
-      .createLine({
-        text: 'Example Shortcuts: Alt+L/S/C',
-        type: 'success',
-      })
-      .show()
   }
 
   @example
-  static exampleShortcutToggleCallback() {
+  static shortcutToggleCallback() {
     const currentTheme = getPref('current_theme')
-    const nextTheme = currentTheme == 'light' ? 'dark' : 'light'
+    const nextTheme = currentTheme === 'light' ? 'dark' : 'light'
     switchTheme(nextTheme)
-    new ztoolkit.ProgressWindow(config.addonName)
-      .createLine({
-        text: `Theme switched to ${nextTheme}!`,
-        type: 'default',
-      })
-      .show()
   }
 }
 
@@ -203,7 +144,34 @@ export class UIExampleFactory {
     })
     document.documentElement.appendChild(styles)
 
-    document.querySelector('#main-window')?.setAttribute('theme', 'dark')
+    document
+      .querySelector('#main-window')
+      ?.setAttribute('theme', getPref('current_theme'))
+  }
+
+  @example
+  static registerToggleButton() {
+    const button = ztoolkit.UI.createElement(document, 'button', {
+      properties: {
+        textContent: config.themes[getPref('current_theme')].icon,
+        onclick: () => {
+          const currentTheme = getPref('current_theme')
+          const nextTheme = currentTheme === 'light' ? 'dark' : 'light'
+          switchTheme(nextTheme)
+          button.textContent = config.themes[nextTheme].icon
+        },
+      },
+      attributes: {
+        id: config.buttonId,
+        style:
+          'font-size: 1.5em; background: transparent; border-left: none; border-right: none;border-top: none; border-bottom: .5px solid #a9a9a9;',
+      },
+    })
+    document.querySelector('#tab-bar-container')?.prepend(button)
+
+    document
+      .querySelector('#main-window')
+      ?.setAttribute('theme', getPref('current_theme'))
   }
 
   // @example

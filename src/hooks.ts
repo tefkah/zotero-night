@@ -9,6 +9,8 @@ import { getString, initLocale } from './utils/locale'
 import { registerPrefsScripts } from './modules/preferenceScript'
 import { createZToolkit } from './utils/ztoolkit'
 import { registerReader } from './modules/ui/registerReader'
+import { switchTheme } from './modules/ui/switchTheme'
+import { getPref, setPref } from './utils/prefs'
 
 async function onStartup() {
   await Promise.all([
@@ -49,6 +51,7 @@ async function onMainWindowLoad(win: Window): Promise<void> {
   })
 
   UIExampleFactory.registerStyleSheet()
+  UIExampleFactory.registerToggleButton()
 
   //   UIExampleFactory.registerRightClickMenuItem();
 
@@ -73,7 +76,7 @@ async function onMainWindowLoad(win: Window): Promise<void> {
   // PromptExampleFactory.registerAnonymousCommandExample();
 
   // PromptExampleFactory.registerConditionalCommandExample();
-  registerReader()
+  await registerReader()
 
   await Zotero.Promise.delay(1000)
 
@@ -141,6 +144,14 @@ async function onPrefsEvent(type: string, data: { [key: string]: any }) {
     case 'load':
       registerPrefsScripts(data.window)
       break
+    case 'switch':
+      switchTheme(data.value)
+      ztoolkit.log(data)
+      break
+    case 'default_filter':
+      setPref('default_pdf_filter', data.value)
+      ztoolkit.log(data)
+      break
     default:
       return
   }
@@ -149,7 +160,7 @@ async function onPrefsEvent(type: string, data: { [key: string]: any }) {
 function onShortcuts(type: string) {
   switch (type) {
     case 'toggle':
-      KeyExampleFactory.exampleShortcutToggleCallback()
+      KeyExampleFactory.shortcutToggleCallback()
       break
     default:
       break

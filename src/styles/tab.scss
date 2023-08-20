@@ -32,20 +32,20 @@
   }
 
   /* search bar at the top of context notes pane */
-  [theme='dark'] .zotero-context-notes-list textbox[type='search'] {
+  .zotero-context-notes-list textbox[type='search'] {
     filter: var(--dark-filter);
   }
 
   /* '+' button */
-  [theme='dark'] .header-row button {
+  .header-row button {
     background-color: var(--nord2) !important;
     color: var(--nord5) !important;
   }
 
   /* boxes/cards for notes 'rows' in context notes pane */
-  [theme='dark'] .note-row,
-  [theme='dark'] .more-row,
-  [theme='dark'] .note-row .inner .body-line .date {
+  .note-row,
+  .more-row,
+  .note-row .inner .body-line .date {
     background-color: var(--nord2) !important;
     color: var(--nord5) !important;
   }
@@ -53,7 +53,7 @@
   /* ------------------------------- */
 
   /* related items tab pane -> 'add' button */
-  [theme='dark'] .zotero-editpane-related #addButton {
+  .zotero-editpane-related #addButton {
     -moz-appearance: none !important;
     background-color: var(--nord2) !important;
     color: var(--nord5) !important;
@@ -62,7 +62,7 @@
   /* --------------------------------- */
 
   /* 'add' notes button in library view*/
-  [theme='dark'] #zotero-editpane-notes-add {
+  #zotero-editpane-notes-add {
     -moz-appearance: none !important;
     background-color: var(--nord2) !important;
     color: var(--nord5) !important;
@@ -71,14 +71,14 @@
   /* --------------------------------- */
 
   /* new tag input in 'tags' tab pane */
-  [theme='dark'] .tag .editable.editing {
+  .tag .editable.editing {
     filter: var(--dark-filter);
   }
 
   /* --------------------------------- */
 
   /* dropdown icon button of 'author'/publisher data entry field in first context tab */
-  [theme='dark'] .creator-type-label image {
+  .creator-type-label image {
     filter: var(--dark-filter);
   }
 
@@ -438,16 +438,22 @@
     background-color: var(--nord0) !important;
     color: var(--nord5) !important;
   }
+  #toolbarViewer {
+    button {
+      filter: brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65)
+        hue-rotate(180deg) !important;
+      border-image: none !important;
+      border-radius: 1rem;
 
-  #toolbarViewer button {
-    filter: brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65)
-      hue-rotate(180deg) !important;
-    border-image: none !important;
-    border-radius: 1rem;
-  }
+      &#night-toggle {
+        display: block !important;
+        filter: none !important;
+      }
+    }
 
-  #toolbarViewer #reader-toolbar-button-color-picker {
-    filter: none !important;
+    #reader-toolbar-button-color-picker {
+      filter: none !important;
+    }
   }
 
   #selector .tags {
