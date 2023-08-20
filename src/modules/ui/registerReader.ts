@@ -2,7 +2,7 @@ import { getPref } from '../../utils/prefs'
 import { waitUtilAsync } from '../../utils/wait'
 import tab from '../../styles/tab.scss'
 import { addFilterToReader, cycleFilter, getFilterByID } from './filterSchema'
-import { getSecondaryReaderDocument } from '../../utils/getSplitWindow'
+import { getReaderDocument } from '../../utils/getSplitWindow'
 import { TagElementProps } from 'zotero-plugin-toolkit/dist/tools/ui'
 
 export async function registerReader() {
@@ -19,16 +19,23 @@ export async function registerReader() {
 
     attachTabStylesToReaderWindow(doc!)
 
+    await waitUtilAsync(() => {
+      const doc = getReaderDocument(instance, false)
+      return !!doc
+    })
+    const viewerDoc = getReaderDocument(instance, false)
+
+    if (viewerDoc) {
+      attachTabStylesToReaderWindow(viewerDoc!)
+    }
+
     addSplitMutationObserver(instance)
     try {
       await waitUtilAsync(() => {
-        const secondviewdoc = getSecondaryReaderDocument(instance)
-        ztoolkit.log('2️⃣ secondviewdoc', secondviewdoc)
-        return (
-          secondviewdoc?.URL === 'resource://zotero/pdf-reader/viewer.html?'
-        )
+        const secondviewdoc = getReaderDocument(instance)
+        return !!secondviewdoc
       })
-      const secondViewDoc = getSecondaryReaderDocument(instance)
+      const secondViewDoc = getReaderDocument(instance)
 
       if (secondViewDoc) {
         attachTabStylesToReaderWindow(secondViewDoc!)
@@ -59,10 +66,11 @@ function addSplitMutationObserver(reader: _ZoteroTypes.ReaderInstance) {
     return
   }
 
-  const splitWrapper = doc?.querySelector('#splitWrapper')
+  const secondaryViewWrapper = doc?.querySelector('#secondary-view')
 
   const prevMutationObserver =
     cache.mutationObservers[reader.itemID?.toString() ?? '']
+  ztoolkit.log({ secondaryViewWrapper })
 
   if (prevMutationObserver) {
     prevMutationObserver.disconnect()
@@ -73,29 +81,15 @@ function addSplitMutationObserver(reader: _ZoteroTypes.ReaderInstance) {
     for (const mutation of mutationsList) {
       // Check if the class attribute was modified
       if (
-        mutation.type === 'attributes' &&
-        mutation.attributeName === 'class'
+        mutation.addedNodes.length &&
+        mutation.addedNodes[0].nodeName === 'IFRAME'
       ) {
-        // @ts-expect-error it do
-        const newClassValue = mutation.target.className
-
-        // If the window is not split, do nothing
-        if (
-          !newClassValue.includes('split') ||
-          mutation.oldValue?.includes('split')
-        ) {
-          return
-        }
-
         await waitUtilAsync(() => {
-          const secondviewdoc = getSecondaryReaderDocument(reader)
-          ztoolkit.log('2️⃣ secondviewdoc', secondviewdoc)
-          return (
-            secondviewdoc?.URL === 'resource://zotero/pdf-reader/viewer.html?'
-          )
+          const secondviewdoc = getReaderDocument(reader)
+          return !!secondviewdoc
         })
 
-        const secondViewDoc = getSecondaryReaderDocument(reader)
+        const secondViewDoc = getReaderDocument(reader)
         if (!secondViewDoc) {
           return
         }
@@ -107,11 +101,10 @@ function addSplitMutationObserver(reader: _ZoteroTypes.ReaderInstance) {
     }
   })
 
-  if (splitWrapper) {
+  if (secondaryViewWrapper) {
     // Start observing the target element for attribute changes
-    observer.observe(splitWrapper, {
-      attributes: true,
-      attributeOldValue: true,
+    observer.observe(secondaryViewWrapper, {
+      childList: true,
     })
     cache.mutationObservers[reader.itemID?.toString() ?? ''] = observer
   }
@@ -150,7 +143,7 @@ function addFilterToggleButton(reader: _ZoteroTypes.ReaderInstance) {
   )
 
   const middleToolbar = readerWindow.document.querySelector(
-    '#toolbarViewerMiddle',
+    '.tool-group.annotation-tools',
   )
 
   if (!middleToolbar) {

@@ -1,5 +1,5 @@
 import { config } from '../../package.json'
-import { getSecondaryReaderDocument } from '../utils/getSplitWindow'
+import { getReaderDocument } from '../utils/getSplitWindow'
 import { getString } from '../utils/locale'
 import { getPref } from '../utils/prefs'
 import { cycleFilter } from './ui/filterSchema'

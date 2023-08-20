@@ -1,5 +1,5 @@
 import { hexToFilter } from './hexToFilter.js'
-import { getSecondaryReaderDocument } from '../../utils/getSplitWindow.js'
+import { getReaderDocument } from '../../utils/getSplitWindow.js'
 import { getPref, setPref } from '../../utils/prefs.js'
 import { sleep } from '../../utils/wait.js'
 import { ElementProps } from 'zotero-plugin-toolkit/dist/tools/ui.js'
@@ -58,16 +58,16 @@ export const getFilterByID = (id: number) => {
 }
 
 export const getReaderFilters = (reader: _ZoteroTypes.ReaderInstance) => {
-  const primary = reader._iframeWindow?.document?.querySelector(`#${filterId}`)
-  const secondary = getSecondaryReaderDocument(reader)?.querySelector(
+  const primary = getReaderDocument(reader, false)?.querySelector(
     `#${filterId}`,
   )
+  const secondary = getReaderDocument(reader)?.querySelector(`#${filterId}`)
 
   ztoolkit.log(
     'getReaderFilters',
     primary,
     secondary,
-    getSecondaryReaderDocument(reader),
+    getReaderDocument(reader),
   )
 
   return [primary, secondary]
@@ -139,8 +139,8 @@ export function addFilterToReader(
   key ??= currentFilter.name ?? getDefaultFilter()
   ztoolkit.log('KEY', currentFilter, key)
 
-  const primaryDocument = reader._iframeWindow?.document
-  const secondaryDocument = getSecondaryReaderDocument(reader)
+  const primaryDocument = getReaderDocument(reader, false)
+  const secondaryDocument = getReaderDocument(reader)
 
   ;[primaryDocument, secondaryDocument].forEach(async (doc, idx) => {
     if (!doc) {

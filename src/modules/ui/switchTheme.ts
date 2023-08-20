@@ -1,4 +1,4 @@
-import { getSecondaryReaderDocument } from '../../utils/getSplitWindow'
+import { getReaderDocument } from '../../utils/getSplitWindow'
 import { prefsSchema, setPref } from '../../utils/prefs'
 import { config } from '../../../package.json'
 import { z } from 'zod'
@@ -45,7 +45,7 @@ export function switchTheme(theme: z.infer<typeof prefsSchema.current_theme>) {
 
   const readers = Zotero.Reader._readers
   for (const reader of readers) {
-    const secondDoc = getSecondaryReaderDocument(reader)
+    const secondDoc = getReaderDocument(reader)
     for (const doc of [reader?._iframeWindow?.document, secondDoc]) {
       if (!doc) {
         continue

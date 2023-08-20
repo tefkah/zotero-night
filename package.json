@@ -20,7 +20,7 @@
       }
     },
     "releasepage": "https://github.com/tefkah/zotero-night/releases/latest/download/night-7.xpi",
-    "updaterdf": "https://raw.githubusercontent.com/tefkah/zotero-night/main/update.json"
+    "updaterdf": "https://raw.githubusercontent.com/tefkah/zotero-night/zotero-7/update.json"
   },
   "main": "src/index.ts",
   "scripts": {
@@ -72,6 +72,6 @@
     "replace-in-file": "^7.0.1",
     "sass": "^1.66.0",
     "typescript": "^5.1.6",
-    "zotero-types": "^1.0.16"
+    "zotero-types": "^1.2.2"
   }
 }

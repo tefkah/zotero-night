@@ -1,5 +1,6 @@
-export function getSecondaryReaderDocument(
+export function getReaderDocument(
   reader: _ZoteroTypes.ReaderInstance,
+  secondary = true,
 ) {
   const readerDocument = reader._iframeWindow?.document
 
@@ -7,7 +8,9 @@ export function getSecondaryReaderDocument(
     return null
   }
 
-  const secondaryIFrame = readerDocument.querySelector('iframe')
+  const secondaryIFrame = readerDocument.querySelector<HTMLIFrameElement>(
+    `#${secondary ? 'secondary' : 'primary'}-view iframe`,
+  )
 
   if (!secondaryIFrame) {
     return null

@@ -6,7 +6,7 @@
   "homepage_url": "__homepage__",
   "author": "__author__",
   "icons": {
-    "48": "chrome/content/icons/favicon@0.5x.png",
+    "48": "chrome/content/icons/favicon.png",
     "96": "chrome/content/icons/favicon.png"
   },
   "applications": {

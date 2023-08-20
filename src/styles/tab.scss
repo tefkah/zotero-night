@@ -19,366 +19,367 @@
   }
 
   /* ------------------------------- */
-  #splitWrapper #viewSplitter {
-    background-color: var(--nord3) !important;
+  .split-view-resizer,
+  .sidebar-resizer {
+    background-color: var(--nord1) !important;
   }
 
-  /* 'deck' context notes pane */
-  #zotero-context-toolbar-extension,
-  .zotero-context-notes-list,
-  .notes-list-container {
-    background: var(--nord0) !important;
-    color: var(--nord5) !important;
-  }
-
-  /* search bar at the top of context notes pane */
-  .zotero-context-notes-list textbox[type='search'] {
-    filter: var(--dark-filter);
-  }
-
-  /* '+' button */
-  .header-row button {
-    background-color: var(--nord2) !important;
-    color: var(--nord5) !important;
-  }
-
-  /* boxes/cards for notes 'rows' in context notes pane */
-  .note-row,
-  .more-row,
-  .note-row .inner .body-line .date {
-    background-color: var(--nord2) !important;
-    color: var(--nord5) !important;
-  }
-
-  /* ------------------------------- */
-
-  /* related items tab pane -> 'add' button */
-  .zotero-editpane-related #addButton {
-    -moz-appearance: none !important;
-    background-color: var(--nord2) !important;
-    color: var(--nord5) !important;
-  }
-
-  /* --------------------------------- */
-
-  /* 'add' notes button in library view*/
-  #zotero-editpane-notes-add {
-    -moz-appearance: none !important;
-    background-color: var(--nord2) !important;
-    color: var(--nord5) !important;
-  }
-
-  /* --------------------------------- */
-
-  /* new tag input in 'tags' tab pane */
-  .tag .editable.editing {
-    filter: var(--dark-filter);
-  }
-
-  /* --------------------------------- */
-
-  /* dropdown icon button of 'author'/publisher data entry field in first context tab */
-  .creator-type-label image {
-    filter: var(--dark-filter);
-  }
-
-  /* --------------------------------- */
-
-  .toolbar-button:hover {
-    background-color: var(--nord3);
-  }
-
-  body {
-    background-color: var(--body-background-color) !important;
-  }
-
-  a {
-    background-color: var(--a-background-color) !important;
-  }
-
-  .ProseMirror-hideselection {
-    caret-color: var(--a-background-color) !important;
-
-    *::-moz-selection {
-      background: var(--a-background-color) !important;
-    }
-
-    *::selection {
-      background: var(--a-background-color) !important;
-    }
-  }
-
-  .citation {
-    &.selected,
-    &:hover {
-      background-color: var(--citation-hover-background-color) !important;
-    }
-
-    &.ProseMirror-selectednode {
-      background-color: var(
-        --citation-ProseMirror-selectednode-background-color
-      ) !important;
-    }
-  }
-
-  .find {
-    background-color: var(--find-background-color) !important;
-  }
-
-  .ProseMirror-gapcursor:after {
-    border-top: 1px solid var(--ProseMirror-gapcursor-after-border-top) !important;
-  }
-
-  .primary-editor {
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: var(--h6-color) !important;
-    }
-
-    blockquote {
-      border-left: 3px solid var(--blockquote-border-left) !important;
-      border-right: 3px solid var(--blockquote-border-left) !important;
-    }
-
-    pre {
-      background: var(--pre-background) !important;
-    }
-
-    math-inline,
-    math-display {
-      color: var(--nord6) !important;
-    }
-
-    p code {
-      background: var(--pre-background) !important;
-    }
-
-    table {
-      border: 1px solid var(--table-border) !important;
-
-      td,
-      th {
-        border: 1px solid var(--table-border) !important;
-      }
-
-      .selectedCell:after {
-        background: var(
-          --primary-editor-selectedCell-after-background
-        ) !important;
-      }
-
-      .column-resize-handle {
-        background-color: var(
-          --primary-editor-column-resize-handle-background-color
-        ) !important;
-      }
-    }
-
-    hr {
-      background-color: var(--table-border) !important;
-
-      &.ProseMirror-selectednode {
-        background-color: var(
-          --primary-editor-column-resize-handle-background-color
-        ) !important;
-      }
-    }
-
-    &.column-resize-handle {
-      background-color: var(
-        --primary-editor-column-resize-handle-background-color
-      ) !important;
-    }
-
-    &.selectedCell:after {
-      background: var(
-        --primary-editor-selectedCell-after-background
-      ) !important;
-    }
-  }
-
-  .ProseMirror .empty-node::before {
-    color: var(--empty-node--before-color) !important;
-  }
-
-  .node-selected {
-    background-color: var(--node-selected-background-color) !important;
-  }
-
-  .blocks-selected *::-moz-selection {
-    background-color: var(--a-background-color) !important;
-  }
-
-  .blocks-selected *::selection {
-    background-color: var(--a-background-color) !important;
-  }
-
-  .ProseMirror-selectednode {
-    background-color: var(
-      --citation-ProseMirror-selectednode-background-color
-    ) !important;
-  }
-
-  .regular-image .resized-wrapper .image {
-    border: 1px solid var(--image-border) !important;
-  }
-
-  .external-image .resized-wrapper {
-    border: 1px solid var(--image-border) !important;
-  }
-
-  .import-placeholder-image .image {
-    background-color: var(--image-background-color) !important;
-  }
-
-  .popup-container {
-    .popup {
-      background-color: var(--body-background-color) !important;
-      border: 1px solid var(--image-border) !important;
-      box-shadow: 0 0 24px 0 var(--popup-box-shadow) !important;
-    }
-
-    &::before,
-    &::after {
-      border: solid var(--a-background-color) !important;
-    }
-
-    &[class*='bottom'] {
-      &::before {
-        border-bottom-color: var(--before-border-bottom-color) !important;
-      }
-      &::after {
-        border-bottom-color: var(--body-background-color) !important;
-      }
-    }
-
-    &[class*='top'] {
-      &::before {
-        border-top-color: var(--before-border-bottom-color) !important;
-      }
-
-      &::after {
-        border-top-color: var(--body-background-color) !important;
-      }
-    }
-
-    button {
-      background: var(--body-background-color) !important;
-
-      &:hover {
-        background: var(--button-hover-background) !important;
-      }
-    }
-  }
-
-  .findbar {
-    color: var(--findbar-color) !important;
-    border-bottom: 1px solid var(--image-border) !important;
-
-    .findbar .line .input-box {
-      border: 1px solid var(--image-border) !important;
-
-      .buttons {
-        color: var(--button-color) !important;
-
-        .button {
-          &:hover,
-          &.hover {
-            background-color: var(--button-hover-background) !important;
-          }
-
-          &.active,
-          &:active {
-            color: var(--body-background-color) !important;
-            background-color: var(--button-color) !important;
-          }
-        }
-
-        .text-button {
-          border: 1px solid var(--image-background-color) !important;
-        }
-      }
-    }
-  }
-
-  .noticebar {
-    color: var(--ProseMirror-gapcursor-after-border-top) !important;
-    border-bottom: 1px solid var(--image-border) !important;
-    background: var(--noticebar-background) !important;
-  }
-
-  .toolbar {
-    color: var(--button-color) !important;
-    border-bottom: 1px solid var(--image-border) !important;
-  }
-
-  .toolbar-button {
-    color: var(--button-color) !important;
-
-    &:hover {
-      background-color: var(--button-hover-background) !important;
-    }
-
-    &:active,
-    &.active {
-      color: var(--body-background-color) !important;
-      background-color: var(--button-color) !important;
-    }
-  }
-
-  .dropdown .popup {
-    background-color: var(--body-background-color) !important;
-    border: 1px solid var(--image-border) !important;
-    box-shadow: 0 0 24px 0 var(--popup-box-shadow) !important;
-  }
-
-  .text-dropdown .popup .inline-options {
-    border-bottom: 1px solid var(--image-border) !important;
-  }
-
-  .text-dropdown .popup .block-options .option:hover {
-    background-color: var(--button-hover-background) !important;
-  }
-
-  .text-dropdown .popup .block-options .option.active {
-    color: var(--body-background-color) !important;
-  }
-
-  .text-dropdown .popup .block-options .option.active {
-    background-color: var(--button-color) !important;
-  }
-
-  .colors-dropdown,
-  .font-colors-dropdown {
-    .popup .grid {
-      border-bottom: 1px solid var(--image-border) !important;
-
-      .color-button:hover {
-        background-color: var(--button-hover-background) !important;
-      }
-
-      .icon-color {
-        border: 1px solid var(--icon-color-border) !important;
-      }
-
-      .clear {
-        border: 2px solid var(--ProseMirror-gapcursor-after-border-top) !important;
-      }
-    }
-  }
-
-  .more-dropdown .popup hr {
-    border-bottom: 1px solid var(--image-border) !important;
-  }
-
-  .more-dropdown .popup .option:hover {
-    background-color: var(--button-hover-background) !important;
-  }
+  // /* 'deck' context notes pane */
+  // #zotero-context-toolbar-extension,
+  // .zotero-context-notes-list,
+  // .notes-list-container {
+  //   background: var(--nord0) !important;
+  //   color: var(--nord5) !important;
+  // }
+
+  // /* search bar at the top of context notes pane */
+  // .zotero-context-notes-list textbox[type='search'] {
+  //   filter: var(--dark-filter);
+  // }
+
+  // /* '+' button */
+  // .header-row button {
+  //   background-color: var(--nord2) !important;
+  //   color: var(--nord5) !important;
+  // }
+
+  // /* boxes/cards for notes 'rows' in context notes pane */
+  // .note-row,
+  // .more-row,
+  // .note-row .inner .body-line .date {
+  //   background-color: var(--nord2) !important;
+  //   color: var(--nord5) !important;
+  // }
+
+  // /* ------------------------------- */
+
+  // /* related items tab pane -> 'add' button */
+  // .zotero-editpane-related #addButton {
+  //   -moz-appearance: none !important;
+  //   background-color: var(--nord2) !important;
+  //   color: var(--nord5) !important;
+  // }
+
+  // /* --------------------------------- */
+
+  // /* 'add' notes button in library view*/
+  // #zotero-editpane-notes-add {
+  //   -moz-appearance: none !important;
+  //   background-color: var(--nord2) !important;
+  //   color: var(--nord5) !important;
+  // }
+
+  // /* --------------------------------- */
+
+  // /* new tag input in 'tags' tab pane */
+  // .tag .editable.editing {
+  //   filter: var(--dark-filter);
+  // }
+
+  // /* --------------------------------- */
+
+  // /* dropdown icon button of 'author'/publisher data entry field in first context tab */
+  // .creator-type-label image {
+  //   filter: var(--dark-filter);
+  // }
+
+  // /* --------------------------------- */
+
+  // .toolbar-button:hover {
+  //   background-color: var(--nord3);
+  // }
+
+  // body {
+  //   background-color: var(--body-background-color) !important;
+  // }
+
+  // a {
+  //   background-color: var(--a-background-color) !important;
+  // }
+
+  // .ProseMirror-hideselection {
+  //   caret-color: var(--a-background-color) !important;
+
+  //   *::-moz-selection {
+  //     background: var(--a-background-color) !important;
+  //   }
+
+  //   *::selection {
+  //     background: var(--a-background-color) !important;
+  //   }
+  // }
+
+  // .citation {
+  //   &.selected,
+  //   &:hover {
+  //     background-color: var(--citation-hover-background-color) !important;
+  //   }
+
+  //   &.ProseMirror-selectednode {
+  //     background-color: var(
+  //       --citation-ProseMirror-selectednode-background-color
+  //     ) !important;
+  //   }
+  // }
+
+  // .find {
+  //   background-color: var(--find-background-color) !important;
+  // }
+
+  // .ProseMirror-gapcursor:after {
+  //   border-top: 1px solid var(--ProseMirror-gapcursor-after-border-top) !important;
+  // }
+
+  // .primary-editor {
+  //   p,
+  //   h1,
+  //   h2,
+  //   h3,
+  //   h4,
+  //   h5,
+  //   h6 {
+  //     color: var(--h6-color) !important;
+  //   }
+
+  //   blockquote {
+  //     border-left: 3px solid var(--blockquote-border-left) !important;
+  //     border-right: 3px solid var(--blockquote-border-left) !important;
+  //   }
+
+  //   pre {
+  //     background: var(--pre-background) !important;
+  //   }
+
+  //   math-inline,
+  //   math-display {
+  //     color: var(--nord6) !important;
+  //   }
+
+  //   p code {
+  //     background: var(--pre-background) !important;
+  //   }
+
+  //   table {
+  //     border: 1px solid var(--table-border) !important;
+
+  //     td,
+  //     th {
+  //       border: 1px solid var(--table-border) !important;
+  //     }
+
+  //     .selectedCell:after {
+  //       background: var(
+  //         --primary-editor-selectedCell-after-background
+  //       ) !important;
+  //     }
+
+  //     .column-resize-handle {
+  //       background-color: var(
+  //         --primary-editor-column-resize-handle-background-color
+  //       ) !important;
+  //     }
+  //   }
+
+  //   hr {
+  //     background-color: var(--table-border) !important;
+
+  //     &.ProseMirror-selectednode {
+  //       background-color: var(
+  //         --primary-editor-column-resize-handle-background-color
+  //       ) !important;
+  //     }
+  //   }
+
+  //   &.column-resize-handle {
+  //     background-color: var(
+  //       --primary-editor-column-resize-handle-background-color
+  //     ) !important;
+  //   }
+
+  //   &.selectedCell:after {
+  //     background: var(
+  //       --primary-editor-selectedCell-after-background
+  //     ) !important;
+  //   }
+  // }
+
+  // .ProseMirror .empty-node::before {
+  //   color: var(--empty-node--before-color) !important;
+  // }
+
+  // .node-selected {
+  //   background-color: var(--node-selected-background-color) !important;
+  // }
+
+  // .blocks-selected *::-moz-selection {
+  //   background-color: var(--a-background-color) !important;
+  // }
+
+  // .blocks-selected *::selection {
+  //   background-color: var(--a-background-color) !important;
+  // }
+
+  // .ProseMirror-selectednode {
+  //   background-color: var(
+  //     --citation-ProseMirror-selectednode-background-color
+  //   ) !important;
+  // }
+
+  // .regular-image .resized-wrapper .image {
+  //   border: 1px solid var(--image-border) !important;
+  // }
+
+  // .external-image .resized-wrapper {
+  //   border: 1px solid var(--image-border) !important;
+  // }
+
+  // .import-placeholder-image .image {
+  //   background-color: var(--image-background-color) !important;
+  // }
+
+  // .popup-container {
+  //   .popup {
+  //     background-color: var(--body-background-color) !important;
+  //     border: 1px solid var(--image-border) !important;
+  //     box-shadow: 0 0 24px 0 var(--popup-box-shadow) !important;
+  //   }
+
+  //   &::before,
+  //   &::after {
+  //     border: solid var(--a-background-color) !important;
+  //   }
+
+  //   &[class*='bottom'] {
+  //     &::before {
+  //       border-bottom-color: var(--before-border-bottom-color) !important;
+  //     }
+  //     &::after {
+  //       border-bottom-color: var(--body-background-color) !important;
+  //     }
+  //   }
+
+  //   &[class*='top'] {
+  //     &::before {
+  //       border-top-color: var(--before-border-bottom-color) !important;
+  //     }
+
+  //     &::after {
+  //       border-top-color: var(--body-background-color) !important;
+  //     }
+  //   }
+
+  //   button {
+  //     background: var(--body-background-color) !important;
+
+  //     &:hover {
+  //       background: var(--button-hover-background) !important;
+  //     }
+  //   }
+  // }
+
+  // .findbar {
+  //   color: var(--findbar-color) !important;
+  //   border-bottom: 1px solid var(--image-border) !important;
+
+  //   .findbar .line .input-box {
+  //     border: 1px solid var(--image-border) !important;
+
+  //     .buttons {
+  //       color: var(--button-color) !important;
+
+  //       .button {
+  //         &:hover,
+  //         &.hover {
+  //           background-color: var(--button-hover-background) !important;
+  //         }
+
+  //         &.active,
+  //         &:active {
+  //           color: var(--body-background-color) !important;
+  //           background-color: var(--button-color) !important;
+  //         }
+  //       }
+
+  //       .text-button {
+  //         border: 1px solid var(--image-background-color) !important;
+  //       }
+  //     }
+  //   }
+  // }
+
+  // .noticebar {
+  //   color: var(--ProseMirror-gapcursor-after-border-top) !important;
+  //   border-bottom: 1px solid var(--image-border) !important;
+  //   background: var(--noticebar-background) !important;
+  // }
+
+  // .toolbar {
+  //   color: var(--button-color) !important;
+  //   /// border-bottom: 1px solid var(--image-border) !important;
+  // }
+
+  // .toolbar-button {
+  //   color: var(--button-color) !important;
+
+  //   &:hover {
+  //     background-color: var(--button-hover-background) !important;
+  //   }
+
+  //   &:active,
+  //   &.active {
+  //     color: var(--body-background-color) !important;
+  //     background-color: var(--button-color) !important;
+  //   }
+  // }
+
+  // .dropdown .popup {
+  //   background-color: var(--body-background-color) !important;
+  //   border: 1px solid var(--image-border) !important;
+  //   box-shadow: 0 0 24px 0 var(--popup-box-shadow) !important;
+  // }
+
+  // .text-dropdown .popup .inline-options {
+  //   border-bottom: 1px solid var(--image-border) !important;
+  // }
+
+  // .text-dropdown .popup .block-options .option:hover {
+  //   background-color: var(--button-hover-background) !important;
+  // }
+
+  // .text-dropdown .popup .block-options .option.active {
+  //   color: var(--body-background-color) !important;
+  // }
+
+  // .text-dropdown .popup .block-options .option.active {
+  //   background-color: var(--button-color) !important;
+  // }
+
+  // .colors-dropdown,
+  // .font-colors-dropdown {
+  //   .popup .grid {
+  //     border-bottom: 1px solid var(--image-border) !important;
+
+  //     .color-button:hover {
+  //       background-color: var(--button-hover-background) !important;
+  //     }
+
+  //     .icon-color {
+  //       border: 1px solid var(--icon-color-border) !important;
+  //     }
+
+  //     .clear {
+  //       border: 2px solid var(--ProseMirror-gapcursor-after-border-top) !important;
+  //     }
+  //   }
+  // }
+
+  // .more-dropdown .popup hr {
+  //   border-bottom: 1px solid var(--image-border) !important;
+  // }
+
+  // .more-dropdown .popup .option:hover {
+  //   background-color: var(--button-hover-background) !important;
+  // }
 
   * {
     border-width: 0px;
@@ -397,7 +398,6 @@
 
   div#viewer .page {
     background-color: var(--nord0) !important;
-    border: 9px solid transparent !important;
   }
 
   .page-popup-container .page-popup {
@@ -419,7 +419,8 @@
 	        	}
                 */
 
-  #viewer {
+  #viewer,
+  #viewerContainer {
     background-color: var(--nord0) !important;
   }
 
@@ -438,7 +439,8 @@
     background-color: var(--nord0) !important;
     color: var(--nord5) !important;
   }
-  #toolbarViewer {
+  .tool-group.annotation-tools {
+    //  #toolbarViewer {
     button {
       filter: brightness(0.91) grayscale(0.15) invert(0.95) sepia(0.65)
         hue-rotate(180deg) !important;
@@ -491,6 +493,10 @@
     .highlight {
       color: var(--nord4) !important;
     }
+
+    .content {
+      color: var(--nord4) !important;
+    }
     &:hover {
       background-color: var(--nord3) !important;
     }
@@ -536,6 +542,20 @@
 
   .annotations {
     color: var(--nord4);
+  }
+
+  .view-popup {
+    background-color: var(--nord1) !important;
+    color: var(--nord5) !important;
+  }
+
+  .context-menu {
+    background-color: var(--nord1) !important;
+    color: var(--nord5) !important;
+    button {
+      background-color: var(--nord1) !important;
+      color: var(--nord5) !important;
+    }
   }
 
   .editor .bubble {
