@@ -25,3 +25,5 @@ declare const cache: typeof addon.data.cache
 declare const __env__: 'production' | 'development'
 
 declare class Localization {}
+
+declare module '*.scss'
