@@ -1,19 +1,19 @@
-import { config } from "../../package.json";
+import { config } from '../../package.json'
 
-export { initLocale, getString };
+export { initLocale, getString }
 
 /**
  * Initialize locale data
  */
 function initLocale() {
   const l10n = new (
-    typeof Localization === "undefined"
-      ? ztoolkit.getGlobal("Localization")
+    typeof Localization === 'undefined'
+      ? ztoolkit.getGlobal('Localization')
       : Localization
-  )([`${config.addonRef}-addon.ftl`], true);
+  )([`${config.addonRef}-addon.ftl`], true)
   addon.data.locale = {
     current: l10n,
-  };
+  }
 }
 
 /**
@@ -39,23 +39,23 @@ function initLocale() {
  * getString("addon-dynamic-example", { args: { count: 2 } }); // I have 2 apples
  * ```
  */
-function getString(localString: string): string;
-function getString(localString: string, branch: string): string;
+function getString(localString: string): string
+function getString(localString: string, branch: string): string
 function getString(
   localeString: string,
   options: { branch?: string | undefined; args?: Record<string, unknown> },
-): string;
+): string
 function getString(...inputs: any[]) {
   if (inputs.length === 1) {
-    return _getString(inputs[0]);
+    return _getString(inputs[0])
   } else if (inputs.length === 2) {
-    if (typeof inputs[1] === "string") {
-      return _getString(inputs[0], { branch: inputs[1] });
+    if (typeof inputs[1] === 'string') {
+      return _getString(inputs[0], { branch: inputs[1] })
     } else {
-      return _getString(inputs[0], inputs[1]);
+      return _getString(inputs[0], inputs[1])
     }
   } else {
-    throw new Error("Invalid arguments");
+    throw new Error('Invalid arguments')
   }
 }
 
@@ -63,17 +63,17 @@ function _getString(
   localeString: string,
   options: { branch?: string | undefined; args?: Record<string, unknown> } = {},
 ): string {
-  const localStringWithPrefix = `${config.addonRef}-${localeString}`;
-  const { branch, args } = options;
+  const localStringWithPrefix = `${config.addonRef}-${localeString}`
+  const { branch, args } = options
   const pattern = addon.data.locale?.current.formatMessagesSync([
     { id: localStringWithPrefix, args },
-  ])[0];
+  ])[0]
   if (!pattern) {
-    return localStringWithPrefix;
+    return localStringWithPrefix
   }
   if (branch && pattern.attributes) {
-    return pattern.attributes[branch] || localStringWithPrefix;
+    return pattern.attributes[branch] || localStringWithPrefix
   } else {
-    return pattern.value || localStringWithPrefix;
+    return pattern.value || localStringWithPrefix
   }
 }

@@ -15,7 +15,7 @@ class Color {
 
   toString() {
     return `rgb(${Math.round(this.r)}, ${Math.round(this.g)}, ${Math.round(
-      this.b
+      this.b,
     )})`
   }
 
@@ -87,13 +87,13 @@ class Color {
 
   multiply(matrix: number[]) {
     const newR = this.clamp(
-      this.r * matrix[0] + this.g * matrix[1] + this.b * matrix[2]
+      this.r * matrix[0] + this.g * matrix[1] + this.b * matrix[2],
     )
     const newG = this.clamp(
-      this.r * matrix[3] + this.g * matrix[4] + this.b * matrix[5]
+      this.r * matrix[3] + this.g * matrix[4] + this.b * matrix[5],
     )
     const newB = this.clamp(
-      this.r * matrix[6] + this.g * matrix[7] + this.b * matrix[8]
+      this.r * matrix[6] + this.g * matrix[7] + this.b * matrix[8],
     )
     this.r = newR
     this.g = newG
@@ -297,9 +297,9 @@ class Solver {
       Math.round(filters[idx] * multiplier)
 
     return `filter: invert(${fmt(0)}%) sepia(${fmt(1)}%) saturate(${fmt(
-      2
+      2,
     )}%) hue-rotate(${fmt(3, 3.6)}deg) brightness(${fmt(4)}%) contrast(${fmt(
-      5
+      5,
     )}%);`
   }
 }
@@ -309,7 +309,7 @@ function hexToRgb(hex: string): number[] {
   const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i
   hex = hex.replace(
     shorthandRegex,
-    (m, r: string, g: string, b: string) => `${r}${r}${g}${g}${b}${b}`
+    (m, r: string, g: string, b: string) => `${r}${r}${g}${g}${b}${b}`,
   )
 
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
@@ -325,7 +325,7 @@ function hexToRgb(hex: string): number[] {
 
 export const hexToFilter = (
   input: string,
-  base?: string
+  base?: string,
 ): {
   lossMsg: string
   result: { values: number[]; loss: number; filter: string }

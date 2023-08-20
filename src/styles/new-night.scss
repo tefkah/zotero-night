@@ -86,7 +86,9 @@ math-display {
 // background-color: black;
 * {
   border: 0 !important;
-  transition: color 0.15s ease, background-color 0.15s ease;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
 }
 
 zoteroitembox label {

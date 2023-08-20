@@ -256,7 +256,7 @@ async function main() {
   console.log('[Build] Compiling SCSS')
   const nightCss = sass.compile(
     new URL('../src/styles/night.scss', import.meta.url).pathname,
-    { style: 'compressed', }
+    { style: 'compressed' },
   )
 
   console.log('[Build] Write night.css')

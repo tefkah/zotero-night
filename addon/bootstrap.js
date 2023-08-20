@@ -5,25 +5,25 @@
  * [2] https://www.zotero.org/support/dev/zotero_7_for_developers
  */
 
-var chromeHandle;
+var chromeHandle
 
 function install(data, reason) {}
 
 async function startup({ id, version, resourceURI, rootURI }, reason) {
-  await Zotero.initializationPromise;
+  await Zotero.initializationPromise
 
   // String 'rootURI' introduced in Zotero 7
   if (!rootURI) {
-    rootURI = resourceURI.spec;
+    rootURI = resourceURI.spec
   }
 
   var aomStartup = Components.classes[
-    "@mozilla.org/addons/addon-manager-startup;1"
-  ].getService(Components.interfaces.amIAddonManagerStartup);
-  var manifestURI = Services.io.newURI(rootURI + "manifest.json");
+    '@mozilla.org/addons/addon-manager-startup;1'
+  ].getService(Components.interfaces.amIAddonManagerStartup)
+  var manifestURI = Services.io.newURI(rootURI + 'manifest.json')
   chromeHandle = aomStartup.registerChrome(manifestURI, [
-    ["content", "__addonRef__", rootURI + "chrome/content/"],
-  ]);
+    ['content', '__addonRef__', rootURI + 'chrome/content/'],
+  ])
 
   /**
    * Global variables for plugin code.
@@ -33,44 +33,44 @@ async function startup({ id, version, resourceURI, rootURI }, reason) {
    */
   const ctx = {
     rootURI,
-  };
-  ctx._globalThis = ctx;
+  }
+  ctx._globalThis = ctx
 
   Services.scriptloader.loadSubScript(
     `${rootURI}/chrome/content/scripts/__addonRef__.js`,
     ctx,
-  );
+  )
 }
 
 async function onMainWindowLoad({ window }, reason) {
-  Zotero.__addonInstance__?.hooks.onMainWindowLoad(window);
+  Zotero.__addonInstance__?.hooks.onMainWindowLoad(window)
 }
 
 async function onMainWindowUnload({ window }, reason) {
-  Zotero.__addonInstance__?.hooks.onMainWindowUnload(window);
+  Zotero.__addonInstance__?.hooks.onMainWindowUnload(window)
 }
 
 function shutdown({ id, version, resourceURI, rootURI }, reason) {
   if (reason === APP_SHUTDOWN) {
-    return;
+    return
   }
 
-  if (typeof Zotero === "undefined") {
-    Zotero = Components.classes["@zotero.org/Zotero;1"].getService(
+  if (typeof Zotero === 'undefined') {
+    Zotero = Components.classes['@zotero.org/Zotero;1'].getService(
       Components.interfaces.nsISupports,
-    ).wrappedJSObject;
+    ).wrappedJSObject
   }
-  Zotero.__addonInstance__?.hooks.onShutdown();
+  Zotero.__addonInstance__?.hooks.onShutdown()
 
-  Cc["@mozilla.org/intl/stringbundle;1"]
+  Cc['@mozilla.org/intl/stringbundle;1']
     .getService(Components.interfaces.nsIStringBundleService)
-    .flushBundles();
+    .flushBundles()
 
-  Cu.unload(`${rootURI}/chrome/content/scripts/__addonRef__.js`);
+  Cu.unload(`${rootURI}/chrome/content/scripts/__addonRef__.js`)
 
   if (chromeHandle) {
-    chromeHandle.destruct();
-    chromeHandle = null;
+    chromeHandle.destruct()
+    chromeHandle = null
   }
 }
 

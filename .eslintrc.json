@@ -36,6 +36,7 @@
     "**/node_modules/**",
     "**/scripts/**",
     "**/*.js",
-    "**/*.bak"
+    "**/*.bak",
+    "**/*.yaml"
   ]
 }

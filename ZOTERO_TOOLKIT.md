@@ -277,7 +277,7 @@ The bootstrapped plugin runs in a sandbox, which does not have default global va
 This template registers the following variables to the global scope:
 
 ```ts
-Zotero, ZoteroPane, Zotero_Tabs, window, document, rootURI, ztoolkit, addon;
+Zotero, ZoteroPane, Zotero_Tabs, window, document, rootURI, ztoolkit, addon
 ```
 
 ### Create Elements API
@@ -288,9 +288,9 @@ The plugin template provides new APIs for bootstrap plugins. We have two reasons
 - Zotero 7 requires createElement()/createElementNS() → createXULElement() for remaining XUL elements, while Zotero 6 doesn't support `createXULElement`. The React.createElement-like API `createElement` detects namespace(xul/html/svg) and creates elements automatically, with the return element in the corresponding TS element type.
 
 ```ts
-createElement(document, "div"); // returns HTMLDivElement
-createElement(document, "hbox"); // returns XUL.Box
-createElement(document, "button", { namespace: "xul" }); // manually set namespace. returns XUL.Button
+createElement(document, 'div') // returns HTMLDivElement
+createElement(document, 'hbox') // returns XUL.Box
+createElement(document, 'button', { namespace: 'xul' }) // manually set namespace. returns XUL.Button
 ```
 
 ### About Build
