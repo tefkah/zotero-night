@@ -1,7 +1,10 @@
 [![](https://img.shields.io/badge/%E2%AC%87-download-brightgreen)](https://github.com/tefkah/zotero-night/releases/latest/download/night.xpi) ![](https://img.shields.io/github/v/release/tefkah/zotero-night?label=version) ![]() ![](https://img.shields.io/github/downloads/tefkah/zotero-night/latest/total?color=blue) 
-# 🌌 Night for Zotero
+# 🌌 Night for Zotero 6
 
 [⬇️ Download latest version](https://github.com/tefkah/zotero-night/releases/latest/download/night.xpi)
+[⬇️ Download alpha version for Zotero 7 Beta](https://github.com/tefkah/zotero-night/releases/download/0.1.0-0/night-7.xpi)
+
+[7️⃣ Click here for the version for Zotero 7](https://github.com/tefkah/zotero-night/tree/zotero-7)
 
 ![](./IMG-20220419-WA0000.jpg)
 
