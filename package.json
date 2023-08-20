@@ -1,6 +1,6 @@
 {
   "name": "zotero-night",
-  "version": "0.0.1",
+  "version": "0.1.0-0",
   "description": "Zotero Night",
   "config": {
     "addonName": "Night",
