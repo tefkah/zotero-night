@@ -3,7 +3,7 @@
 [![zotero target version](https://img.shields.io/badge/Zotero-7-green?style=flat-square&logo=zotero&logoColor=CC2936)](https://www.zotero.org)
 [![Using Zotero Plugin Template](https://img.shields.io/badge/Using-Zotero%20Plugin%20Template-blue?style=flat-square&logo=github)](https://github.com/windingwind/zotero-plugin-template)
 
-[⬇️ Download latest version](https://github.com/tefkah/zotero-night/releases/latest/download/night-7.xpi)
+[⬇️ Download latest version](https://github.com/tefkah/zotero-night/releases/download/0.1.0-1/night-7.xpi)
 
 ![](./IMG-20220419-WA0000.jpg)
 
