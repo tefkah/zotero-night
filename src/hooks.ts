@@ -1,7 +1,6 @@
 import {
   BasicExampleFactory,
   KeyExampleFactory,
-  PromptExampleFactory,
   UIExampleFactory,
 } from './modules/examples'
 import { config } from '../package.json'
@@ -22,8 +21,6 @@ async function onStartup() {
 
   BasicExampleFactory.registerPrefs()
 
-  BasicExampleFactory.registerNotifier()
-
   await onMainWindowLoad(window)
 }
 
@@ -31,62 +28,10 @@ async function onMainWindowLoad(win: Window): Promise<void> {
   // Create ztoolkit for every window
   addon.data.ztoolkit = createZToolkit()
 
-  const popupWin = new ztoolkit.ProgressWindow(config.addonName, {
-    closeOnClick: true,
-    closeTime: -1,
-  })
-    .createLine({
-      text: getString('startup-begin'),
-      type: 'default',
-      progress: 0,
-    })
-    .show()
-
   KeyExampleFactory.registerShortcuts()
-
-  await Zotero.Promise.delay(1000)
-  popupWin.changeLine({
-    progress: 30,
-    text: `[30%] ${getString('startup-begin')}`,
-  })
-
   UIExampleFactory.registerStyleSheet()
   UIExampleFactory.registerToggleButton()
-
-  //   UIExampleFactory.registerRightClickMenuItem();
-
-  // UIExampleFactory.registerRightClickMenuPopup();
-
-  // UIExampleFactory.registerWindowMenuWithSeparator();
-
-  // await UIExampleFactory.registerExtraColumn();
-
-  // await UIExampleFactory.registerExtraColumnWithCustomCell();
-
-  // await UIExampleFactory.registerCustomCellRenderer();
-
-  // await UIExampleFactory.registerCustomItemBoxRow();
-
-  // UIExampleFactory.registerLibraryTabPanel();
-
-  // await UIExampleFactory.registerReaderTabPanel();
-
-  // PromptExampleFactory.registerNormalCommandExample();
-
-  // PromptExampleFactory.registerAnonymousCommandExample();
-
-  // PromptExampleFactory.registerConditionalCommandExample();
   await registerReader()
-
-  await Zotero.Promise.delay(1000)
-
-  popupWin.changeLine({
-    progress: 100,
-    text: `[100%] ${getString('startup-finish')}`,
-  })
-  popupWin.startCloseTimer(5000)
-
-  //  addon.hooks.onDialogEvents('dialogExample')
 }
 
 async function onMainWindowUnload(win: Window): Promise<void> {
@@ -162,32 +107,13 @@ function onShortcuts(type: string) {
     case 'toggle':
       KeyExampleFactory.shortcutToggleCallback()
       break
+    case 'cycleFilter':
+      KeyExampleFactory.shortcutCycleFilterCallback()
+      break
     default:
       break
   }
 }
-
-// function onDialogEvents(type: string) {
-//   switch (type) {
-//     case 'dialogExample':
-//       HelperExampleFactory.dialogExample()
-//       break
-//     case 'clipboardExample':
-//       HelperExampleFactory.clipboardExample()
-//       break
-//     case 'filePickerExample':
-//       HelperExampleFactory.filePickerExample()
-//       break
-//     case 'progressWindowExample':
-//       HelperExampleFactory.progressWindowExample()
-//       break
-//     case 'vtableExample':
-//       HelperExampleFactory.vtableExample()
-//       break
-//     default:
-//       break
-//   }
-// }
 
 // Add your hooks here. For element click, etc.
 // Keep in mind hooks only do dispatch. Don't add code that does real jobs in hooks.

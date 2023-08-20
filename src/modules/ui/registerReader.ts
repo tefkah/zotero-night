@@ -1,6 +1,5 @@
-import { config } from '../../../package.json'
 import { getPref } from '../../utils/prefs'
-import { sleep, waitUtilAsync } from '../../utils/wait'
+import { waitUtilAsync } from '../../utils/wait'
 import tab from '../../styles/tab.scss'
 import { addFilterToReader, cycleFilter, getFilterByID } from './filterSchema'
 import { getSecondaryReaderDocument } from '../../utils/getSplitWindow'

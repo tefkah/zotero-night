@@ -13,7 +13,7 @@ function addTransitionCSS(element: HTMLElement) {
         id: TRANSITION_ID,
       },
       properties: {
-        textContent: `* { transition: all 0.5s ease-in-out !important; }`,
+        textContent: `* { transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out !important; }`,
       },
     },
     element,
