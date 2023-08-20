@@ -2,7 +2,7 @@ export const defaultFilters = {
   none: { filter: 'none', icon: '☀️', displayName: 'None', name: 'none' },
   nord: {
     filter:
-      'invert(85%) sepia(70%) saturate(220%) hue-rotate(179deg) brightness(99%) contrast(90%)',
+      'invert(85%) sepia(70%) saturate(200%) hue-rotate(179deg) brightness(99%) contrast(90%)',
     icon: '✨',
     name: 'nord',
     displayName: 'Nord',

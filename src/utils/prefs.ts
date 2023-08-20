@@ -17,7 +17,7 @@ export type Prefs = {
 }
 
 export const defaultPrefs: Prefs = {
-  current_theme: 'light',
+  current_theme: 'dark',
   // themes: {},
   default_pdf_filter: 'none',
   filters: defaultFilters,
@@ -32,7 +32,7 @@ export const defaultPrefs: Prefs = {
 export function getPref<K extends keyof typeof prefsSchema>(key: K): Prefs[K] {
   const pref = Zotero.Prefs.get(`${config.prefsPrefix}.${key}`, true)
 
-  if (pref === undefined) {
+  if (pref == null) {
     setPref(key, defaultPrefs[key])
     return defaultPrefs[key]
   }

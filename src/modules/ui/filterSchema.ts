@@ -3,7 +3,8 @@ import { getSecondaryReaderDocument } from '../../utils/getSplitWindow.js'
 import { getPref, setPref } from '../../utils/prefs.js'
 import { sleep } from '../../utils/wait.js'
 import { ElementProps } from 'zotero-plugin-toolkit/dist/tools/ui.js'
-import { Filter, filterSchema } from './types.js'
+import { Filter, Filters, filterSchema } from './types.js'
+import { defaultFilters } from './defaultFilters.js'
 
 const filterId = 'pdf-filter'
 
@@ -18,12 +19,17 @@ export const createFilterFromHex = (
     filter: hexToFilter(hex).result.filter,
   })
 
-export const getFilters = () => {
+export const getFilters = (): Filters => {
   const customFilters = getPref('filters')
+  if (!customFilters) {
+    const filters = defaultFilters
+    setPref('filters', filters)
+    return filters as Filters
+  }
   return customFilters
 }
 
-export const getFilter = (name: string) => {
+export const getFilter = (name: string): Filter => {
   const filters = getFilters()
   return filters[name]
 }

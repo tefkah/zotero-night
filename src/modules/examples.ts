@@ -5,10 +5,6 @@ import { getPref } from '../utils/prefs'
 import { cycleFilter } from './ui/filterSchema'
 import { switchTheme } from './ui/switchTheme'
 
-export function getDarkEnabled() {
-  return getPref('current_theme') === 'dark'
-}
-
 function example(
   target: any,
   propertyKey: string | symbol,
@@ -51,9 +47,9 @@ export class KeyExampleFactory {
   static registerShortcuts() {
     const keysetId = `${config.addonRef}-keyset`
     const cmdsetId = `${config.addonRef}-cmdset`
-    const cmdSmallerId = `${config.addonRef}-cmd-smaller`
     const cmdToggleId = `${config.addonRef}-cmd-toggle`
     const cmdCycleId = `${config.addonRef}-cmd-cycle`
+    // @ts-expect-error It does not like 'alt shift' as a modifier even if it works
     ztoolkit.Shortcut.register('element', {
       id: `${config.addonRef}-key-toggle`,
       key: 'Z',
@@ -69,17 +65,9 @@ export class KeyExampleFactory {
           oncommand: `Zotero.${config.addonInstance}.hooks.onShortcuts('toggle')`,
         },
       },
-      // callback: (keyOptions) => {
-      //   const main = window.document.querySelector('#main-window')
-      //   ztoolkit.log('Shortcut triggered!', keyOptions)
-
-      //   main?.setAttribute(
-      //     'theme',
-      //     main.getAttribute('theme') == 'dark' ? 'light' : 'dark'
-      //   )
-      // },
     })
 
+    // @ts-expect-error It does not like 'alt shift' as a modifier even if it works
     ztoolkit.Shortcut.register('element', {
       id: `${config.addonRef}-key-cycle-filter`,
       key: 'C',
@@ -95,15 +83,6 @@ export class KeyExampleFactory {
           oncommand: `Zotero.${config.addonInstance}.hooks.onShortcuts('cycleFilter')`,
         },
       },
-      // callback: (keyOptions) => {
-      //   const main = window.document.querySelector('#main-window')
-      //   ztoolkit.log('Shortcut triggered!', keyOptions)
-
-      //   main?.setAttribute(
-      //     'theme',
-      //     main.getAttribute('theme') == 'dark' ? 'light' : 'dark'
-      //   )
-      // },
     })
   }
 
