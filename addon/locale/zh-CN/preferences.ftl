@@ -1,5 +1,10 @@
-pref-title = 插件模板设置示例
+pref-title = Night 首选项
 pref-enable =
-    .label = 开启
-pref-input = 输入
+    .label = Gay
 pref-help = { $name } Build { $version } { $time }
+pref-theme = 当前主题
+pref-current-theme = 当前主题
+pref-pdf-none = None
+pref-pdf-nord = Match
+pref-pdf-dark = Dark
+pref-pdf-default-filter = 默认 PDF 滤镜
