@@ -1,0 +1,23 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="standard" viewBox="0 0 16 16">
+		<path fill="#fff" opacity="0.5" d="m9.8 1 4.2 4.2v9.8h-11v-14h6.8" />
+		<polygon fill="#fff" points="2 0 2 16 15 16 15 4.8 10 0"/>
+		<path opacity="0.2" d="m10 0h-8.2v16h13v-11zm0.29 1.7 2.8 2.8h-2.8zm-7.5 13v-14h6.5v4.5h4.5v9.5z"/>
+		<polygon opacity="0.08" points="13 4.5 10 1.7 10 4.5"/>
+		<path fill="#39bf68" d="m12 9c-1.9 0-3.5 1.6-3.5 3.5 0 1.9 1.6 3.5 3.5 3.5 1.9 0 3.5-1.6 3.5-3.5 0-1.9-1.6-3.5-3.5-3.5zm-0.58 5.5-1.6-1.6 0.82-0.82 0.75 0.75 1.9-1.9 0.82 0.82-2.7 2.7z" stroke-width="1.2"/>
+		<path fill="#39bf68" d="m4 13h1v1h-1zm0-3h1v1h-1zm0-3h1v1h-1z" />
+		<path fill="#444" d="m6 13h1v1h-1zm-2-9h3.5v1h-3.5zm2 6h1v1h-1zm0-3h6v1h-6z" />
+	</symbol>
+	<symbol id="standard-white">
+		<polygon opacity="0" d="m9.8 1 4.2 4.2v9.8h-11v-14h6.8" />
+		<polygon opacity="0" points="2 0 2 16 15 16 15 4.8 10 0"/>
+		<path fill="#fff" d="m10 0h-8.2v16h13v-11zm0.29 1.7 2.8 2.8h-2.8zm-7.5 13v-14h6.5v4.5h4.5v9.5z"/>
+		<polygon fill="#fff" opacity="0.08" points="13 4.5 10 1.7 10 4.5"/>
+		<path fill="#fff" d="m12 9c-1.9 0-3.5 1.6-3.5 3.5 0 1.9 1.6 3.5 3.5 3.5 1.9 0 3.5-1.6 3.5-3.5 0-1.9-1.6-3.5-3.5-3.5zm-0.58 5.5-1.6-1.6 0.82-0.82 0.75 0.75 1.9-1.9 0.82 0.82-2.7 2.7z" stroke-width="1.2"/>
+		<path fill="#fff" d="m4 13h1v1h-1zm0-3h1v1h-1zm0-3h1v1h-1z" />
+		<path fill="#fff" d="m6 13h1v1h-1zm-2-9h3.5v1h-3.5zm2 6h1v1h-1zm0-3h6v1h-6z" />
+	</symbol>
+	<use xlink:href="#standard" viewBox="0 0 16 16"/>
+</svg>

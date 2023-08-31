@@ -1,0 +1,7 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="chevron-13" viewBox="0 0 16 16">
+  	<polygon fill="currentColor" points="3.06 11 8.5 5.56 13.939 11 15 9.939 8.5 3.439 2 9.939 3.06 11"/>
+	</symbol>
+	<use xlink:href="#chevron-13" viewBox="0 0 16 16"/>
+</svg>

@@ -1,0 +1,27 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="webpage-snapshot" viewBox="0 0 16 16">
+		<rect x="1" y="2" width="13" height="12" fill="#fff"/>
+		<rect x="1" y="2" width="13" height="3" opacity="0.04"/>
+		<g opacity="0.5">
+			<path d="M14,2V14H1V2H14m0-1H1A1,1,0,0,0,0,2V15H15V2a1,1,0,0,0-1-1Z" fill="#fff"/>
+		</g>
+		<path d="M14,1H1A1,1,0,0,0,0,2V15H15V2A1,1,0,0,0,14,1Zm0,13H1V6H14Zm0-9H1V2H14Z" opacity="0.2"/>
+		<rect x="2" y="3" width="1" height="1" fill="#e24940"/>
+		<rect x="4" y="3" width="1" height="1" fill="#e0a32a"/>
+		<rect x="6" y="3" width="1" height="1" fill="#28ad31"/>
+		<rect x="2.5" y="9.5" width="2.5" height="3" fill="#b3c7f5"/>
+		<polygon points="5 12 3 12 3 10 5 10 5 9 2 9 2 13 5 13 5 12" fill="#4072e5"/>
+		<rect x="6.5" y="8.5" width="9" height="7" rx="0.5" fill="#b4b4b4"/>
+		<circle cx="11" cy="12" r="1.5" fill="#dadada"/>
+		<path d="M15,9v6H7V9h8m0-1H7A1,1,0,0,0,6,9v6a1,1,0,0,0,1,1h8a1,1,0,0,0,1-1V9a1,1,0,0,0-1-1Zm-4,3a1,1,0,1,1-1,1,1,1,0,0,1,1-1m0-1a2,2,0,1,0,2,2,2,2,0,0,0-2-2Zm2,.5h1v-1H13Z" fill="#444"/>
+	</symbol>
+	<symbol id="webpage-snapshot-white">
+		<rect x="1" y="2" width="13" height="3" fill="#fff" opacity="0.2"/>
+		<rect x="2.5" y="9.5" width="2.5" height="3" fill="#fff" opacity="0.4"/>
+		<circle cx="11" cy="12" r="1.5" fill="#fff" opacity="0.2"/>
+		<path d="M15,8.5H7a.5.5,0,0,0-.5.5v6a.5.5,0,0,0,.5.5h8a.5.5,0,0,0,.5-.5V9A.5.5,0,0,0,15,8.5Zm-4,5A1.5,1.5,0,1,1,12.5,12,1.5,1.5,0,0,1,11,13.5Z" fill="#fff" opacity="0.4"/>
+		<path d="M11,14a2,2,0,1,0-2-2A2,2,0,0,0,11,14Zm0-3a1,1,0,1,1-1,1A1,1,0,0,1,11,11Zm4-3V2a1,1,0,0,0-1-1H1A1,1,0,0,0,0,2V15H6a1,1,0,0,0,1,1h8a1,1,0,0,0,1-1V9A1,1,0,0,0,15,8ZM1,2H14V5H1ZM6,9v5H1V6H14V8H7A1,1,0,0,0,6,9Zm9,6H7V9h8Zm-1-4.5H13v-1h1ZM2,3H3V4H2ZM4,3H5V4H4ZM2,9H5v1H3v2H5v1H2ZM6,3H7V4H6Z" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#webpage-snapshot" viewBox="0 0 16 16"/>
+</svg>

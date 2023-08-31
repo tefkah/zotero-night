@@ -1,0 +1,12 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="trash" viewBox="0 0 16 16">
+		<g fill="currentColor">
+			<path d="M13,14.542C13,14.79,12.729,15,12.409,15H4.591C4.271,15,4,14.79,4,14.542V4H3v10.542C3,15.346,3.714,16,4.591,16h7.818C13.286,16,14,15.346,14,14.542V4h-1V14.542z"/>
+			<path d="M12,2V1c0-0.552-0.448-1-1-1H6C5.448,0,5,0.448,5,1v1H2v1h3h7h3V2H12z M6,2V1h5v1H6z"/>
+			<rect x="6" y="5" width="1" height="8"/>
+			<rect x="10" y="5" width="1" height="8"/>
+		</g>
+	</symbol>
+	<use xlink:href="#trash" viewBox="0 0 16 16"/>
+</svg>

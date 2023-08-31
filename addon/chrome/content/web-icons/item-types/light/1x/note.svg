@@ -1,0 +1,16 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="note" viewBox="0 0 16 16">
+		<polygon points="15 0 2 0 2 16 9.707 16 15 10.707 15 0 15 0" fill="#fff" opacity="0.5"/>
+		<polyline points="14 1 14 10.293 9.293 15 3 15 3 1 14 1" fill="#fff"/>
+		<path d="M15,10.707V0H2V16H9.707Zm-5,3.586V11h3.293ZM14,10H9v5H3V1H14Z" opacity="0.2"/>
+		<path d="M14,1V2H3V1H14m1-1H2V3H15V0Z" fill="#faa700"/>
+		<rect x="3" y="1" width="11" height="1" fill="#faa700" opacity="0.4"/>
+	</symbol>
+	<symbol id="note-white">
+		<polygon points="9.5 15.5 9.5 10.5 14.5 10.5 9.5 15.5" fill="#fff" opacity="0.4"/>
+		<path d="M2,0V16H9.707L15,10.707V0ZM3,1H14V2H3Zm7,13.293V11h3.293ZM14,10H9v5H3V3H14Z" fill="#fff"/>
+		<rect x="3" y="1" width="11" height="1" fill="#fff" opacity="0.4"/>
+	</symbol>
+	<use xlink:href="#note" viewBox="0 0 16 16"/>
+</svg>

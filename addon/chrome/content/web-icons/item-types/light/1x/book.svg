@@ -1,0 +1,15 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="book" viewBox="0 0 16 16">
+		<polygon points="13 2 13 13 12 13 12 14 3 14 3 15 14 15 14 2 13 2" fill="#fff"/>
+		<path d="M14,2H13l1,1V15H4L3,14h9a1,1,0,0,0,1-1V1a1,1,0,0,0-1-1H2A1,1,0,0,0,1,1V13a1,1,0,0,0,.293.707l2,2A1,1,0,0,0,4,16H14a1,1,0,0,0,1-1V3A1,1,0,0,0,14,2ZM4,1h8V13H4ZM2,1H3V13H2Z" fill="#4072e5"/>
+		<rect x="4" y="1" width="8" height="12" fill="#b3c7f5"/>
+		<rect x="2" y="1" width="1" height="12" fill="#8daaf0"/>
+	</symbol>
+	<symbol id="book-white">
+		<path d="M4,1h8V13H4ZM2,1H3V13H2ZM4,15,3,14h9a1,1,0,0,0,1-1V1a1,1,0,0,0-1-1H2A1,1,0,0,0,1,1V13a1,1,0,0,0,.293.707l2,2A1,1,0,0,0,4,16H14a1,1,0,0,0,1-1V3a1,1,0,0,0-1-1H13l1,1V15Z" fill="#fff"/>
+		<rect x="4" y="1" width="8" height="12" fill="#fff" opacity="0.4"/>
+		<rect x="2" y="1" width="1" height="12" fill="#fff" opacity="0.6"/>
+	</symbol>
+	<use xlink:href="#book" viewBox="0 0 16 16"/>
+</svg>

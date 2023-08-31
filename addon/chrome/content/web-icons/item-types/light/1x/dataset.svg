@@ -1,0 +1,34 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="dataset" viewBox="0 0 16 16">
+		<rect fill="#fff" x="1" y="2" width="14" height="12"/>
+		<rect opacity="0.04" x="3" y="7" width="2.5" height="1"/>
+		<rect opacity="0.04" x="3" y="9" width="2.5" height="1"/>
+		<rect opacity="0.04" x="3" y="11" width="2.5" height="1"/>
+		<rect opacity="0.04" x="10.5" y="7" width="2.5" height="1"/>
+		<rect opacity="0.04" x="10.5" y="9" width="2.5" height="1"/>
+		<rect opacity="0.04" x="10.5" y="11" width="2.5" height="1"/>
+		<rect opacity="0.04" x="6.5" y="7" width="3" height="1"/>
+		<rect opacity="0.04" x="6.5" y="9" width="3" height="1"/>
+		<rect opacity="0.04" x="6.5" y="11" width="3" height="1"/>
+		<rect fill="#39bf68" x="2" y="3.5" width="12" height="1" />
+		<path opacity="0.2" d="m2,6v7h12v-7H2Zm7.5,1v1h-3v-1h3Zm0,2v1h-3v-1h3Zm-6.5-2h2.5v1h-2.5v-1Zm0,2h2.5v1h-2.5v-1Zm0,3v-1h2.5v1h-2.5Zm3.5,0v-1h3v1h-3Zm6.5,0h-2.5v-1h2.5v1Zm0-2h-2.5v-1h2.5v1Zm0-2h-2.5v-1h2.5v1Z"/>
+		<path opacity="0.2" d="m15,2v12H1V2h14m1-1H0v14h16V1h0Z"/>
+	</symbol>
+	<symbol id="dataset-white">
+		<rect opacity="0" x="1" y="2" width="14" height="12"/>
+		<rect opacity="0" x="3" y="7" width="2.5" height="1"/>
+		<rect opacity="0" x="3" y="9" width="2.5" height="1"/>
+		<rect opacity="0" x="3" y="11" width="2.5" height="1"/>
+		<rect opacity="0" x="10.5" y="7" width="2.5" height="1"/>
+		<rect opacity="0" x="10.5" y="9" width="2.5" height="1"/>
+		<rect opacity="0" x="10.5" y="11" width="2.5" height="1"/>
+		<rect opacity="0" x="6.5" y="7" width="3" height="1"/>
+		<rect opacity="0" x="6.5" y="9" width="3" height="1"/>
+		<rect opacity="0" x="6.5" y="11" width="3" height="1"/>
+		<rect fill="#fff" x="2" y="3.5" width="12" height="1" />
+		<path fill="#fff" d="m2,6v7h12v-7H2Zm7.5,1v1h-3v-1h3Zm0,2v1h-3v-1h3Zm-6.5-2h2.5v1h-2.5v-1Zm0,2h2.5v1h-2.5v-1Zm0,3v-1h2.5v1h-2.5Zm3.5,0v-1h3v1h-3Zm6.5,0h-2.5v-1h2.5v1Zm0-2h-2.5v-1h2.5v1Zm0-2h-2.5v-1h2.5v1Z"/>
+		<path fill="#fff" d="m15,2v12H1V2h14m1-1H0v14h16V1h0Z"/>
+	</symbol>
+	<use xlink:href="#dataset" viewBox="0 0 16 16"/>
+</svg>

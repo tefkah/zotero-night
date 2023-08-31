@@ -1,0 +1,8 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="bibliography" viewBox="0 0 16 16">
+		<path fill="currentColor" d="M9,0H7A1,1,0,0,0,6,1V3H4V1A1,1,0,0,0,3,0H1A1,1,0,0,0,0,1V15a1,1,0,0,0,1,1H3a.977.977,0,0,0,.5-.153A.977.977,0,0,0,4,16H6a.977.977,0,0,0,.5-.153A.977.977,0,0,0,7,16H9a1,1,0,0,0,1-1V1A1,1,0,0,0,9,0ZM1,15V1H3V15Zm3,0V4H6V15Zm5,0H7V1H9ZM13.963,3.666a1,1,0,0,0-.986-.844.944.944,0,0,0-.158.013l-1.975.313a1,1,0,0,0-.832,1.144l1.721,10.864A1,1,0,0,0,12.72,16a1.047,1.047,0,0,0,.157-.012l1.976-.313a1,1,0,0,0,.831-1.144ZM12.721,15,11,4.135l1.976-.313L14.7,14.687Z"/>
+	</symbol>
+	<use xlink:href="#bibliography" viewBox="0 0 16 16"/>
+</svg>
+

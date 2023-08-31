@@ -1,0 +1,7 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="magic-wand" viewBox="0 0 16 16">
+		<path fill="currentColor" d="M13.081,4.333,11.667,2.918a.5.5,0,0,0-.707,0L.646,13.232a.5.5,0,0,0,0,.707l1.415,1.415a.5.5,0,0,0,.707,0L13.081,5.04A.5.5,0,0,0,13.081,4.333ZM2.414,14.293l-.707-.707,1.939-1.94.708.708Zm7.94-7.939-.708-.708,1.667-1.667.708.708ZM10,1.75,9,2,8.75,3h-.5L8,2,7,1.75v-.5L8,1l.25-1h.5L9,1l1,.25Zm6,0L15,2l-.25,1h-.5L14,2l-1-.25v-.5L14,1l.25-1h.5L15,1l1,.25Zm0,6L15,8l-.25,1h-.5L14,8l-1-.25v-.5L14,7l.25-1h.5L15,7l1,.25Z"/>
+	</symbol>
+	<use xlink:href="#magic-wand" viewBox="0 0 16 16"/>
+</svg>

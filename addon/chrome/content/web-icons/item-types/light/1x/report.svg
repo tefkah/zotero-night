@@ -1,0 +1,16 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="report" viewBox="0 0 16 16">
+		<path d="M14,0H3A1,1,0,0,0,2,1V14a1,1,0,0,0,1,1H14a1,1,0,0,0,1-1V1a1,1,0,0,0-1-1Z" fill="#fff" opacity="0.5"/>
+		<polyline points="14 1 14 14 3 14 3 1 14 1" fill="#fff"/>
+		<path d="M14,0H3A1,1,0,0,0,2,1V14a1,1,0,0,0,1,1H14a1,1,0,0,0,1-1V1A1,1,0,0,0,14,0ZM3,1H14V9H9v5H3Zm10.293,9L10,13.293V10ZM14,14H10.707L14,10.707Z" opacity="0.2"/>
+		<path d="M1,2.5A.5.5,0,0,1,1.5,2h2a.5.5,0,0,1,0,1h-2A.5.5,0,0,1,1,2.5ZM3.5,4h-2a.5.5,0,0,0,0,1h2a.5.5,0,0,0,0-1Zm0,2h-2a.5.5,0,0,0,0,1h2a.5.5,0,0,0,0-1Zm0,2h-2a.5.5,0,0,0,0,1h2a.5.5,0,0,0,0-1Zm0,2h-2a.5.5,0,0,0,0,1h2a.5.5,0,0,0,0-1Zm0,2h-2a.5.5,0,0,0,0,1h2a.5.5,0,0,0,0-1Z" fill="#db2c3a"/>
+		<path d="M12,5H6V4h6ZM11,6H7V7h4Z" fill="#444"/>
+		<polygon points="10 10 10 13.293 13.293 10 10 10" opacity="0.08"/>
+	</symbol>
+	<symbol id="report-white">
+		<polygon points="14.5 9.5 9.5 9.5 9.5 14.5 14.5 9.5" fill="#fff" opacity="0.4"/>
+		<path d="M14,0H3A1,1,0,0,0,2,1V2H1.5a.5.5,0,0,0,0,1H2V4H1.5a.5.5,0,0,0,0,1H2V6H1.5a.5.5,0,0,0,0,1H2V8H1.5a.5.5,0,0,0,0,1H2v1H1.5a.5.5,0,0,0,0,1H2v1H1.5a.5.5,0,0,0,0,1H2v1a1,1,0,0,0,1,1H14a1,1,0,0,0,1-1V1A1,1,0,0,0,14,0Zm0,14H10.707L14,10.707Zm-4-.707V10h3.293ZM14,9H9v5H3V13h.5a.5.5,0,0,0,0-1H3V11h.5a.5.5,0,0,0,0-1H3V9h.5a.5.5,0,0,0,0-1H3V7h.5a.5.5,0,0,0,0-1H3V5h.5a.5.5,0,0,0,0-1H3V3h.5a.5.5,0,0,0,0-1H3V1H14ZM12,5H6V4h6ZM7,6h4V7H7Z" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#report" viewBox="0 0 16 16"/>
+</svg>

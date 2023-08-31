@@ -1,0 +1,7 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="align-left" viewBox="0 0 16 16">
+		<path fill="currentColor" d="M13,3H1V2H13Zm2,2H1V6H15ZM13,8H1V9H13Zm2,3H1v1H15Zm-2,3H1v1H13Z"/>
+	</symbol>
+	<use xlink:href="#align-left" viewBox="0 0 16 16"/>
+</svg>

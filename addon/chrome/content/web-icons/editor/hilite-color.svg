@@ -1,0 +1,7 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="hilite-color" viewBox="0 0 16 16">
+		<path fill="currentColor" d="M7,12V5H4V3h8V5H9v7ZM1,13H15v3H1Zm1,2H14V14H2ZM1,0V12H2V1H14V12h1V0Z"/>
+	</symbol>
+	<use xlink:href="#hilite-color" viewBox="0 0 16 16"/>
+</svg>

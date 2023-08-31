@@ -1,0 +1,21 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="pdf" viewBox="0 0 16 16">
+		<polygon points="11.707 0 3 0 3 16 16 16 16 4.293 11.707 0 11.707 0" fill="#fff" opacity="0.5"/>
+		<polyline points="11.293 1 15 4.707 15 15 4 15 4 1 11.293 1" fill="#fff"/>
+		<g opacity="0.08">
+			<polygon points="12 1.707 12 4 14.293 4 12 1.707"/>
+		</g>
+		<g opacity="0.2">
+			<path d="M11.707,0H3V16H16V4.293ZM12,1.707,14.293,4H12ZM15,15H4V1h7V5h4Z"/>
+		</g>
+		<rect x="1" y="4" width="7" height="2" fill="#f1abb0"/>
+		<path d="M8,4V6H1V4H8M9,3H0V7H9V3Z" fill="#db2c3a"/>
+	</symbol>
+	<symbol id="pdf-white">
+		<polygon points="12 1.707 12 4 14.293 4 12 1.707" fill="#fff" opacity="0.4"/>
+		<path d="M11.707,0H3V3H0V7H3v9H16V4.293ZM12,1.707,14.293,4H12ZM1,6V4H8V6Zm14,9H4V7H9V3H4V1h7V5h4Z" fill="#fff"/>
+		<rect x="1" y="4" width="7" height="2" fill="#fff" opacity="0.4"/>
+	</symbol>
+	<use xlink:href="#pdf" viewBox="0 0 16 16"/>
+</svg>

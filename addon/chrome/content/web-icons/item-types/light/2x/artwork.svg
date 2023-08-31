@@ -1,0 +1,16 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="artwork" viewBox="0 0 16 16">
+		<rect x="1" y="1" width="14" height="14" fill="#fff" opacity="0.5"/>
+		<path d="M14,2V14H2V2H14m1-1H1V15H15V1Z" opacity="0.2"/>
+		<rect x="2" y="2" width="12" height="12" fill="#fff"/>
+		<rect x="3" y="3" width="10" height="10" fill="#66adff" opacity="0.4"/>
+		<polygon points="3 13 6 8 8.5 11.5 10.5 10 13 13 3 13" fill="#39bf68"/>
+	</symbol>
+	<symbol id="artwork-white">
+		<path d="M14,2V14H2V2H14m1-1H1V15H15V1Z" fill="#fff"/>
+		<rect x="3" y="3" width="10" height="10" fill="#fff" opacity="0.4"/>
+		<polygon points="3 13 6 8 8.5 11.5 10.5 10 13 13 3 13" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#artwork" viewBox="0 0 16 16"/>
+</svg>

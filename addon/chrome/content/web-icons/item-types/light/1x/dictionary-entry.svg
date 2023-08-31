@@ -1,0 +1,22 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="dictionary-entry" viewBox="0 0 16 16">
+		<polygon points="10.707 0 2 0 2 16 15 16 15 4.293 10.707 0 10.707 0" fill="#fff" opacity="0.5"/>
+		<polyline points="10.293 1 14 4.707 14 15 3 15 3 1 10.293 1" fill="#fff"/>
+		<path d="M12.036,13,9.343,6H7.657L4.964,13H4v1H7V13H6.036l.384-1h4.16l.384,1H10v1h3V13ZM6.805,11,8.343,7h.314L10.2,11Z" fill="#db2c3a"/>
+		<g opacity="0.08">
+		  <polygon points="11 1.707 11 4 13.293 4 11 1.707"/>
+		</g>
+		<g opacity="0.2">
+		  <path d="M10.707,0H2V16H15V4.293ZM11,1.707,13.293,4H11ZM14,15H3V1h7V5h4Z"/>
+		</g>
+	</symbol>
+	<symbol id="dictionary-entry-white">
+		<g opacity="0.4">
+			<polygon points="10.5 0.5 10.5 4.5 14.5 4.5 10.5 0.5" fill="#fff"/>
+		</g>
+		<path d="M12.036,13,9.343,6H7.657L4.964,13H4v1H7V13H6.036l.384-1h4.16l.384,1H10v1h3V13ZM6.805,11,8.343,7h.314L10.2,11Z" fill="#fff"/>
+		<path d="M10.707,0H2V16H15V4.293ZM11,1.707,13.293,4H11ZM14,15H3V1h7V5h4Z" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#dictionary-entry" viewBox="0 0 16 16"/>
+</svg>

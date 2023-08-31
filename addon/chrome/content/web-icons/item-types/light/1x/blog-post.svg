@@ -1,0 +1,24 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="blog-post" viewBox="0 0 16 16">
+		<rect x="2" width="12" height="16" fill="#fff" opacity="0.5"/>
+		<rect x="3" y="1" width="10" height="14" fill="#fff"/>
+		<rect x="5" y="3" width="6" height="2" fill="#cc7a52" opacity="0.4"/>
+		<path d="M13,1V15H3V1H13m1-1H2V16H14V0Z" opacity="0.2"/>
+		<path d="M11,3V5H5V3h6m1-1H4V6h8V2Z" fill="#cc7a52"/>
+		<path d="M9,8H4V7H9ZM8,9H4v1H8Zm1,2H4v1H9ZM8,13H4v1H8Z" fill="#444"/>
+		<g opacity="0.4">
+		  <path d="M10,7h2V8H10Zm0,3h2V9H10Zm0,2h2V11H10Z" fill="#444"/>
+		</g>
+	</symbol>
+	<symbol id="blog-post-white">
+  <path d="M13,1V15H3V1H13m1-1H2V16H14V0Z" fill="#fff"/>
+		<rect x="5" y="3" width="6" height="2" fill="#fff" opacity="0.4"/>
+		<path d="M11,3V5H5V3h6m1-1H4V6h8V2Z" fill="#fff"/>
+		<path d="M9,8H4V7H9ZM8,9H4v1H8Zm1,2H4v1H9ZM8,13H4v1H8Z" fill="#fff"/>
+		<g opacity="0.4">
+			<path d="M10,7h2V8H10Zm0,3h2V9H10Zm0,2h2V11H10Z" fill="#fff"/>
+		</g>
+	</symbol>
+	<use xlink:href="#blog-post" viewBox="0 0 16 16"/>
+</svg>

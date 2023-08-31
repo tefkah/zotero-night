@@ -1,0 +1,22 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="manuscript" viewBox="0 0 16 16">
+		<rect x="1.3" y=".938" width="10.9" height="14.1" fill="#fff"/>
+		<path d="m0.361 0h12.8v16h-12.8zm0.937 0.937v14.1h10.9v-14.1z" opacity=".2"/>
+		<polygon points="8.31 10.1 12.9 5.54 14.8 7.46 10.2 12" fill="#fc0" fill-rule="evenodd"/>
+		<path d="m8.31 10.1 4.58-4.55 1.93 1.91-4.58 4.55zm1.93 1.03 3.69-3.67-1.04-1.03-3.69 3.67z" fill="#f6c501"/>
+		<polygon points="7.37 11 8.35 10 10.3 12 9.32 13 7.37 13" fill="#eccfaa" fill-rule="evenodd"/>
+		<path d="m7.37 11 0.974-0.968 1.95 1.94-0.974 0.968h-1.95zm0.625 1.31h1.06l0.345-0.343-1.06-1.05-0.349 0.347z" fill="#e0c39f"/>
+		<polygon points="7.36 11.4 7.36 13 8.92 13 8.92 12.4 7.89 12.4 7.89 11.4" fill="#444"/>
+		<polygon points="14 4.41 14.9 4.55 15.4 5.02 15.9 5.52 16 6.35 15.6 6.74 14.8 7.49 12.9 5.55 13.6 4.8" fill="#d8d8d8" fill-rule="evenodd"/>
+		<path d="m12.9 5.55 1.14-1.14 0.868 0.136 0.974 0.967 0.106 0.831-1.14 1.14zm1.95 1.14 0.551-0.548-0.0464-0.364-0.707-0.703-0.406-0.0639-0.541 0.537z" fill="#bfbfbf"/>
+	</symbol>
+	<symbol id="manuscript-white" viewBox="0 0 16 16" fill="#fff" fill-rule="evenodd">
+		<path d="m0.361 0h12.8v16h-12.8zm0.937 0.937v14.1h10.9v-14.1z" fill-rule="nonzero"/>
+		<polygon points="14.8 7.46 10.2 12 8.31 10.1 12.9 5.54"/>
+		<path d="m8.31 10.1 4.58-4.55 1.93 1.91-4.58 4.55zm1.93 1.03 3.69-3.67-1.04-1.03-3.69 3.67z" fill-rule="nonzero"/>
+		<path d="m7.37 11 0.974-0.968 1.95 1.94-0.974 0.968h-1.95zm0.625 1.31h1.06l0.345-0.343-1.06-1.05-0.349 0.347z" fill-rule="nonzero"/>
+		<path d="m12.9 5.55 1.14-1.14 0.868 0.136 0.974 0.967 0.106 0.831-1.14 1.14zm1.95 1.14 0.551-0.548-0.0464-0.364-0.707-0.703-0.406-0.0639-0.541 0.537z" fill-rule="nonzero"/>
+	</symbol>
+	<use xlink:href="#manuscript" viewBox="0 0 16 16"/>
+</svg>

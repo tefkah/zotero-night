@@ -1,0 +1,13 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="document" viewBox="0 0 16 16">
+		<polygon points="9.707 0 2 0 2 16 15 16 15 5.293 9.707 0 9.707 0" fill="#fff" opacity="0.5"/>
+		<polyline points="9.293 1 14 5.707 14 15 3 15 3 1 9.293 1" fill="#fff"/>
+		<path d="M9.707,0H2V16H15V5.293Zm3.586,5H10V1.707ZM14,15H3V1H9V6h5Z" opacity="0.2"/>
+	</symbol>
+	<symbol id="document-white">
+		<polygon points="9.5 0.5 9.5 5.5 14.5 5.5 9.5 0.5" fill="#fff" opacity="0.4"/>
+		<path d="M9.707,0H2V16H15V5.293Zm3.586,5H10V1.707ZM14,15H3V1H9V6h5Z" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#document" viewBox="0 0 16 16"/>
+</svg>

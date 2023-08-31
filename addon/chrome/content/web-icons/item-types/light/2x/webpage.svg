@@ -1,0 +1,22 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="webpage" viewBox="0 0 16 16">
+		<rect x="1" y="2" width="14" height="12" fill="#fff"/>
+		<rect x="1" y="2" width="14" height="3" opacity="0.04"/>
+		<rect x="2.5" y="9.5" width="11" height="3" fill="#4072e5" opacity="0.4"/>
+		<path d="M13,10v2H3V10H13m1-1H2v4H14V9Z" fill="#4072e5"/>
+		<g opacity="0.5">
+			<path d="M15,2V14H1V2H15m0-1H1A1,1,0,0,0,0,2V15H16V2a1,1,0,0,0-1-1Z" fill="#fff"/>
+		</g>
+		<path d="M15,1H1A1,1,0,0,0,0,2V15H16V2A1,1,0,0,0,15,1Zm0,13H1V6H15Zm0-9H1V2H15Z" opacity="0.2"/>
+		<rect x="2" y="3" width="1" height="1" fill="#e24940"/>
+		<rect x="4" y="3" width="1" height="1" fill="#e0a32a"/>
+		<rect x="6" y="3" width="1" height="1" fill="#28ad31"/>
+	</symbol>
+	<symbol id="webpage-white">
+		<rect x="1" y="2" width="14" height="3" fill="#fff" opacity="0.2"/>
+		<rect x="2.5" y="9.5" width="11" height="3" fill="#fff" opacity="0.4"/>
+		<path d="M15,1H1A1,1,0,0,0,0,2V15H16V2A1,1,0,0,0,15,1Zm0,13H1V6H15Zm0-9H1V2H15ZM3,4H2V3H3ZM5,4H4V3H5ZM7,4H6V3H7Zm6,6v2H3V10H13m1-1H2v4H14V9Z" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#webpage" viewBox="0 0 16 16"/>
+</svg>

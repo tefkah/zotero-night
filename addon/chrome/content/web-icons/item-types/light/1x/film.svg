@@ -1,0 +1,12 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="film" viewBox="0 0 16 16">
+		<path d="M1,1V14H15V1ZM11,2V7H5V2ZM2,2H4V4H2ZM2,5H4V7H2ZM2,8H4v2H2Zm0,5V11H4v2Zm3,0V8h6v5Zm9,0H12V11h2Zm0-3H12V8h2Zm0-3H12V5h2Zm0-3H12V2h2Z" fill="#444"/>
+		<path d="M11,7H5V2h6Zm0,1H5v5h6Z" fill="#444" opacity="0.2"/>
+	</symbol>
+	<symbol id="film-white">
+		<path d="M1,1V14H15V1ZM11,2V7H5V2ZM2,2H4V4H2ZM2,5H4V7H2ZM2,8H4v2H2Zm0,5V11H4v2Zm3,0V8h6v5Zm9,0H12V11h2Zm0-3H12V8h2Zm0-3H12V5h2Zm0-3H12V2h2Z" fill="#fff"/>
+		<path d="M11,7H5V2h6Zm0,1H5v5h6Z" fill="#fff" opacity="0.2"/>
+	</symbol>
+	<use xlink:href="#film" viewBox="0 0 16 16"/>
+</svg>

@@ -1,0 +1,26 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="preprint" viewBox="0 0 16 16">
+		<polygon points="8.17 0 1.1e-7 0 1.1e-7 16 12.9 16 12.9 4.79" fill="#fff" opacity=".5"/>
+		<path d="m5.98 5.5h-2.99v-1h2.99zm3.98 1.5h-6.97v1h6.97zm0 2.5h-6.97v1h6.97zm0 2.5h-6.97v1h6.97z" fill="#444"/>
+		<path d="m8.17 0h-8.17v16h12.9v-11.2zm0.292 1.71 2.78 2.79h-2.78zm-7.47 13.3v-14h6.47v4.5h4.48v9.5z" opacity=".2"/>
+		<polygon points="8.46 4.5 11.2 4.5 8.46 1.71" opacity=".08"/>
+		<polygon points="7.98 10.1 12.6 5.54 14.5 7.46 9.91 12" fill="#fc0" fill-rule="evenodd"/>
+		<path d="m7.98 10.1 4.58-4.55 1.93 1.91-4.58 4.55zm1.93 1.03 3.69-3.67-1.04-1.03-3.69 3.67z" fill="#f6c501"/>
+		<polygon points="9.97 12 9 13 7.05 13 7.05 11 8.02 10" fill="#eccfaa" fill-rule="evenodd"/>
+		<path d="m7.05 11 0.974-0.968 1.95 1.94-0.974 0.968h-1.95zm0.625 1.31h1.06l0.345-0.343-1.06-1.05-0.349 0.347z" fill="#e0c39f"/>
+		<polygon points="7.57 12.4 7.57 11.4 7.04 11.4 7.04 13 8.6 13 8.6 12.4" fill="#444"/>
+		<polygon points="14.6 4.55 15 5.02 15.5 5.52 15.6 6.35 15.3 6.74 14.5 7.49 12.6 5.55 13.3 4.8 13.7 4.41" fill="#d8d8d8" fill-rule="evenodd"/>
+		<path d="m12.6 5.55 1.14-1.14 0.868 0.136 0.974 0.967 0.106 0.831-1.14 1.14zm1.95 1.14 0.551-0.548-0.0464-0.364-0.707-0.703-0.406-0.0639-0.54 0.537z" fill="#bfbfbf"/>
+	</symbol>
+	<symbol id="preprint-white" viewBox="0 0 16 16" fill="#fff" fill-rule="evenodd">
+		<polygon points="7.97 5 12.4 5 7.97 0.5" fill-rule="nonzero" opacity=".4"/>
+		<path d="m5.98 5.5h-2.99v-1h2.99zm3.98 1.5h-6.97v1h6.97zm0 2.5h-6.97v1h6.97zm0 2.5h-6.97v1h6.97z" fill-rule="nonzero"/>
+		<path d="m8.17 0h-8.17v16h12.9v-11.2zm0.292 1.71 2.78 2.79h-2.78zm-7.47 13.3v-14h6.47v4.5h4.48v9.5z" fill-rule="nonzero"/>
+		<polygon points="14.5 7.46 9.91 12 7.98 10.1 12.6 5.54"/>
+		<path d="m7.98 10.1 4.58-4.55 1.93 1.91-4.58 4.55zm1.93 1.03 3.69-3.67-1.04-1.03-3.69 3.67z" fill-rule="nonzero"/>
+		<path d="m7.05 11 0.974-0.968 1.95 1.94-0.974 0.968h-1.95zm0.625 1.31h1.06l0.345-0.343-1.06-1.05-0.349 0.347z" fill-rule="nonzero"/>
+		<path d="m12.6 5.55 1.14-1.14 0.868 0.136 0.974 0.967 0.106 0.831-1.14 1.14zm1.95 1.14 0.551-0.548-0.0464-0.364-0.707-0.703-0.406-0.0639-0.54 0.537z" fill-rule="nonzero"/>
+	</symbol>
+	<use xlink:href="#preprint" viewBox="0 0 16 16"/>
+</svg>

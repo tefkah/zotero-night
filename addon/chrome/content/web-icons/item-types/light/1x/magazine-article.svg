@@ -1,0 +1,19 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="magazine-article" viewBox="0 0 16 16">
+		<rect x="3" y="3" width="11" height="12" fill="#fff"/>
+		<polygon points="4 14 4 3 3 3 3 15 8 15 8 14 4 14" fill="#d9e3fa"/>
+		<path d="M4.5,13.5V.5h3a1,1,0,0,1,1,1v12Z" fill="#b3c7f5"/>
+		<path d="M9,2V1.5A1.5,1.5,0,0,0,7.5,0H4V2H2V16H15V2ZM5,1H7.5a.5.5,0,0,1,.5.5V13H5ZM3,15V3H4V14H7.5a.5.5,0,0,1,0,1Zm11,0H8.908A1.483,1.483,0,0,0,9,14.5V3h5Z" fill="#4072e5"/>
+		<path d="M10,10h3v1H10Zm0,3h3V12H10Z" fill="#444"/>
+		<polygon points="10 4 10 5 12 5 12 8 10 8 10 9 13 9 13 4 10 4" fill="#39bf68"/>
+		<rect x="10" y="5" width="2" height="3" fill="#b0e5c3"/>
+	</symbol>
+	<symbol id="magazine-article-white">
+		<polygon points="4 14 4 3 3 3 3 15 8 15 8 14 4 14" fill="#fff" opacity="0.2"/>
+		<path d="M4.5,13.5V.5h3a1,1,0,0,1,1,1v12Z" fill="#fff" opacity="0.4"/>
+		<path d="M9,2V1.5A1.5,1.5,0,0,0,7.5,0H4V2H2V16H15V2ZM5,1H7.5a.5.5,0,0,1,.5.5V13H5ZM3,15V3H4V14H7.5a.5.5,0,0,1,0,1Zm11,0H8.908A1.483,1.483,0,0,0,9,14.5V3h5Zm-4-5h3v1H10Zm0,3h3V12H10Zm3-9V9H10V8h2V5H10V4Z" fill="#fff"/>
+		<rect x="10" y="5" width="2" height="3" fill="#fff" opacity="0.4"/>
+	</symbol>
+	<use xlink:href="#magazine-article" viewBox="0 0 16 16"/>
+</svg>

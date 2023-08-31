@@ -1,0 +1,19 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="newspaper-article" viewBox="0 0 16 16">
+		<path d="M2.5,14.5V1.5h13V13.551a.95.95,0,0,1-.949.949Z" fill="#f3f3f3"/>
+		<path d="M1.5,14.5a1,1,0,0,1-1-1V4h2v9.5A1,1,0,0,1,1.5,14.5Z" fill="#dbdbdb"/>
+		<rect x="4.5" y="4" width="9" height="2" fill="#c6d5f7"/>
+		<path d="M13,4.5v1H5v-1h8m1-1H4v3H14v-3Z" fill="#4072e5"/>
+		<path d="M14,7.5H10v1h4Zm0,2H10v1h4Zm0,2H4v1H14ZM2,1V3.5H0v10A1.5,1.5,0,0,0,1.5,15H14.551A1.449,1.449,0,0,0,16,13.551V1ZM1,13.5v-9H2v9a.5.5,0,0,1-1,0Zm14,.051a.449.449,0,0,1-.449.449H2.908A1.483,1.483,0,0,0,3,13.5V2H15Z" fill="#888"/>
+		<rect x="4.5" y="8" width="4" height="2" fill="#d1e7ff"/>
+		<path d="M8,8.5v1H5v-1H8m1-1H4v3H9v-3Z" fill="#66adff"/>
+	</symbol>
+	<symbol id="newspaper-article-white">
+		<path d="M1.5,14.5a1,1,0,0,1-1-1V4h2v9.5A1,1,0,0,1,1.5,14.5ZM8.5,8h-4v2h4Zm-4-2V4h9V6Z" fill="#fff" opacity="0.3"/>
+		<path d="M2.5,1.5v13H14.551a.95.95,0,0,0,.949-.949V1.5Zm6,8.5h-4V8h4Zm5-4h-9V4h9Z" fill="#fff" opacity="0.1"/>
+		<path d="M13,4.5v1H5v-1h8m1-1H4v3H14v-3Z" fill="#fff"/>
+		<path d="M8,8.5v1H5v-1H8m1-1H4v3H9v-3Zm5,0H10v1h4Zm0,2H10v1h4Zm0,2H4v1H14ZM2,1V3.5H0v10A1.5,1.5,0,0,0,1.5,15H14.551A1.449,1.449,0,0,0,16,13.551V1ZM1,13.5v-9H2v9a.5.5,0,0,1-1,0Zm14,.051a.449.449,0,0,1-.449.449H2.908A1.483,1.483,0,0,0,3,13.5V2H15Z" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#newspaper-article" viewBox="0 0 16 16"/>
+</svg>

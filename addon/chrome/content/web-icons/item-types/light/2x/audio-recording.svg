@@ -1,0 +1,12 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="audio-recording" viewBox="0 0 16 16">
+		<path d="M6.5,2.5a1.5,1.5,0,0,1,3,0v6a1.5,1.5,0,0,1-3,0Z" fill="#dadada"/>
+		<path d="M8,0A2.5,2.5,0,0,0,5.5,2.5v6a2.5,2.5,0,0,0,5,0v-6A2.5,2.5,0,0,0,8,0ZM9.5,8.5a1.5,1.5,0,0,1-3,0v-6a1.5,1.5,0,0,1,3,0Zm-1,4.449V15h3v1h-7V15h3V12.949A4.49,4.49,0,0,1,3.5,8.5V6h1V8.5a3.5,3.5,0,0,0,7,0V6h1V8.5A4.49,4.49,0,0,1,8.5,12.949Z" fill="#444"/>
+	</symbol>
+	<symbol id="audio-recording-white">
+		<path d="M6.5,2.5a1.5,1.5,0,0,1,3,0v6a1.5,1.5,0,0,1-3,0Z" fill="#fff" opacity="0.2"/>
+		<path d="M8,0A2.5,2.5,0,0,0,5.5,2.5v6a2.5,2.5,0,0,0,5,0v-6A2.5,2.5,0,0,0,8,0ZM9.5,8.5a1.5,1.5,0,0,1-3,0v-6a1.5,1.5,0,0,1,3,0Zm-1,4.449V15h3v1h-7V15h3V12.949A4.49,4.49,0,0,1,3.5,8.5V6h1V8.5a3.5,3.5,0,0,0,7,0V6h1V8.5A4.49,4.49,0,0,1,8.5,12.949Z" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#audio-recording" viewBox="0 0 16 16"/>
+</svg>

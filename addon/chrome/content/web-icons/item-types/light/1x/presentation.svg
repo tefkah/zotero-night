@@ -1,0 +1,14 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="presentation" viewBox="0 0 16 16">
+		<rect x="1.5" y="0.5" width="14" height="10" fill="#fff"/>
+		<path d="M16,11V0H1V11H8v1.293L5.146,15.146a.5.5,0,0,0,.708.708L8,13.707V15.5a.5.5,0,0,0,1,0V13.707l2.146,2.147a.5.5,0,0,0,.708-.708L9,12.293V11ZM2,10V1H15v9Z" fill="#444"/>
+		<polygon points="14 4.5 10 6.5 7 4.5 3 6.5 3 9 14 9 14 4.5" fill="#c2deff"/>
+		<polygon points="14 3.941 10.036 5.923 7.036 3.923 3 5.941 3 7.059 6.964 5.077 9.964 7.077 14 5.059 14 3.941" fill="#66adff"/>
+	</symbol>
+	<symbol id="presentation-white">
+		<polygon points="14 4.5 10 6.5 7 4.5 3 6.5 3 9 14 9 14 4.5" fill="#fff" opacity="0.4"/>
+		<path d="M16,11V0H1V11H8v1.293L5.146,15.146a.5.5,0,0,0,.708.708L8,13.707V15.5a.5.5,0,0,0,1,0V13.707l2.146,2.147a.5.5,0,0,0,.708-.708L9,12.293V11ZM2,10V1H15v9ZM14,5.059,9.964,7.077l-3-2L3,7.059V5.941L7.036,3.923l3,2L14,3.941Z" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#presentation" viewBox="0 0 16 16"/>
+</svg>

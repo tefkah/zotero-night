@@ -1,0 +1,16 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="conference-paper" viewBox="0 0 16 16">
+		<rect x="5" y="5" width="6" height="10" fill="#f5e4dc"/>
+		<path d="M10.5,3a.5.5,0,0,1-.354-.146l-2-2A.5.5,0,0,1,8.854.146l2,2A.5.5,0,0,1,10.5,3Z" fill="#444"/>
+		<polygon points="1.59 2.5 2.423 7.5 4.5 7.5 4.5 4.5 11.5 4.5 11.5 7.5 13.576 7.5 14.41 2.5 1.59 2.5" fill="#ebcaba"/>
+		<path d="M14,8l1-6H1L2,8H4v7H2v1H14V15H12V8ZM2.847,7,2.18,3H13.82l-.667,4H12V4H4V7ZM11,15H5V5h6Z" fill="#cc7a52"/>
+	</symbol>
+	<symbol id="conference-paper-white">
+		<rect x="5" y="5" width="6" height="10" fill="#fff" opacity="0.2"/>
+		<path d="M10.5,3a.5.5,0,0,1-.354-.146l-2-2A.5.5,0,0,1,8.854.146l2,2A.5.5,0,0,1,10.5,3Z" fill="#fff"/>
+		<polygon points="1.59 2.5 2.423 7.5 4.5 7.5 4.5 4.5 11.5 4.5 11.5 7.5 13.576 7.5 14.41 2.5 1.59 2.5" fill="#fff" opacity="0.4"/>
+		<path d="M14,8l1-6H1L2,8H4v7H2v1H14V15H12V8ZM2.847,7,2.18,3H13.82l-.667,4H12V4H4V7ZM11,15H5V5h6Z" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#conference-paper" viewBox="0 0 16 16"/>
+</svg>

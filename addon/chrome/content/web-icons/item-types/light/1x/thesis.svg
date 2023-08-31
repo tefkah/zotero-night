@@ -1,0 +1,15 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="thesis" viewBox="0 0 16 16">
+		<path d="M1,7v5L0,14.5c0,.276.448.5,1,.5s1-.224,1-.5V7Z" fill="#ff794c"/>
+		<path d="M8,13.5c-2.439,0-4.5-1.145-4.5-2.5V6.875h9V11C12.5,12.355,10.439,13.5,8,13.5Z" fill="#8f8f8f"/>
+		<polygon points="1.02 6.5 8 2.573 14.98 6.5 8 10.427 1.02 6.5" fill="#b4b4b4"/>
+		<path d="M16,6.5,8,2,0,6.5,3,8.188V11c0,1.657,2.239,3,5,3s5-1.343,5-3V8.188ZM8,3.147,13.96,6.5,8,9.853,2.04,6.5ZM12,11c0,.944-1.711,2-4,2s-4-1.056-4-2V8.75L8,11l4-2.25Z" fill="#444"/>
+	</symbol>
+	<symbol id="thesis-white">
+		<polygon points="1.02 6.5 8 2.573 14.98 6.5 8 10.427 1.02 6.5" fill="#fff" opacity="0.4"/>
+		<path d="M8,10.427,3.5,7.9V11c0,1.355,2.061,2.5,4.5,2.5s4.5-1.145,4.5-2.5V7.9Z" fill="#fff" opacity="0.6"/>
+		<path d="M8,2,0,6.5l1,.562V12L0,14.5c0,.276.448.5,1,.5s1-.224,1-.5V7.625l1,.563V11c0,1.657,2.239,3,5,3s5-1.343,5-3V8.188L16,6.5Zm4,9c0,.944-1.711,2-4,2s-4-1.056-4-2V8.75L8,11l4-2.25ZM8,9.853,2.04,6.5,8,3.147,13.96,6.5Z" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#thesis" viewBox="0 0 16 16"/>
+</svg>

@@ -1,0 +1,7 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="duplicate" viewBox="0 0 16 16">
+		<path fill="currentColor" d="M12,3V0H1V13H4v3H15V3ZM2,1h9V12H2ZM14,15H5V13h7V4h2Z"/>
+	</symbol>
+	<use xlink:href="#duplicate" viewBox="0 0 16 16"/>
+</svg>

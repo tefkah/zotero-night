@@ -1,0 +1,12 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="statute" viewBox="0 0 16 16">
+		<path d="M4.5,13h-1V5h1Zm4-8h-1v8h1Zm4,0h-1v8h1Zm1,9H2.5v1h11ZM14,4.5V3.32L8,.551,2,3.32V4.5Z" fill="#e7e7e7"/>
+		<path d="M14.5,15V13h-1V5h1V3L8,0,1.5,3V5h1v8h-1v2H.5v1h15V15ZM5.5,5h1v8h-1Zm2,0h1v8h-1Zm2,0h1v8h-1Zm2,0h1v8h-1Zm-9-1.36L8,1.1,13.5,3.64V4H2.5ZM4.5,5v8h-1V5Zm9,10H2.5V14h11Z" fill="#888"/>
+	</symbol>
+	<symbol id="statute-white">
+		<path d="M4.5,13h-1V5h1Zm4-8h-1v8h1Zm4,0h-1v8h1Zm1,9H2.5v1h11ZM14,4.5V3.32L8,.551,2,3.32V4.5Z" fill="#fff" opacity="0.2"/>
+		<path d="M14.5,15V13h-1V5h1V3L8,0,1.5,3V5h1v8h-1v2H.5v1h15V15ZM5.5,5h1v8h-1Zm2,0h1v8h-1Zm2,0h1v8h-1Zm2,0h1v8h-1Zm-9-1.36L8,1.1,13.5,3.64V4H2.5ZM4.5,5v8h-1V5Zm9,10H2.5V14h11Z" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#statute" viewBox="0 0 16 16"/>
+</svg>

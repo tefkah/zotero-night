@@ -1,0 +1,10 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="computer-program" viewBox="0 0 16 16">
+		<path d="M6.111,13.889.723,8.5,6.111,3.111l.778.778L2.277,8.5l4.612,4.611ZM15.277,8.5,9.889,3.111l-.778.778L13.723,8.5,9.111,13.111l.778.778Z" fill="#39bf68"/>
+	</symbol>
+	<symbol id="computer-program-white">
+		<path d="M6.111,13.889.723,8.5,6.111,3.111l.778.778L2.277,8.5l4.612,4.611ZM15.277,8.5,9.889,3.111l-.778.778L13.723,8.5,9.111,13.111l.778.778Z" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#computer-program" viewBox="0 0 16 16"/>
+</svg>

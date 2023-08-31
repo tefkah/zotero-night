@@ -1,0 +1,18 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="video-recording" viewBox="0 0 16 16">
+		<rect x="5" y="4" width="9" height="8" fill="#dadada"/>
+		<path d="M4.5,6.752.708,4.563a.9.9,0,0,0-.17-.071A.345.345,0,0,0,.5,4.683v6.634a.864.864,0,0,0,.023.182H.532a.4.4,0,0,0,.176-.062L4.5,9.247Z" fill="#b4b4b4"/>
+		<rect x="12" y="5.5" width="1" height="1" fill="#db2c3a"/>
+		<g>
+			<path d="M6.5,6.5h4a.5.5,0,0,0,0-1h-4a.5.5,0,0,0,0,1Z" fill="#444"/>
+			<path d="M15,5.5V4a1,1,0,0,0-1-1H5A1,1,0,0,0,4,4V5.886L.958,4.13A.869.869,0,0,0,.532,4C.217,4,0,4.251,0,4.683v6.634c0,.432.217.683.532.683a.869.869,0,0,0,.426-.13L4,10.114V12a1,1,0,0,0,1,1h9a1,1,0,0,0,1-1V8.5a1,1,0,0,0,1-1v-1A1,1,0,0,0,15,5.5ZM4,8.959,1,10.69V5.309L4,7.042ZM14,12H5V4h9Z" fill="#444"/>
+		</g>
+	</symbol>
+	<symbol id="video-recording-white">
+		<rect x="5" y="4" width="9" height="8" fill="#fff" opacity="0.2"/>
+		<path d="M4.5,6.752.708,4.563a.9.9,0,0,0-.17-.071A.345.345,0,0,0,.5,4.683v6.634a.864.864,0,0,0,.023.182H.532a.4.4,0,0,0,.176-.062L4.5,9.247Z" fill="#fff" opacity="0.4"/>
+		<path d="M12,5.5h1v1H12Zm-5.5,1h4a.5.5,0,0,0,0-1h-4a.5.5,0,0,0,0,1Zm9.5,0v1a1,1,0,0,1-1,1V12a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V10.114L.958,11.87A.869.869,0,0,1,.532,12C.217,12,0,11.749,0,11.317V4.683C0,4.251.217,4,.532,4a.869.869,0,0,1,.426.13L4,5.886V4A1,1,0,0,1,5,3h9a1,1,0,0,1,1,1V5.5A1,1,0,0,1,16,6.5ZM4,7.042,1,5.309V10.69L4,8.959ZM14,4H5v8h9Z" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#video-recording" viewBox="0 0 16 16"/>
+</svg>

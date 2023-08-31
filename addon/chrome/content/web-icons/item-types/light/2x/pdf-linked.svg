@@ -1,0 +1,17 @@
+<!-- This file is part of Zotero. It is distributed under the GNU Affero General Public License version 3. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol id="pdf-linked" viewBox="0 0 16 16">
+		<path d="M7.5,13.5a2,2,0,0,1,4,0,2,2,0,0,1,2-2,1.966,1.966,0,0,1,.5.071V10h1V4.793L10.207,0H3V15H6V14H7.571A1.966,1.966,0,0,1,7.5,13.5Z" fill="#fff" opacity="0.5"/>
+		<path d="M7.5,13.5a2,2,0,0,1,4,0,2,2,0,0,1,2-2,1.966,1.966,0,0,1,.5.071V5.207L9.793,1H4V14H7.571A1.966,1.966,0,0,1,7.5,13.5Z" fill="#fff"/>
+		<polygon points="10.5 1.707 10.5 4.5 13.293 4.5 10.5 1.707" opacity="0.08"/>
+		<path d="M6,14H4V1H9.5V5.5H14V10h1V4.793L10.207,0H3V15H6ZM10.5,1.707,13.293,4.5H10.5Z" opacity="0.2"/>
+		<path d="M13.5,11a2.489,2.489,0,0,0-2,1.014,2.5,2.5,0,1,0,0,2.972A2.5,2.5,0,1,0,13.5,11Zm-4,4a1.5,1.5,0,1,1,1.408-2H9.5a.5.5,0,0,0,0,1h1.408A1.5,1.5,0,0,1,9.5,15Zm4,0a1.5,1.5,0,0,1-1.408-1H13.5a.5.5,0,0,0,0-1H12.092A1.5,1.5,0,1,1,13.5,15Z" fill="#888"/>
+		<rect x="1" y="4" width="6" height="2" fill="#f1abb0"/>
+		<path d="M7,4V6H1V4H7M8,3H0V7H8V3Z" fill="#db2c3a"/>
+	</symbol>
+	<symbol id="pdf-linked-white">
+		<path d="M13.293,4.5H10.5V1.707ZM7,6V4H1V6Z" fill="#fff" opacity="0.4"/>
+		<path d="M13.5,11a2.489,2.489,0,0,0-2,1.014,2.5,2.5,0,1,0,0,2.972A2.5,2.5,0,1,0,13.5,11Zm-4,4a1.5,1.5,0,1,1,1.408-2H9.5a.5.5,0,0,0,0,1h1.408A1.5,1.5,0,0,1,9.5,15Zm4,0a1.5,1.5,0,0,1-1.408-1H13.5a.5.5,0,0,0,0-1H12.092A1.5,1.5,0,1,1,13.5,15ZM10.207,0H3V3H0V7H3v8H6V14H4V7H8V3H4V1H9.5V5.5H14V10h1V4.793ZM7,4V6H1V4Zm3.5.5V1.707L13.293,4.5Z" fill="#fff"/>
+	</symbol>
+	<use xlink:href="#pdf-linked" viewBox="0 0 16 16"/>
+</svg>
