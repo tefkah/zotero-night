@@ -20,16 +20,19 @@ export async function registerReader() {
     attachTabStylesToReaderWindow(doc!)
 
     await waitUtilAsync(() => {
-      const doc = getReaderDocument(instance, false)
+      const doc = getReaderDocument(instance, 'primary')
       return !!doc
     })
-    const viewerDoc = getReaderDocument(instance, false)
+    const viewerDoc = getReaderDocument(instance, 'primary')
 
     if (viewerDoc) {
       attachTabStylesToReaderWindow(viewerDoc!)
     }
 
     addSplitMutationObserver(instance)
+
+    attachTabStylesToReaderWindow(getReaderDocument(instance, 'portal')!)
+
     try {
       await waitUtilAsync(() => {
         const secondviewdoc = getReaderDocument(instance)
@@ -157,7 +160,10 @@ function addFilterToggleButton(reader: _ZoteroTypes.ReaderInstance) {
 const existingStyle = (element: HTMLElement | Document) =>
   element.querySelector('#pageStyle')
 
-function attachTabStylesToReaderWindow(doc: Document) {
+function attachTabStylesToReaderWindow(doc?: Document) {
+  if (!doc) {
+    return
+  }
   const alreadyExistingStyle = existingStyle(doc)
 
   const props: TagElementProps = {

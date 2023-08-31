@@ -45,8 +45,15 @@ export function switchTheme(theme: z.infer<typeof prefsSchema.current_theme>) {
 
   const readers = Zotero.Reader._readers
   for (const reader of readers) {
+    const mainDoc = getReaderDocument(reader, 'primary')
     const secondDoc = getReaderDocument(reader)
-    for (const doc of [reader?._iframeWindow?.document, secondDoc]) {
+    const portalDoc = getReaderDocument(reader, 'portal')
+    for (const doc of [
+      reader?._iframeWindow?.document,
+      mainDoc,
+      secondDoc,
+      portalDoc,
+    ]) {
       if (!doc) {
         continue
       }

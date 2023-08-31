@@ -58,19 +58,22 @@ export const getFilterByID = (id: number) => {
 }
 
 export const getReaderFilters = (reader: _ZoteroTypes.ReaderInstance) => {
-  const primary = getReaderDocument(reader, false)?.querySelector(
+  const primary = getReaderDocument(reader, 'primary')?.querySelector(
     `#${filterId}`,
   )
   const secondary = getReaderDocument(reader)?.querySelector(`#${filterId}`)
+  const portal = getReaderDocument(reader, 'portal')?.querySelector(
+    `#${filterId}`,
+  )
 
   ztoolkit.log(
     'getReaderFilters',
     primary,
     secondary,
-    getReaderDocument(reader),
+    getReaderDocument(reader, 'portal'),
   )
 
-  return [primary, secondary]
+  return [primary, secondary, portal]
 }
 
 export function readerHasFilter(reader: _ZoteroTypes.ReaderInstance) {
@@ -139,25 +142,24 @@ export function addFilterToReader(
   key ??= currentFilter.name ?? getDefaultFilter()
   ztoolkit.log('KEY', currentFilter, key)
 
-  const primaryDocument = getReaderDocument(reader, false)
+  const primaryDocument = getReaderDocument(reader, 'primary')
   const secondaryDocument = getReaderDocument(reader)
+  const portalDocument = getReaderDocument(reader, 'portal')
 
-  ;[primaryDocument, secondaryDocument].forEach(async (doc, idx) => {
-    if (!doc) {
-      ztoolkit.log('addFilterToReader', 'no document')
-      return
-    }
+  ;[primaryDocument, secondaryDocument, portalDocument].forEach(
+    async (doc, idx) => {
+      if (!doc) {
+        ztoolkit.log('addFilterToReader', 'no document')
+        return
+      }
 
-    if (idx === 1) {
-      //    await sleep(100)
-    }
+      ztoolkit.log('addFilterToReader', 'doc', idx, doc)
 
-    ztoolkit.log('addFilterToReader', 'doc', idx, doc)
+      const filterElement = createOrReplaceFilterElement(doc, key!)
 
-    const filterElement = createOrReplaceFilterElement(doc, key!)
-
-    // doc?.head?.appendChild(filterElement)
-  })
+      // doc?.head?.appendChild(filterElement)
+    },
+  )
 
   saveFiltersByID({
     id: reader.itemID!,
