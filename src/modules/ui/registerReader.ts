@@ -173,9 +173,7 @@ function attachTabStylesToReaderWindow(doc: Document) {
   /**
    * Set the theme to dark
    */
-  doc
-    .querySelector('html[dir]')
-    ?.setAttribute('theme', getPref('current_theme'))
+  doc.querySelector('html')?.setAttribute('theme', getPref('current_theme'))
 
   if (alreadyExistingStyle) {
     ztoolkit.UI.replaceElement(props, alreadyExistingStyle)
