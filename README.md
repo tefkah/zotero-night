@@ -44,6 +44,8 @@ Download the xpi from [Releases](https://github.com/ThomasFKJorna/zotero-night/r
 
 https://user-images.githubusercontent.com/21983833/168032714-6106b138-2725-4091-830b-770dbdff43a4.mov
 
+Once installed in Zotero, activate it: Tools > Night Preferences, and select "Enable Dark Theme".
+
 ## 😢 Limitations
 
 - Popup menus do not have proper styling on some platforms.
