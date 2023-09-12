@@ -1,6 +1,6 @@
 pref-title = Night 首选项
 pref-enable =
-    .label = Gay
+    .label = Enable
 pref-help = { $name } Build { $version } { $time }
 pref-theme = 当前主题
 pref-current-theme = 当前主题
