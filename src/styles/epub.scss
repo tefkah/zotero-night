@@ -1,0 +1,13 @@
+@import './nord.scss';
+
+[theme='dark'] replaced-body {
+  color: var(--nord4) !important;
+
+  section {
+    color: var(--nord4) !important;
+  }
+
+  a {
+    color: var(--nord10) !important;
+  }
+}

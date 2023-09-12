@@ -1,8 +1,7 @@
 // import { nord } from './nord'
 @import './nord.scss';
 @import './scrollbar.scss';
-
-// * {
+@import './epub.scss'; // * {
 //   background-color: var(--nord0) !important;
 // }
 [theme='dark'] {
@@ -547,6 +546,14 @@
   .view-popup {
     background-color: var(--nord1) !important;
     color: var(--nord5) !important;
+
+    &.portal-popup {
+      &::before,
+      &::after {
+        border-bottom-color: var(--nord0);
+      }
+      background: var(--nord0) !important;
+    }
   }
 
   .context-menu {

@@ -15,21 +15,24 @@ export async function registerReader() {
     const doc = instance._iframeWindow?.document
 
     addFilterToggleButton(instance)
-    addFilterToReader(instance)
 
     attachTabStylesToReaderWindow(doc!)
 
     await waitUtilAsync(() => {
-      const doc = getReaderDocument(instance, false)
+      const doc = getReaderDocument(instance, 'primary')
       return !!doc
     })
-    const viewerDoc = getReaderDocument(instance, false)
+    const viewerDoc = getReaderDocument(instance, 'primary')
 
     if (viewerDoc) {
       attachTabStylesToReaderWindow(viewerDoc!)
     }
 
+    addFilterToReader(instance)
     addSplitMutationObserver(instance)
+
+    attachTabStylesToReaderWindow(getReaderDocument(instance, 'portal')!)
+
     try {
       await waitUtilAsync(() => {
         const secondviewdoc = getReaderDocument(instance)
@@ -48,11 +51,6 @@ export async function registerReader() {
     } catch (e) {
       ztoolkit.log(e)
     }
-    // ;[doc, secondViewDoc].forEach(async (doc, idx) => {
-    //   if (idx === 1) {
-    //     ztoolkit.log('registering styles for window', idx, doc)
-    //   }
-    // })
   })
 }
 
@@ -157,7 +155,10 @@ function addFilterToggleButton(reader: _ZoteroTypes.ReaderInstance) {
 const existingStyle = (element: HTMLElement | Document) =>
   element.querySelector('#pageStyle')
 
-function attachTabStylesToReaderWindow(doc: Document) {
+function attachTabStylesToReaderWindow(doc?: Document) {
+  if (!doc) {
+    return
+  }
   const alreadyExistingStyle = existingStyle(doc)
 
   const props: TagElementProps = {
@@ -173,9 +174,7 @@ function attachTabStylesToReaderWindow(doc: Document) {
   /**
    * Set the theme to dark
    */
-  doc
-    .querySelector('html[dir]')
-    ?.setAttribute('theme', getPref('current_theme'))
+  doc.querySelector('html')?.setAttribute('theme', getPref('current_theme'))
 
   if (alreadyExistingStyle) {
     ztoolkit.UI.replaceElement(props, alreadyExistingStyle)

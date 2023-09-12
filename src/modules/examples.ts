@@ -2,6 +2,7 @@ import { config } from '../../package.json'
 import { getReaderDocument } from '../utils/getSplitWindow'
 import { getString } from '../utils/locale'
 import { getPref } from '../utils/prefs'
+import { sleep } from '../utils/wait'
 import { cycleFilter } from './ui/filterSchema'
 import { switchTheme } from './ui/switchTheme'
 
@@ -124,8 +125,9 @@ export class UIExampleFactory {
   }
 
   @example
-  static registerToggleButton() {
-    const button = ztoolkit.UI.createElement(document, 'button', {
+  static async registerToggleButton() {
+    sleep(1000)
+    const button = ztoolkit.UI.createElement(window.document, 'button', {
       properties: {
         textContent: config.themes[getPref('current_theme')].icon,
         onclick: () => {
@@ -141,9 +143,9 @@ export class UIExampleFactory {
           'font-size: 1.5em; background: transparent; border-left: none; border-right: none;border-top: none; border-bottom: .5px solid #a9a9a9;',
       },
     })
-    document.querySelector('#tab-bar-container')?.prepend(button)
+    window.document.querySelector('#tab-bar-container')?.prepend(button)
 
-    document
+    window.document
       .querySelector('#main-window')
       ?.setAttribute('theme', getPref('current_theme'))
   }

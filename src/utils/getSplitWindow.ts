@@ -1,6 +1,6 @@
 export function getReaderDocument(
   reader: _ZoteroTypes.ReaderInstance,
-  secondary = true,
+  type: 'secondary' | 'primary' | 'portal' = 'secondary',
 ) {
   const readerDocument = reader._iframeWindow?.document
 
@@ -8,14 +8,16 @@ export function getReaderDocument(
     return null
   }
 
-  const secondaryIFrame = readerDocument.querySelector<HTMLIFrameElement>(
-    `#${secondary ? 'secondary' : 'primary'}-view iframe`,
+  const iframe = readerDocument.querySelector<HTMLIFrameElement>(
+    `#${type}-view iframe`,
   )
 
-  if (!secondaryIFrame) {
+  if (!iframe) {
     return null
   }
 
-  const secondaryReaderDocument = secondaryIFrame.contentDocument
+  const secondaryReaderDocument = iframe.contentDocument
+
+  ztoolkit.log('getReaderDocument', secondaryReaderDocument, type)
   return secondaryReaderDocument
 }
