@@ -1,6 +1,6 @@
 pref-title = Night Preferences
 pref-enable =
-    .label = Gay
+    .label = Enable
 pref-help = { $name } Build { $version } { $time }
 pref-theme = Current Theme
 pref-current-theme = Current Theme
