@@ -15,7 +15,6 @@ export async function registerReader() {
     const doc = instance._iframeWindow?.document
 
     addFilterToggleButton(instance)
-    addFilterToReader(instance)
 
     attachTabStylesToReaderWindow(doc!)
 
@@ -29,6 +28,7 @@ export async function registerReader() {
       attachTabStylesToReaderWindow(viewerDoc!)
     }
 
+    addFilterToReader(instance)
     addSplitMutationObserver(instance)
 
     attachTabStylesToReaderWindow(getReaderDocument(instance, 'portal')!)
@@ -51,11 +51,6 @@ export async function registerReader() {
     } catch (e) {
       ztoolkit.log(e)
     }
-    // ;[doc, secondViewDoc].forEach(async (doc, idx) => {
-    //   if (idx === 1) {
-    //     ztoolkit.log('registering styles for window', idx, doc)
-    //   }
-    // })
   })
 }
 
