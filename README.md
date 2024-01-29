@@ -1,3 +1,9 @@
+> [!NOTE]
+> Development of this plugin has ceased, as Zotero has introduced it's own native dark mode in Zotero 7.
+> Thank you for using the plugin!
+
+___
+
 # 🌌 Night for Zotero 7 (alpha)
 
 [![zotero target version](https://img.shields.io/badge/Zotero-7-green?style=flat-square&logo=zotero&logoColor=CC2936)](https://www.zotero.org)
