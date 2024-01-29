@@ -1,3 +1,9 @@
+> ![NOTE]
+> Development of this plugin has ceased, as Zotero has introduced it's own native dark mode in Zotero 7.
+> Thank you for using the plugin!
+
+___
+
 [![](https://img.shields.io/badge/%E2%AC%87-download-brightgreen)](https://github.com/tefkah/zotero-night/releases/latest/download/night.xpi) ![](https://img.shields.io/github/v/release/tefkah/zotero-night?label=version) ![]() ![](https://img.shields.io/github/downloads/tefkah/zotero-night/latest/total?color=blue) 
 # 🌌 Night for Zotero 6
 
