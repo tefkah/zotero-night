@@ -1,4 +1,4 @@
-> ![NOTE]
+> [!NOTE]
 > Development of this plugin has ceased, as Zotero has introduced it's own native dark mode in Zotero 7.
 > Thank you for using the plugin!
 
