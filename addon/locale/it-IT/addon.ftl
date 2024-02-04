@@ -1,0 +1,11 @@
+startup-begin = Night si sta caricando
+startup-finish = Night è pronto
+menuitem-label = Template dell'estensione: Esempi d'aiuto
+menupopup-label = Template dell'estensione: Popup del menu
+menuitem-submenulabel = Template dell'estensione
+menuitem-filemenulabel = Template dell'estensione: File Menuitem
+prefs-title = Night
+prefs-table-title = Titolo
+prefs-table-detail = Dettagli
+tabpanel-lib-tab-label = Scheda della libreria
+tabpanel-reader-tab-label = Scheda del lettore

@@ -1,0 +1,10 @@
+pref-title = Preferenze di Night
+pref-enable =
+    .label = Attiva
+pref-help = { $name } Build { $version } { $time }
+pref-theme = Tema attuale
+pref-current-theme = Tema attuale
+pref-pdf-none = nessuno
+pref-pdf-nord = Abbina
+pref-pdf-dark = Scuro
+pref-pdf-default-filter = Filtro PDF predefinito
