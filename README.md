@@ -93,4 +93,4 @@ If you really like Zotero Night, you can consider sponsoring me monthly!
 
 If you donate $5/month or more, you'll be listed here and get priority for feature requests/bugfixes! (mention that you're a sponsor in the issue because i'll forget)
 
-<!-- sponsors --><a href="https://github.com/eunosm3"><img src="https://github.com/eunosm3.png" style="border-radius: 50%; margin-right: 1rem" width="60px" alt="" /></a><a href="https://github.com/jpgaubier"><img src="https://github.com/jpgaubier.png" style="border-radius: 50%; margin-right: 1rem" width="60px" alt="" /></a><!-- sponsors -->
+<!-- sponsors --><a href="https://github.com/eunosm3"><img src="https://github.com/eunosm3.png" style="border-radius: 50%; margin-right: 1rem" width="60px" alt="" /></a><!-- sponsors -->
