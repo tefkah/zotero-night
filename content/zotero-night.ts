@@ -226,8 +226,9 @@ class Night {
   }
 
   private setFilterStyle(styleTag: HTMLStyleElement, style?: string) {
+    const styleString = style !== undefined ? this.getFilterString(style) : undefined
     styleTag.textContent = `[theme='dark'] .page .canvasWrapper canvas:not(.selectionCanvas) { filter:  ${
-      style || this.getCurrentFilterString()
+      styleString || this.getCurrentFilterString()
     } }
     `
     return styleTag
